@@ -11,7 +11,7 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var Screen = require( 'JOIST/Screen' );
-  var ScreenView = require( 'JOIST/ScreenView' );
+  var SolidLiquidGasScreenView = require( 'STATES_OF_MATTER_BASICS/solid-liquid-gas/view/SolidLiquidGasScreenView' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
 
   // strings
@@ -22,8 +22,8 @@ define( function( require ) {
    */
   function SolidLiquidGasScreen() {
     Screen.call( this, solidLiquidGasString, new Rectangle( 0, 0, 50, 50 ),
-      function() { return {} },
-      function( model ) { return new ScreenView(); },
+      function() { return {}; },
+      function( model ) { return new SolidLiquidGasScreenView(); },
       { backgroundColor: 'black', navigationBarIcon: new Rectangle( 0, 0, 50, 50 ) }
     );
   }
