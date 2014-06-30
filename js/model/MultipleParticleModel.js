@@ -107,7 +107,7 @@ define( function( require ) {
     // portions of the simulation to be properly created.  The rest of the
     // initialization will occur when the model is reset.
     this.particleDiameter = 1;
-    resetContainerSize();
+    // resetContainerSize();
     this.currentMolecule = DEFAULT_MOLECULE;
 
     PropertySet.call( this, {
@@ -242,13 +242,13 @@ define( function( require ) {
         for ( var i = 0; i < numberOfAtoms; i++ ) {
 
             // Create the atom.
-            Point2D moleculeCenterOfMassPosition = new Point2D.Double();
-            MutableVector2D moleculeVelocity = new MutableVector2D();
-            Point2D[] atomPositions = new Point2D[1];
-            atomPositions[0] = new Point2D.Double();
+            // Point2D moleculeCenterOfMassPosition = new Point2D.Double();
+            // MutableVector2D moleculeVelocity = new MutableVector2D();
+            // Point2D[] atomPositions = new Point2D[1];
+            // atomPositions[0] = new Point2D.Double();
 
             // Add the atom to the data set.
-            m_moleculeDataSet.addMolecule( atomPositions, moleculeCenterOfMassPosition, moleculeVelocity, 0 );
+            this.moleculeDataSet.addMolecule( atomPositions, moleculeCenterOfMassPosition, moleculeVelocity, 0 );
 
             // Add particle to model set.
             var atom;
