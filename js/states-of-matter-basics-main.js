@@ -11,7 +11,7 @@ define( function( require ) {
 
   // modules
   var SolidLiquidGasScreen = require( 'STATES_OF_MATTER_BASICS/solid-liquid-gas/SolidLiquidGasScreen' );
-  var PhaseChangesScreen = require( 'STATES_OF_MATTER_BASICS/phase-changes/PhaseChangesScreen' );
+  // var PhaseChangesScreen = require( 'STATES_OF_MATTER_BASICS/phase-changes/PhaseChangesScreen' );
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
 
@@ -38,7 +38,7 @@ define( function( require ) {
   }
 
   SimLauncher.launch( function() {
-    var sim = new Sim( simTitle, [ new SolidLiquidGasScreen(), new PhaseChangesScreen() ], simOptions );
+    var sim = new Sim( simTitle, [new SolidLiquidGasScreen()], simOptions );
     sim.start();
   } );
 } );
