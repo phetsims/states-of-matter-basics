@@ -118,20 +118,19 @@ define( function( require ) {
 
   return inherit( PropertySet, MultipleParticleModel, {
 
-    // public methods
-
-
-    // setters
+    //----------------------------------------------------------------------------
+    // Accessor Methods
+    //----------------------------------------------------------------------------
 
     getNumMolecules: function() {
-        // return this.particles.length / m_moleculeDataSet.getAtomsPerMolecule();
+      return this.particles.length / this.moleculeDataSet.getAtomsPerMolecule();
     },
 
     /**
      * Get a rectangle that represents the current size and position of the particle container.
      */
     getParticleContainerRect: function() {
-        // return new Rectangle( 0, 0, StatesOfMatterConstants.PARTICLE_CONTAINER_WIDTH, this.particleContainerHeight );
+      return new Rectangle( 0, 0, StatesOfMatterConstants.PARTICLE_CONTAINER_WIDTH, this.particleContainerHeight );
     },
 
     /**
@@ -139,33 +138,253 @@ define( function( require ) {
      */
     setTemperature: function( newTemperature ) {
         // if ( newTemperature > MAX_TEMPERATURE ) {
-        //     m_temperatureSetPoint = MAX_TEMPERATURE;
+        //     this.temperatureSetPoint = MAX_TEMPERATURE;
         // }
         // else if ( newTemperature < MIN_TEMPERATURE ) {
-        //     m_temperatureSetPoint = MIN_TEMPERATURE;
+        //     this.temperatureSetPoint = MIN_TEMPERATURE;
         // }
         // else {
-        //     m_temperatureSetPoint = newTemperature;
+        //     this.temperatureSetPoint = newTemperature;
         // }
 
-        // if ( m_isoKineticThermostat != null ) {
-        //     m_isoKineticThermostat.setTargetTemperature( newTemperature );
+        // if ( this.isoKineticThermostat != null ) {
+        //     this.isoKineticThermostat.setTargetTemperature( newTemperature );
         // }
 
-        // if ( m_andersenThermostat != null ) {
-        //     m_andersenThermostat.setTargetTemperature( newTemperature );
+        // if ( this.andersenThermostat != null ) {
+        //     this.andersenThermostat.setTargetTemperature( newTemperature );
         // }
 
         // notifyTemperatureChanged();
     },
 
-    reset: function() {},
+    /**
+     * Get the current temperature in degrees Kelvin.
+     */
+    getTemperatureInKelvin: function() {
+      return this.convertInternalTemperatureToKelvin();
+    },
+
+    setGravitationalAcceleration: function( acceleration ) {
+      if ( acceleration > MAX_GRAVITATIONAL_ACCEL ) {
+        throw new Error( "WARNING: Attempt to set out-of-range value for gravitational acceleration." );
+        this.gravitationalAcceleration = MAX_GRAVITATIONAL_ACCEL;
+      }
+      else if ( acceleration < 0 ) {
+        throw new Error( "WARNING: Attempt to set out-of-range value for gravitational acceleration." );
+        this.gravitationalAcceleration = 0;
+      }
+      else {
+        this.gravitationalAcceleration = acceleration;
+      }
+    },
+
+    /**
+     * Get the pressure value which is being calculated by the model and is
+     * not adjusted to represent any "real" units (such as atmospheres).
+     *
+     * @return
+     */
+    getModelPressure: function() {
+      return this.moleculeForceAndMotionCalculator.getPressure();
+    },
+
+    /**
+     * Set the molecule type to be simulated.
+     *
+     * @param {Number} moleculeID
+     */
+    setMoleculeType: function( moleculeID ) {
+
+      // Verify that this is a supported value.
+      if ( ( moleculeID !== StatesOfMatterConstants.DIATOMIC_OXYGEN ) &&
+           ( moleculeID !== StatesOfMatterConstants.NEON ) &&
+           ( moleculeID !== StatesOfMatterConstants.ARGON ) &&
+           ( moleculeID !== StatesOfMatterConstants.WATER ) &&
+           ( moleculeID !== StatesOfMatterConstants.USER_DEFINED_MOLECULE ) ) {
+
+        throw new Error( "ERROR: Unsupported molecule type." );
+        moleculeID = StatesOfMatterConstants.NEON;
+      }
+
+      // Retain the current phase so that we can set the particles back to
+      // this phase once they have been created and initialized.
+      var phase = mapTemperatureToPhase();
+
+      // Remove existing particles and reset the global model parameters.
+      this.removeAllParticles();
+      initializeModelParameters();
+
+      // Set the new molecule type.
+      this.currentMolecule = moleculeID;
+
+      // Set the model parameters that are dependent upon the molecule type.
+      switch( this.currentMolecule ) {
+        case StatesOfMatterConstants.DIATOMIC_OXYGEN:
+          this.particleDiameter = OxygenAtom.RADIUS * 2;
+          this.minModelTemperature = 0.5 * TRIPLE_POINT_MONATOMIC_MODEL_TEMPERATURE / O2_TRIPLE_POINT_IN_KELVIN;
+          break;
+        case StatesOfMatterConstants.NEON:
+          this.particleDiameter = NeonAtom.RADIUS * 2;
+          this.minModelTemperature = 0.5 * TRIPLE_POINT_MONATOMIC_MODEL_TEMPERATURE / NEON_TRIPLE_POINT_IN_KELVIN;
+          break;
+        case StatesOfMatterConstants.ARGON:
+          this.particleDiameter = ArgonAtom.RADIUS * 2;
+          this.minModelTemperature = 0.5 * TRIPLE_POINT_MONATOMIC_MODEL_TEMPERATURE / ARGON_TRIPLE_POINT_IN_KELVIN;
+          break;
+        case StatesOfMatterConstants.WATER:
+          // Use a radius value that is artificially large, because the
+          // educators have requested that water look "spaced out" so that
+          // users can see the crystal structure better, and so that the
+          // solid form will look larger (since water expands when frozen).
+          this.particleDiameter = OxygenAtom.RADIUS * 2.9;
+          this.minModelTemperature = 0.5 * TRIPLE_POINT_MONATOMIC_MODEL_TEMPERATURE / WATER_TRIPLE_POINT_IN_KELVIN;
+          break;
+        case StatesOfMatterConstants.USER_DEFINED_MOLECULE:
+          this.particleDiameter = ConfigurableStatesOfMatterAtom.DEFAULT_RADIUS * 2;
+          this.minModelTemperature = 0.5 * TRIPLE_POINT_MONATOMIC_MODEL_TEMPERATURE / ADJUSTABLE_ATOM_TRIPLE_POINT_IN_KELVIN;
+          break;
+        default:
+          debugger; // Should never happen, so it should be debugged if it does.
+      }
+
+      // Reset the container size.  This must be done after the diameter is
+      // initialized because the normalized size is dependent upon the
+      // particle diameter.
+      resetContainerSize();
+
+      // Initiate a reset in order to get the particles into predetermined
+      // locations and energy levels.
+      initializeParticles( phase );
+
+      // Notify listeners that the molecule type has changed.
+      notifyMoleculeTypeChanged();
+      notifyInteractionStrengthChanged();
+    },
+
+    /**
+     * Sets the target height of the container.  The target height is set
+     * rather than the actual height because the model limits the rate at
+     * which the height can changed.  The model will gradually move towards
+     * the target height.
+     *
+     * @param {Number} desiredContainerHeight
+     */
+    setTargetParticleContainerHeight: function( desiredContainerHeight ) {
+      desiredContainerHeight = Util.clamp( this.minAllowableContainerHeight,
+                                           desiredContainerHeight,
+                                           StatesOfMatterConstants.PARTICLE_CONTAINER_INITIAL_HEIGHT );
+      this.targetContainerHeight = desiredContainerHeight;
+    },
+
+    /**
+     * Get the sigma value, which is one of the two parameters that describes the Lennard-Jones potential.
+     */
+    getSigma: function() {
+      var sigma;
+      switch( this.currentMolecule ) {
+        case StatesOfMatterConstants.NEON:
+          sigma = NeonAtom.RADIUS * 2;
+          break;
+        case StatesOfMatterConstants.ARGON:
+          sigma = ArgonAtom.RADIUS * 2;
+          break;
+        case StatesOfMatterConstants.DIATOMIC_OXYGEN:
+          sigma = StatesOfMatterConstants.SIGMA_FOR_DIATOMIC_OXYGEN;
+          break;
+        case StatesOfMatterConstants.MONATOMIC_OXYGEN:
+          sigma = OxygenAtom.RADIUS * 2;
+          break;
+        case StatesOfMatterConstants.WATER:
+          sigma = StatesOfMatterConstants.SIGMA_FOR_WATER;
+          break;
+        case StatesOfMatterConstants.USER_DEFINED_MOLECULE:
+          sigma = ConfigurableStatesOfMatterAtom.DEFAULT_RADIUS * 2;
+          break;
+        default:
+          console.error( "Error: Unrecognized molecule type when setting sigma value." );
+          sigma = 0;
+      }
+
+      return sigma;
+    },
+
+    /**
+     * Get the epsilon value, which is one of the two parameters that describes the Lennard-Jones potential.
+     */
+    getEpsilon: function() {
+        var epsilon;
+        switch( this.currentMolecule ) {
+
+            case StatesOfMatterConstants.NEON:
+                epsilon = InteractionStrengthTable.getInteractionPotential( AtomType.NEON, AtomType.NEON );
+                break;
+
+            case StatesOfMatterConstants.ARGON:
+                epsilon = InteractionStrengthTable.getInteractionPotential( AtomType.ARGON, AtomType.ARGON );
+                break;
+
+            case StatesOfMatterConstants.DIATOMIC_OXYGEN:
+                epsilon = StatesOfMatterConstants.EPSILON_FOR_DIATOMIC_OXYGEN;
+                break;
+
+            case StatesOfMatterConstants.MONATOMIC_OXYGEN:
+                epsilon = InteractionStrengthTable.getInteractionPotential( AtomType.OXYGEN, AtomType.OXYGEN );
+                break;
+
+            case StatesOfMatterConstants.WATER:
+                epsilon = StatesOfMatterConstants.EPSILON_FOR_WATER;
+                break;
+
+            case StatesOfMatterConstants.USER_DEFINED_MOLECULE:
+                epsilon = convertScaledEpsilonToEpsilon( this.moleculeForceAndMotionCalculator.getScaledEpsilon() );
+                break;
+
+            default:
+                console.log( "Error: Unrecognized molecule type when getting epsilon value." );
+                epsilon = 0;
+        }
+
+        return epsilon;
+    },
+
+    //----------------------------------------------------------------------------
+    // Other Public Methods
+    //----------------------------------------------------------------------------
+
+    reset: function() {
+      initializeModelParameters();
+      setMoleculeType( DEFAULT_MOLECULE );
+      notifyResetOccurred();
+    },
 
     /**
      * Set the phase of the particles in the simulation.
      * @param {Number} state
      */
-    setPhase: function( state ) {},
+    setPhase: function( state ) {
+      switch( state ) {
+        case PHASE_SOLID:
+            this.phaseStateChanger.setPhase( PhaseStateChanger.PHASE_SOLID );
+            break;
+
+        case PHASE_LIQUID:
+            this.phaseStateChanger.setPhase( PhaseStateChanger.PHASE_LIQUID );
+            break;
+
+        case PHASE_GAS:
+            this.phaseStateChanger.setPhase( PhaseStateChanger.PHASE_GAS );
+            break;
+
+        default:
+            console.error( "Error: Invalid state specified." );
+            // Treat it as a solid.
+            this.phaseStateChanger.setPhase( PhaseStateChanger.PHASE_SOLID );
+            break;
+      }
+
+      syncParticlePositions();
+    },
 
     /**
      * Sets the amount of heating or cooling that the system is undergoing.
@@ -173,7 +392,10 @@ define( function( require ) {
      * @param {Number} normalizedHeatingCoolingAmount Normalized amount of heating or cooling
      *                 that the system is undergoing, ranging from -1 to +1.
      */
-    setHeatingCoolingAmount: function( normalizedHeatingCoolingAmount ) {},
+    setHeatingCoolingAmount: function( normalizedHeatingCoolingAmount ) {
+      assert && assert( normalizedHeatingCoolingAmount <= 1.0 ) && ( normalizedHeatingCoolingAmount >= -1.0 );
+      this.heatingCoolingAmount = normalizedHeatingCoolingAmount * MAX_TEMPERATURE_CHANGE_PER_ADJUSTMENT;
+    },
 
     /**
      * Inject a new molecule of the current type into the model.  This uses
@@ -181,9 +403,7 @@ define( function( require ) {
      */
     injectMolecule: function() {},
 
-    step: function( dt ) {},
-
-     //----------------------------------------------------------------------------
+    //----------------------------------------------------------------------------
     // Private Methods
     //----------------------------------------------------------------------------
 
@@ -192,6 +412,128 @@ define( function( require ) {
 
         // Get rid of the normalized particles.
         this.moleculeDataSet = null;
+    },
+
+    /**
+     * Calculate the minimum allowable container height based on the current
+     * number of particles.
+     */
+    calculateMinAllowableContainerHeight: function() {
+      this.minAllowableContainerHeight = ( this.moleculeDataSet.getNumberOfMolecules() / this.normalizedContainerWidth ) * this.particleDiameter;
+    },
+
+    /**
+     * Initialize the particles by calling the appropriate initialization
+     * routine, which will set their positions, velocities, etc.
+     *
+     * @param {Number} phase
+     */
+    initializeParticles: function( phase ) {
+
+      // Initialize the particles.
+      switch( this.currentMolecule ) {
+          case StatesOfMatterConstants.DIATOMIC_OXYGEN:
+              initializeDiatomic( this.currentMolecule, phase );
+              break;
+          case StatesOfMatterConstants.NEON:
+              initializeMonatomic( this.currentMolecule, phase );
+              break;
+          case StatesOfMatterConstants.ARGON:
+              initializeMonatomic( this.currentMolecule, phase );
+              break;
+          case StatesOfMatterConstants.USER_DEFINED_MOLECULE:
+              initializeMonatomic( this.currentMolecule, phase );
+              break;
+          case StatesOfMatterConstants.WATER:
+              initializeTriatomic( this.currentMolecule, phase );
+              break;
+          default:
+              console.error( "ERROR: Unrecognized particle type, using default." );
+              break;
+      }
+
+      this.notifyPressureChanged(); // This is needed in case we were switching from another molecule that was under pressure.
+      this.calculateMinAllowableContainerHeight();
+    },
+
+    initializeModelParameters: function() {
+      // Initialize the system parameters.
+      this.gravitationalAcceleration = INITIAL_GRAVITATIONAL_ACCEL;
+      this.heatingCoolingAmount = 0;
+      this.tempAdjustTickCounter = 0;
+      this.temperatureSetPoint = INITIAL_TEMPERATURE;
+      setContainerExploded( false );
+    },
+
+    /**
+     * Reset both the normalized and non-normalized sizes of the container.
+     * Note that the particle diameter must be valid before this will work
+     * properly.
+     */
+    resetContainerSize: function() {
+      // Set the initial size of the container.
+      this.particleContainerHeight = StatesOfMatterConstants.PARTICLE_CONTAINER_INITIAL_HEIGHT;
+      this.targetContainerHeight = StatesOfMatterConstants.PARTICLE_CONTAINER_INITIAL_HEIGHT;
+      this.normalizedContainerHeight = this.particleContainerHeight / this.particleDiameter;
+      this.normalizedContainerWidth = StatesOfMatterConstants.PARTICLE_CONTAINER_WIDTH / this.particleDiameter;
+
+      // Notify listeners.
+      notifyContainerSizeChanged();
+    },
+
+    /**
+     * Step the model.  There is no time step used, as a fixed internal time step is assumed.
+     * TODO: use dt instead of fixed timestep
+     */
+    step: function( dt ) {},
+
+    /**
+     * Run the appropriate thermostat based on the settings and the state of
+     * the simulation.
+     */
+    runThermostat: function() {
+
+        if ( this.isExploded ) {
+            // Don't bother to run any thermostat if the lid is blown off -
+            // just let those little particles run free!
+            return;
+        }
+
+        var calculatedTemperature = this.moleculeForceAndMotionCalculator.getTemperature();
+        var temperatureIsChanging = false;
+
+        if ( ( this.heatingCoolingAmount != 0 ) ||
+             ( this.temperatureSetPoint + TEMPERATURE_CLOSENESS_RANGE < calculatedTemperature ) ||
+             ( this.temperatureSetPoint - TEMPERATURE_CLOSENESS_RANGE > calculatedTemperature ) ) {
+            temperatureIsChanging = true;
+        }
+
+        if ( this.heightChangeCounter != 0 && particlesNearTop() ) {
+            // The height of the container is currently changing and there
+            // are particles close enough to the top that they may be
+            // interacting with it.  Since this can end up adding or removing
+            // kinetic energy (i.e. heat) from the system, no thermostat is
+            // run in this case.  Instead, the temperature determined by
+            // looking at the kinetic energy of the molecules and that value
+            // is used to set the system temperature set point.
+            setTemperature( this.moleculeDataSet.calculateTemperatureFromKineticEnergy() );
+        }
+        else if ( ( this.thermostatType == ISOKINETIC_THERMOSTAT ) ||
+                  ( this.thermostatType == ADAPTIVE_THERMOSTAT && ( temperatureIsChanging || this.temperatureSetPoint > LIQUID_TEMPERATURE ) ) ) {
+            // Use the isokinetic thermostat.
+            this.isoKineticThermostat.adjustTemperature();
+        }
+        else if ( ( this.thermostatType == ANDERSEN_THERMOSTAT ) ||
+                  ( this.thermostatType == ADAPTIVE_THERMOSTAT && !temperatureIsChanging ) ) {
+            // The temperature isn't changing and it is below a certain
+            // threshold, so use the Andersen thermostat.  This is done for
+            // purely visual reasons - it looks better than the isokinetic in
+            // these circumstances.
+            this.andersenThermostat.adjustTemperature();
+        }
+
+        // Note that there will be some circumstances in which no thermostat
+        // is run.  This is intentional.
     },
 
     /**
@@ -235,8 +577,8 @@ define( function( require ) {
         // this.phaseStateChanger = new MonatomicPhaseStateChanger( this );
         // this.atomPositionUpdater = new MonatomicAtomPositionUpdater();
         // this.moleculeForceAndMotionCalculator = new MonatomicVerletAlgorithm( this );
-        // this.isoKineticThermostat = new IsokineticThermostat( m_moleculeDataSet, m_minModelTemperature );
-        // this.andersenThermostat = new AndersenThermostat( m_moleculeDataSet, m_minModelTemperature );
+        // this.isoKineticThermostat = new IsokineticThermostat( this.moleculeDataSet, this.minModelTemperature );
+        // this.andersenThermostat = new AndersenThermostat( this.moleculeDataSet, this.minModelTemperature );
 
         // Create the individual atoms and add them to the data set.
         for ( var i = 0; i < numberOfAtoms; i++ ) {
@@ -269,6 +611,135 @@ define( function( require ) {
 
         // Initialize the particle positions according the to requested phase.
         this.setPhase( phase );
+    },
+
+    /**
+     * Set the positions of the non-normalized particles based on the positions
+     * of the normalized ones.
+     */
+    syncParticlePositions: function() {
+      var positionMultiplier = this.particleDiameter;
+      var atomPositions = this.moleculeDataSet.getAtomPositions();
+      for ( var i = 0; i < this.moleculeDataSet.getNumberOfAtoms(); i++ ) {
+        this.particles[i].setPosition( atomPositions[i].x * positionMultiplier, atomPositions[i].y * positionMultiplier );
+      }
+      if ( this.moleculeDataSet.getNumberOfAtoms() != this.particles.size() ) {
+        console.log( "Inconsistent number of normalized versus non-normalized particles." );
+      }
+    },
+
+    /**
+     * Take the internal temperature value and convert it to Kelvin.  This
+     * is dependent on the type of molecule selected.  The values and ranges
+     * used in this method were derived from information provided by Paul
+     * Beale.
+     */
+    convertInternalTemperatureToKelvin: function() {
+
+        if ( this.particles.size() === 0 ) {
+            // Temperature is reported as 0 if there are no particles.
+            return 0;
+        }
+
+        var temperatureInKelvin;
+        var triplePoint = 0;
+        var criticalPoint = 0;
+
+        switch( this.currentMolecule ) {
+
+            case StatesOfMatterConstants.NEON:
+                triplePoint = NEON_TRIPLE_POINT_IN_KELVIN;
+                criticalPoint = NEON_CRITICAL_POINT_IN_KELVIN;
+                break;
+
+            case StatesOfMatterConstants.ARGON:
+                triplePoint = ARGON_TRIPLE_POINT_IN_KELVIN;
+                criticalPoint = ARGON_CRITICAL_POINT_IN_KELVIN;
+                break;
+
+            case StatesOfMatterConstants.USER_DEFINED_MOLECULE:
+                triplePoint = ADJUSTABLE_ATOM_TRIPLE_POINT_IN_KELVIN;
+                criticalPoint = ADJUSTABLE_ATOM_CRITICAL_POINT_IN_KELVIN;
+                break;
+
+            case StatesOfMatterConstants.WATER:
+                triplePoint = WATER_TRIPLE_POINT_IN_KELVIN;
+                criticalPoint = WATER_CRITICAL_POINT_IN_KELVIN;
+                break;
+
+            case StatesOfMatterConstants.DIATOMIC_OXYGEN:
+                triplePoint = O2_TRIPLE_POINT_IN_KELVIN;
+                criticalPoint = O2_CRITICAL_POINT_IN_KELVIN;
+                break;
+
+            default:
+                break;
+        }
+
+        if ( this.temperatureSetPoint <= this.minModelTemperature ) {
+            // We treat anything below the minimum temperature as absolute zero.
+            temperatureInKelvin = 0;
+        }
+        else if ( this.temperatureSetPoint < TRIPLE_POINT_MONATOMIC_MODEL_TEMPERATURE ) {
+            temperatureInKelvin = this.temperatureSetPoint * triplePoint / TRIPLE_POINT_MONATOMIC_MODEL_TEMPERATURE;
+
+            if ( temperatureInKelvin < 0.5 ) {
+                // Don't return zero - or anything that would round to it - as
+                // a value until we actually reach the minimum internal temperature.
+                temperatureInKelvin = 0.5;
+            }
+        }
+        else if ( this.temperatureSetPoint < CRITICAL_POINT_MONATOMIC_MODEL_TEMPERATURE ) {
+            var slope = ( criticalPoint - triplePoint ) / ( CRITICAL_POINT_MONATOMIC_MODEL_TEMPERATURE - TRIPLE_POINT_MONATOMIC_MODEL_TEMPERATURE );
+            var offset = triplePoint - ( slope * TRIPLE_POINT_MONATOMIC_MODEL_TEMPERATURE );
+            temperatureInKelvin = this.temperatureSetPoint * slope + offset;
+        }
+        else {
+            temperatureInKelvin = this.temperatureSetPoint * criticalPoint / CRITICAL_POINT_MONATOMIC_MODEL_TEMPERATURE;
+        }
+        return temperatureInKelvin;
+    },
+
+    /**
+     * Take the internal pressure value and convert it to atmospheres.  This
+     * is dependent on the type of molecule selected.  The values and ranges
+     * used in this method were derived from information provided by Paul
+     * Beale.
+     */
+    getPressureInAtmospheres: function() {
+
+        var pressureInAtmospheres;
+
+        switch( this.currentMolecule ) {
+
+            case StatesOfMatterConstants.NEON:
+                pressureInAtmospheres = 200 * getModelPressure();
+                break;
+
+            case StatesOfMatterConstants.ARGON:
+                pressureInAtmospheres = 125 * getModelPressure();
+                break;
+
+            case StatesOfMatterConstants.USER_DEFINED_MOLECULE:
+                // TODO: Not sure what to do here, need to figure it out.
+                // Using the value for Argon at the moment.
+                pressureInAtmospheres = 125 * getModelPressure();
+                break;
+
+            case StatesOfMatterConstants.WATER:
+                pressureInAtmospheres = 200 * getModelPressure();
+                break;
+
+            case StatesOfMatterConstants.DIATOMIC_OXYGEN:
+                pressureInAtmospheres = 125 * getModelPressure();
+                break;
+
+            default:
+                pressureInAtmospheres = 0;
+                break;
+        }
+
+        return pressureInAtmospheres;
     }
 
   } );
