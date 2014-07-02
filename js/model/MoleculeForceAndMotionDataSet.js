@@ -21,6 +21,9 @@ define( function( require ) {
    * @constructor
    */
   function MoleculeForceAndMotionDataSet( atomsPerMolecule ) {
+    this.numberOfAtoms = 0;
+    this.numberOfSafeMolecules = 0;
+
     this.atomsPerMolecule = atomsPerMolecule;
 
     this.atomPositions = [];
@@ -34,8 +37,6 @@ define( function( require ) {
     this.moleculeRotationRates = [];
     this.moleculeTorques = [];
     this.nextMoleculeTorques = [];
-
-    this.numberOfAtoms = 0;
 
     // Set default values.
     if ( atomsPerMolecule == 1 ) {
