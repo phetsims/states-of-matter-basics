@@ -35,6 +35,8 @@ define( function( require ) {
     this.moleculeTorques = [];
     this.nextMoleculeTorques = [];
 
+    this.numberOfAtoms = 0;
+
     // Set default values.
     if ( atomsPerMolecule == 1 ) {
       this.moleculeMass = 1;
@@ -52,8 +54,6 @@ define( function( require ) {
       this.moleculeRotationalInertia = WaterMoleculeStructure.getInstance().getRotationalInertia();
     }
   }
-
-
 
   return inherit( Object, MoleculeForceAndMotionDataSet, {
 
@@ -94,7 +94,7 @@ define( function( require ) {
       }
 
       return kineticEnergyPerMolecule;
-    }
+    },
 
     /**
      * Add a new molecule to the model.  The molecule must have been created
@@ -132,7 +132,7 @@ define( function( require ) {
       this.numberOfAtoms += this.atomsPerMolecule;
 
       return true;
-    }
+    },
 
     /**
      * Remove the molecule at the designated index.  This also removes all

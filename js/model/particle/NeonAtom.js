@@ -1,8 +1,9 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * Model of a photon for single bulb screen.
+ * The class represents a single atom of neon in the model.
  *
+ * @author John Blanco
  * @author Aaron Davis
  */
 define( function( require ) {
@@ -10,7 +11,7 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var StateOfMatterAtom = require( 'STATES_OF_MATTER_BASICS/model/particle/StateOfMatterAtom' );
+  var StatesOfMatterAtom = require( 'STATES_OF_MATTER_BASICS/model/particle/StatesOfMatterAtom' );
   var AtomType = require( 'STATES_OF_MATTER_BASICS/model/AtomType' );
 
   // constants
@@ -22,13 +23,13 @@ define( function( require ) {
   /**
    * @param {Number} x
    * @param {Number} y
-   # @constructor
+   * @constructor
    */
   function NeonAtom( x, y ) {
     StateOfMatterAtom.call( this, x, y, RADIUS, MASS );
   }
 
-  return inherit( StateOfMatterAtom, NeonAtom, {
+  return inherit( StatesOfMatterAtom, NeonAtom, {
 
     getType: function() {
       return ATOM_TYPE;
