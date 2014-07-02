@@ -17,6 +17,8 @@ define( function( require ) {
   var Property = require( 'AXON/Property' );
   var TextPushButton = require( 'SUN/buttons/TextPushButton' );
   var Panel = require( 'SUN/Panel' );
+  var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
+  var Vector2 = require( 'DOT/Vector2' );
 
   /**
    * @param {SolidLiquidGasModel} model
@@ -24,6 +26,9 @@ define( function( require ) {
    */
   function SolidLiquidGasScreenView( model ) {
     ScreenView.call( this, { renderer: 'svg' } );
+
+    // model-view transform
+    var modelViewTransform = ModelViewTransform2.createSinglePointScaleInvertedYMapping( new Vector2( 0, 0 ), new Vector2( 0, 0 ), 1 );
 
     this.addChild( new Rectangle( 0, 0, 200, 250,
       {
