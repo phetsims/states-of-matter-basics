@@ -11,6 +11,7 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var Vector2 = require( 'DOT/Vector2' );
+  var Property = require( 'AXON/Property' );
 
   /**
    * @param {Number} x
@@ -20,7 +21,7 @@ define( function( require ) {
    # @constructor
    */
   function StatesOfMatterAtom( x, y, radius, mass ) {
-    this.position = new Vector2( x, y );
+    this.positionProperty = new Property( new Vector2( x, y ) );
     this.velocity = new Vector2( 0, 0 );
     this.accel = new Vector2( 0, 0 );
 
@@ -48,7 +49,7 @@ define( function( require ) {
         if ( !this.velocity.equals( other.velocity ) ) {
             return false;
         }
-        if ( !this.position.equals( other.position ) ) {
+        if ( !this.positionProperty.equals( other.positionProperty ) ) {
             return false;
         }
         if ( !this.accel.equals( other.accel ) ) {
