@@ -146,7 +146,7 @@ define( function( require ) {
         resultantForce.setY( -48 / ( Math.pow( distance, 13 ) ) + ( 24 / ( Math.pow( distance, 7 ) ) ) );
         this.potentialEnergy += 4 / ( Math.pow( distance, 12 ) ) - 4 / ( Math.pow( distance, 6 ) ) + 1;
       }
-    }
+    },
 
     /**
      * Update the safety status of any molecules that may have previously been
@@ -158,7 +158,7 @@ define( function( require ) {
      */
     updateMoleculeSafety: function() {
 
-      MoleculeForceAndMotionDataSet moleculeDataSet = this.model.getMoleculeDataSetRef();
+      var moleculeDataSet = this.model.moleculeDataSet;
       var numberOfSafeMolecules = moleculeDataSet.numberOfSafeMolecules;
       var numberOfMolecules = moleculeDataSet.numberOfMolecules;
 

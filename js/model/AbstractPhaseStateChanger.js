@@ -75,6 +75,12 @@ define( function( require ) {
       console.error( "Error: No open positions available for molecule." );
       return null;
     }
+  },
 
+  // public static final
+  {
+    PHASE_SOLID: 1,
+    PHASE_LIQUID: 2,
+    PHASE_GAS: 3
   } );
 } );

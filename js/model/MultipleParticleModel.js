@@ -13,13 +13,15 @@ define( function( require ) {
   var PropertySet = require( 'AXON/PropertySet' );
   var ObservableArray = require( 'AXON/ObservableArray' );
   var Rectangle = require( 'DOT/Rectangle' );
-  var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/StatesOfMatterBasicsConstants' );
+  var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/StatesOfMatterConstants' );
   var NeonAtom = require( 'STATES_OF_MATTER_BASICS/model/particle/NeonAtom' );
   var MoleculeForceAndMotionDataSet = require( 'STATES_OF_MATTER_BASICS/model/MoleculeForceAndMotionDataSet' );
+  var AbstractPhaseStateChanger = require( 'STATES_OF_MATTER_BASICS/model/AbstractPhaseStateChanger' );
+  var MonatomicVerletAlgorithm = require( 'STATES_OF_MATTER_BASICS/model/MonatomicVerletAlgorithm' );
   var MonatomicPhaseStateChanger = require( 'STATES_OF_MATTER_BASICS/model/MonatomicPhaseStateChanger' );
   var MonatomicAtomPositionUpdater = require( 'STATES_OF_MATTER_BASICS/model/MonatomicAtomPositionUpdater' );
-
-  MoleculeForceAndMotionDataSet
+  var IsokineticThermostat = require( 'STATES_OF_MATTER_BASICS/model/engine/kinetic/IsokineticThermostat' );
+  var AndersenThermostat = require( 'STATES_OF_MATTER_BASICS/model/engine/kinetic/AndersenThermostat' );
 
   // statics
   // The internal model temperature values for the various states.
@@ -259,21 +261,21 @@ define( function( require ) {
      */
     setTemperature: function( newTemperature ) {
       if ( newTemperature > MAX_TEMPERATURE ) {
-          this.temperatureSetPoint = MAX_TEMPERATURE;
+        this.temperatureSetPoint = MAX_TEMPERATURE;
       }
       else if ( newTemperature < MIN_TEMPERATURE ) {
-          this.temperatureSetPoint = MIN_TEMPERATURE;
+        this.temperatureSetPoint = MIN_TEMPERATURE;
       }
       else {
-          this.temperatureSetPoint = newTemperature;
+        this.temperatureSetPoint = newTemperature;
       }
 
-      if ( this.isoKineticThermostat != null ) {
-          this.isoKineticThermostat.setTargetTemperature( newTemperature );
+      if ( this.isoKineticThermostat !== null ) {
+        this.isoKineticThermostat.targetTemperature = newTemperature;
       }
 
-      if ( this.andersenThermostat != null ) {
-          this.andersenThermostat.setTargetTemperature( newTemperature );
+      if ( this.andersenThermostat !== null ) {
+        this.andersenThermostat.targetTemperature = newTemperature;
       }
     },
 
@@ -432,21 +434,21 @@ define( function( require ) {
     setPhase: function( state ) {
       switch( state ) {
         case PHASE_SOLID:
-          this.phaseStateChanger.setPhase( PhaseStateChanger.PHASE_SOLID );
+          this.phaseStateChanger.setPhase( AbstractPhaseStateChanger.PHASE_SOLID );
           break;
 
         case PHASE_LIQUID:
-          this.phaseStateChanger.setPhase( PhaseStateChanger.PHASE_LIQUID );
+          this.phaseStateChanger.setPhase( AbstractPhaseStateChanger.PHASE_LIQUID );
           break;
 
         case PHASE_GAS:
-          this.phaseStateChanger.setPhase( PhaseStateChanger.PHASE_GAS );
+          this.phaseStateChanger.setPhase( AbstractPhaseStateChanger.PHASE_GAS );
           break;
 
         default:
           console.error( "Error: Invalid state specified." );
           // Treat it as a solid.
-          this.phaseStateChanger.setPhase( PhaseStateChanger.PHASE_SOLID );
+          this.phaseStateChanger.setPhase( AbstractPhaseStateChanger.PHASE_SOLID );
           break;
       }
 
@@ -486,7 +488,7 @@ define( function( require ) {
      * number of particles.
      */
     calculateMinAllowableContainerHeight: function() {
-      this.minAllowableContainerHeight = ( this.moleculeDataSet.getNumberOfMolecules() / this.normalizedContainerWidth ) * this.particleDiameter;
+      this.minAllowableContainerHeight = ( this.moleculeDataSet.numberOfMolecules / this.normalizedContainerWidth ) * this.particleDiameter;
     },
 
     /**
@@ -519,7 +521,6 @@ define( function( require ) {
           break;
       }
 
-      this.notifyPressureChanged(); // This is needed in case we were switching from another molecule that was under pressure.
       this.calculateMinAllowableContainerHeight();
     },
 
@@ -631,7 +632,7 @@ define( function( require ) {
 
       // Create the strategies that will work on this data set.
       this.phaseStateChanger = new MonatomicPhaseStateChanger( this );
-      this.atomPositionUpdater = new MonatomicAtomPositionUpdater( this.moleculeDataSet );
+      this.atomPositionUpdater = new MonatomicAtomPositionUpdater();
       this.moleculeForceAndMotionCalculator = new MonatomicVerletAlgorithm( this );
       this.isoKineticThermostat = new IsokineticThermostat( this.moleculeDataSet, this.minModelTemperature );
       this.andersenThermostat = new AndersenThermostat( this.moleculeDataSet, this.minModelTemperature );
@@ -640,10 +641,10 @@ define( function( require ) {
       for ( var i = 0; i < numberOfAtoms; i++ ) {
 
           // Create the atom.
-          // Point2D moleculeCenterOfMassPosition = new Point2D.Double();
-          // MutableVector2D moleculeVelocity = new MutableVector2D();
-          // Point2D[] atomPositions = new Point2D[1];
-          // atomPositions[0] = new Point2D.Double();
+          var moleculeCenterOfMassPosition = new Vector2( 0, 0 );
+          var moleculeVelocity = new Vector2( 0, 0 );
+          var atomPositions = [];
+          atomPositions.push( new Vector2( 0, 0 ) );
 
           // Add the atom to the data set.
           this.moleculeDataSet.addMolecule( atomPositions, moleculeCenterOfMassPosition, moleculeVelocity, 0 );
@@ -675,11 +676,11 @@ define( function( require ) {
      */
     syncParticlePositions: function() {
       var positionMultiplier = this.particleDiameter;
-      var atomPositions = this.moleculeDataSet.getAtomPositions();
-      for ( var i = 0; i < this.moleculeDataSet.getNumberOfAtoms(); i++ ) {
+      var atomPositions = this.moleculeDataSet.atomPositions;
+      for ( var i = 0; i < this.moleculeDataSet.numberOfAtoms; i++ ) {
         this.particles[i].setPosition( atomPositions[i].x * positionMultiplier, atomPositions[i].y * positionMultiplier );
       }
-      if ( this.moleculeDataSet.getNumberOfAtoms() != this.particles.size() ) {
+      if ( this.moleculeDataSet.numberOfAtoms !== this.particles.length ) {
         console.log( "Inconsistent number of normalized versus non-normalized particles." );
       }
     },
@@ -860,5 +861,10 @@ define( function( require ) {
       return epsilon;
     }
 
+  },
+
+  // public static attributes
+  {
+    INITIAL_TEMPERATURE: INITIAL_TEMPERATURE
   } );
 } );

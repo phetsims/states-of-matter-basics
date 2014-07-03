@@ -13,6 +13,8 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var AbstractPhaseStateChanger = require( 'STATES_OF_MATTER_BASICS/model/AbstractPhaseStateChanger' );
   var randomGaussian = require( 'STATES_OF_MATTER_BASICS/model/randomGaussian' );
+  var MonatomicAtomPositionUpdater = require( 'STATES_OF_MATTER_BASICS/model/MonatomicAtomPositionUpdater' );
+  var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/StatesOfMatterConstants' );
 
   // constants
   var MIN_INITIAL_INTER_PARTICLE_DISTANCE = 1.12;
@@ -22,35 +24,34 @@ define( function( require ) {
    */
   function MonatomicPhaseStateChanger( model ) {
     AbstractPhaseStateChanger.call( this, model );
+    this.positionUpdater = new MonatomicAtomPositionUpdater();
   }
 
   return inherit( AbstractPhaseStateChanger, MonatomicPhaseStateChanger, {
 
     setPhase: function( phaseID ) {
       switch( phaseID ) {
-        case PhaseStateChanger.PHASE_SOLID:
-          setPhaseSolid();
+        case AbstractPhaseStateChanger.PHASE_SOLID:
+          this.setPhaseSolid();
           break;
-        case PhaseStateChanger.PHASE_LIQUID:
-          setPhaseLiquid();
+        case AbstractPhaseStateChanger.PHASE_LIQUID:
+          this.setPhaseLiquid();
           break;
-        case PhaseStateChanger.PHASE_GAS:
-          setPhaseGas();
+        case AbstractPhaseStateChanger.PHASE_GAS:
+          this.setPhaseGas();
           break;
       }
 
       var moleculeDataSet = this.model.moleculeDataSet;
 
-      // Assume that we've done our job correctly and that all the atoms are
-      // in safe positions.
-      this.model.moleculeDataSet.setNumberOfSafeMolecules( moleculeDataSet.getNumberOfMolecules() );
+      // Assume that we've done our job correctly and that all the atoms are in safe positions.
+      this.model.moleculeDataSet.numberOfSafeMolecules = moleculeDataSet.numberOfMolecules;
 
       // Sync up the atom positions with the molecule positions.
       this.positionUpdater.updateAtomPositions( moleculeDataSet );
 
       // Step the model a number of times in order to prevent the particles
-      // from looking too organized.  The number of steps was empirically
-      // determined.
+      // from looking too organized.  The number of steps was empirically determined.
       for ( var i = 0; i < 20; i++ ) {
         this.model.step();
       }
@@ -62,7 +63,7 @@ define( function( require ) {
     setPhaseSolid: function() {
 
       // Set the temperature in the model.
-      this.model.setTemperature( MultipleParticleModel.SOLID_TEMPERATURE );
+      this.model.setTemperature( StatesOfMatterConstants.SOLID_TEMPERATURE );
 
       // Create the solid form, a.k.a. a crystal.
       var numberOfAtoms = this.model.moleculeDataSet.numberOfAtoms;
@@ -102,8 +103,8 @@ define( function( require ) {
      */
     setPhaseLiquid: function() {
 
-      this.model.setTemperature( MultipleParticleModel.LIQUID_TEMPERATURE );
-      var temperatureSqrt = Math.sqrt( MultipleParticleModel.LIQUID_TEMPERATURE );
+      this.model.setTemperature( StatesOfMatterConstants.LIQUID_TEMPERATURE );
+      var temperatureSqrt = Math.sqrt( StatesOfMatterConstants.LIQUID_TEMPERATURE );
 
       // Set the initial velocity for each of the atoms based on the new temperature.
 
@@ -166,8 +167,8 @@ define( function( require ) {
     setPhaseGas: function() {
 
       // Set the temperature for the new state.
-      this.model.setTemperature( MultipleParticleModel.GAS_TEMPERATURE );
-      var temperatureSqrt = Math.sqrt( MultipleParticleModel.GAS_TEMPERATURE );
+      this.model.setTemperature( StatesOfMatterConstants.GAS_TEMPERATURE );
+      var temperatureSqrt = Math.sqrt( StatesOfMatterConstants.GAS_TEMPERATURE );
 
       var numberOfAtoms = this.model.moleculeDataSet.numberOfAtoms;
       var moleculeCenterOfMassPositions = this.model.moleculeDataSet.moleculeCenterOfMassPositions;

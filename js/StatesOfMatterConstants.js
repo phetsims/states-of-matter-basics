@@ -1,7 +1,10 @@
 // Copyright 2002-2013, University of Colorado Boulder
 
 /**
- * Constants used throughout the simulation.
+ * This class is a collection of constants that configure global properties.
+ * If you change something here, it will change *everywhere* in this simulation.
+ *
+ * @author John Blanco
  * @author Aaron Davis
  */
 define( function( require ) {
@@ -10,9 +13,10 @@ define( function( require ) {
   // modules
   var Bounds2 = require( 'DOT/Bounds2' );
 
-  // constants
+  // constants (these are vars because other constants refer to them)
   var PARTICLE_CONTAINER_WIDTH = 10000;
   var PARTICLE_CONTAINER_INITIAL_HEIGHT = PARTICLE_CONTAINER_WIDTH * 1.00;
+  var SOLID_TEMPERATURE = 0.15;
 
   return {
    // Maximum number of atoms that can be simulated.
@@ -61,6 +65,12 @@ define( function( require ) {
     //----------------------------------------------------------------------------
     // Physical Constants
     //----------------------------------------------------------------------------
-    K_BOLTZMANN: 1.38E-23 // Boltzmann's constant.
+    K_BOLTZMANN: 1.38E-23, // Boltzmann's constant.
+
+    // Constants moved from MultipleParticleModel
+    SOLID_TEMPERATURE: SOLID_TEMPERATURE,
+    SLUSH_TEMPERATURE: 0.33,
+    LIQUID_TEMPERATURE: 0.34,
+    INITIAL_TEMPERATURE: SOLID_TEMPERATURE
   };
 } );

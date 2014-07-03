@@ -12,6 +12,7 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
+  var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/StatesOfMatterConstants' );
 
   function nextGaussian() {
     // TODO
@@ -27,11 +28,11 @@ define( function( require ) {
    */
   function AndersenThermostat( moleculeDataSet, minTemperature ) {
     this.moleculeDataSet = moleculeDataSet;
-    this.targetTemperature = MultipleParticleModel.INITIAL_TEMPERATURE;
+    this.targetTemperature = StatesOfMatterConstants.INITIAL_TEMPERATURE;
     this.minModelTemperature = minTemperature;
 
-    this.moleculeVelocities = moleculeDataSet.getMoleculeVelocities();
-    this.moleculeRotationRates = moleculeDataSet.getMoleculeRotationRates();
+    this.moleculeVelocities = moleculeDataSet.moleculeVelocities;
+    this.moleculeRotationRates = moleculeDataSet.moleculeRotationRates;
   }
 
   return inherit( Object, AndersenThermostat, {
