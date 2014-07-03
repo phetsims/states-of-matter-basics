@@ -13,6 +13,7 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
+  var PropertySet = require( 'AXON/PropertySet' );
   var AbstractPhaseStateChanger = require( 'STATES_OF_MATTER_BASICS/model/AbstractPhaseStateChanger' );
   var randomGaussian = require( 'STATES_OF_MATTER_BASICS/model/randomGaussian' );
 
@@ -47,11 +48,14 @@ define( function( require ) {
   function AbstractVerletAlgorithm( model ) {
     this.model = model;
     this.potentialEnergy = 0;
-    this.pressure = 0;
     this.temperature = 0;
+
+    PropertySet.call( this, {
+      pressure: 0
+    } );
   }
 
-  return inherit( Object, AbstractVerletAlgorithm, {
+  return inherit( PropertySet, AbstractVerletAlgorithm, {
 
     /**
      * Calculate the force exerted on a particle at the provided position by
@@ -243,7 +247,7 @@ define( function( require ) {
       }
       else {
         this.pressure = ( 1 - PRESSURE_CALC_WEIGHTING ) *
-                        ( pressureZoneWallForce / ( this.model.normalizedContainerWidth + this.model.getNormalizedContainerHeight() ) ) + PRESSURE_CALC_WEIGHTING * this.pressure;
+                        ( pressureZoneWallForce / ( this.model.normalizedContainerWidth + this.model.normalizedContainerHeight ) ) + PRESSURE_CALC_WEIGHTING * this.pressure;
 
         if ( ( this.pressure > EXPLOSION_PRESSURE ) && !this.model.isExploded ) {
           // The pressure has reached the point where the container should

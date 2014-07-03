@@ -91,7 +91,7 @@ define( function( require ) {
 
       // If there are any atoms that are currently designated as "unsafe",
       // check them to see if they can be moved into the "safe" category.
-      if ( moleculeDataSet.getNumberOfSafeMolecules() < numberOfAtoms ) {
+      if ( moleculeDataSet.numberOfSafeMolecules < numberOfAtoms ) {
         this.updateMoleculeSafety();
       }
 

@@ -40,50 +40,51 @@ define( function( require ) {
     adjustTemperature: function() {
       // Calculate the internal temperature of the system from the kinetic energy.
       var measuredTemperature, i;
-      var numberOfMolecules = this.moleculeDataSet.getNumberOfMolecules();
-      if ( this.moleculeDataSet.getAtomsPerMolecule() > 1 ) {
-          // Include rotational inertia in the calculation.
-          var centersOfMassKineticEnergy = 0;
-          var rotationalKineticEnergy = 0;
-          for ( i = 0; i < numberOfMolecules; i++ ) {
+      var numberOfMolecules = this.moleculeDataSet.numberOfMolecules;
+      if ( this.moleculeDataSet.atomsPerMolecule > 1 ) {
+        // Include rotational inertia in the calculation.
+        var centersOfMassKineticEnergy = 0;
+        var rotationalKineticEnergy = 0;
+        for ( i = 0; i < numberOfMolecules; i++ ) {
 
-              centersOfMassKineticEnergy += 0.5 * this.moleculeDataSet.getMoleculeMass() *
-                                            ( Math.pow( this.moleculeVelocities[i].getX(), 2 ) + Math.pow( this.moleculeVelocities[i].getY(), 2 ) );
-              rotationalKineticEnergy += 0.5 * this.moleculeDataSet.getMoleculeRotationalInertia() *
-                                         Math.pow( this.moleculeRotationRates[i], 2 );
-          }
-          measuredTemperature = ( centersOfMassKineticEnergy + rotationalKineticEnergy ) / numberOfMolecules / 1.5;
+          centersOfMassKineticEnergy += 0.5 * this.moleculeDataSet.getMoleculeMass() *
+                                        ( Math.pow( this.moleculeVelocities[i].x, 2 ) + Math.pow( this.moleculeVelocities[i].y, 2 ) );
+          rotationalKineticEnergy += 0.5 * this.moleculeDataSet.getMoleculeRotationalInertia() *
+                                     Math.pow( this.moleculeRotationRates[i], 2 );
+        }
+        measuredTemperature = ( centersOfMassKineticEnergy + rotationalKineticEnergy ) / numberOfMolecules / 1.5;
       }
       else {
-          var centersOfMassKineticEnergy = 0;
-          for ( i = 0; i < this.moleculeDataSet.getNumberOfMolecules(); i++ ) {
-              // For single-atom molecules, exclude rotational inertia from the calculation.
-              centersOfMassKineticEnergy += 0.5 * this.moleculeDataSet.getMoleculeMass() *
-                                            ( Math.pow( this.moleculeVelocities[i].getX(), 2 ) + Math.pow( this.moleculeVelocities[i].getY(), 2 ) );
-          }
-          measuredTemperature = centersOfMassKineticEnergy / numberOfMolecules;
+        var centersOfMassKineticEnergy = 0;
+        for ( i = 0; i < this.moleculeDataSet.numberOfMolecules; i++ ) {
+          // For single-atom molecules, exclude rotational inertia from the calculation.
+          centersOfMassKineticEnergy += 0.5 * this.moleculeDataSet.getMoleculeMass() *
+                                          ( Math.pow( this.moleculeVelocities[i].x, 2 ) + Math.pow( this.moleculeVelocities[i].y, 2 ) );
+        }
+        measuredTemperature = centersOfMassKineticEnergy / numberOfMolecules;
       }
 
       // Adjust the temperature.
-      adjustTemperature( measuredTemperature );
+      this.adjustMeasuredTemperature( measuredTemperature );
     },
 
-    adjustTemperature2: function( measuredTemperature ) {
+    // this was originally an overload of adjustTemperature in the Java version
+    adjustMeasuredTemperature: function( measuredTemperature ) {
 
       // Calculate the scaling factor that will be used to adjust the temperature.
       var temperatureScaleFactor;
       if ( this.targetTemperature <= this.minModelTemperature ) {
-          temperatureScaleFactor = 0;
+        temperatureScaleFactor = 0;
       }
       else {
-          temperatureScaleFactor = Math.sqrt( this.targetTemperature / measuredTemperature );
+        temperatureScaleFactor = Math.sqrt( this.targetTemperature / measuredTemperature );
       }
 
       // Adjust the temperature by scaling the velocity of each molecule by the appropriate amount.
-      for ( var i = 0; i < m_moleculeDataSet.getNumberOfMolecules(); i++ ) {
-          this.moleculeVelocities[i].setComponents( this.moleculeVelocities[i].getX() * temperatureScaleFactor,
-                                                 this.moleculeVelocities[i].getY() * temperatureScaleFactor );
-          this.moleculeRotationRates[i] *= temperatureScaleFactor; // Doesn't hurt anything in the monatomic case.
+      for ( var i = 0; i < this.moleculeDataSet.numberOfMolecules; i++ ) {
+        this.moleculeVelocities[i].setComponents( this.moleculeVelocities[i].x * temperatureScaleFactor,
+                                                  this.moleculeVelocities[i].y * temperatureScaleFactor );
+        this.moleculeRotationRates[i] *= temperatureScaleFactor; // Doesn't hurt anything in the monatomic case.
       }
     }
 
