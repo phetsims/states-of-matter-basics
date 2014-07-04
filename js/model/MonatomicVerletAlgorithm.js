@@ -53,11 +53,11 @@ define( function( require ) {
       // Update the positions of all particles based on their current
       // velocities and the forces acting on them.
       for ( i = 0; i < numberOfAtoms; i++ ) {
-        var xPos = moleculeCenterOfMassPositions[i].x + ( TIME_STEP * moleculeVelocities[i].x ) +
-                      ( TIME_STEP_SQR_HALF * moleculeForces[i].x );
-        var yPos = moleculeCenterOfMassPositions[i].y + ( TIME_STEP * moleculeVelocities[i].y ) +
-                      ( TIME_STEP_SQR_HALF * moleculeForces[i].y );
-        moleculeCenterOfMassPositions[i].setLocation( xPos, yPos );
+        var xPos = moleculeCenterOfMassPositions[i].x + ( this.TIME_STEP * moleculeVelocities[i].x ) +
+                      ( this.TIME_STEP_SQR_HALF * moleculeForces[i].x );
+        var yPos = moleculeCenterOfMassPositions[i].y + ( this.TIME_STEP * moleculeVelocities[i].y ) +
+                      ( this.TIME_STEP_SQR_HALF * moleculeForces[i].y );
+        moleculeCenterOfMassPositions[i].setXY( xPos, yPos );
       }
 
       // Calculate the forces exerted on the particles by the container
@@ -69,21 +69,21 @@ define( function( require ) {
         nextMoleculeForces[i].setXY( 0, 0 );
 
         // Get the force values caused by the container walls.
-        this.calculateWallForce( moleculeCenterOfMassPositions[i], this.model.getNormalizedContainerWidth(),
-                                 this.model.getNormalizedContainerHeight(), nextMoleculeForces[i] );
+        this.calculateWallForce( moleculeCenterOfMassPositions[i], this.model.normalizedContainerWidth,
+                                 this.model.normalizedContainerHeight, nextMoleculeForces[i] );
 
         // Accumulate this force value as part of the pressure being
         // exerted on the walls of the container.
         if ( nextMoleculeForces[i].y < 0 ) {
           pressureZoneWallForce += -nextMoleculeForces[i].y;
         }
-        else if ( moleculeCenterOfMassPositions[i].y > this.model.getNormalizedContainerHeight() / 2 ) {
+        else if ( moleculeCenterOfMassPositions[i].y > this.model.normalizedContainerHeight / 2 ) {
           // If the particle bounced on one of the walls above the midpoint, add
           // in that value to the pressure.
           pressureZoneWallForce += Math.abs( nextMoleculeForces[i].x );
         }
 
-        nextMoleculeForces[i].setY( nextMoleculeForces[i].y - this.model.getGravitationalAcceleration() );
+        nextMoleculeForces[i].setY( nextMoleculeForces[i].y - this.model.gravitationalAcceleration );
       }
 
       // Update the pressure calculation.
@@ -117,7 +117,7 @@ define( function( require ) {
             distanceSqrd = 2;
           }
 
-          if ( distanceSqrd < PARTICLE_INTERACTION_DISTANCE_THRESH_SQRD ) {
+          if ( distanceSqrd < this.PARTICLE_INTERACTION_DISTANCE_THRESH_SQRD ) {
             // This pair of particles is close enough to one another
             // that we need to calculate their interaction forces.
             if ( distanceSqrd < MIN_DISTANCE_SQUARED ) {
@@ -139,8 +139,8 @@ define( function( require ) {
       // that are acting on the particle.
       var velocityIncrement = new Vector2( 0, 0 );
       for ( i = 0; i < numberOfAtoms; i++ ) {
-        velocityIncrement.setX( TIME_STEP_HALF * ( moleculeForces[i].x + nextMoleculeForces[i].x ) );
-        velocityIncrement.setY( TIME_STEP_HALF * ( moleculeForces[i].y + nextMoleculeForces[i].y ) );
+        velocityIncrement.setX( this.TIME_STEP_HALF * ( moleculeForces[i].x + nextMoleculeForces[i].x ) );
+        velocityIncrement.setY( this.TIME_STEP_HALF * ( moleculeForces[i].y + nextMoleculeForces[i].y ) );
         moleculeVelocities[i].add( velocityIncrement );
         kineticEnergy += ( ( moleculeVelocities[i].x * moleculeVelocities[i].x ) +
                            ( moleculeVelocities[i].y * moleculeVelocities[i].y ) ) / 2;

@@ -15,6 +15,9 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Vector2 = require( 'DOT/Vector2' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
+  var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/StatesOfMatterConstants' );
+  var ParticleNode = require( 'STATES_OF_MATTER_BASICS/view/ParticleNode' );
   var Circle = require( 'SCENERY/nodes/Circle' );
 
 
@@ -66,26 +69,50 @@ define( function( require ) {
    *
    * @param {MultipleParticleModel} model
    * @param {ModelViewTransform} modelViewTransform The model view transform for transforming particle position.
+   * @param {Object} options
    * @constructor
    */
-  function ParticleContainerNode( model, modelViewTransform, volumeControlEnabled, pressureGaugeEnabled ) {
-
-    Node.call( this );
+  function ParticleContainerNode( model, modelViewTransform, options ) {
 
     this.model = model;
     this.modelViewTransform = modelViewTransform;
     this.containmentAreaWidth = StatesOfMatterConstants.CONTAINER_BOUNDS.width;
     this.containmentAreaHeight = StatesOfMatterConstants.CONTAINER_BOUNDS.height;
 
-    this.model.numParticlesProperty.link( function( numParticles ) {
-      // particleAdded listener
+    // this.model.numParticlesProperty.link( function( numParticles ) {
+    //   // particleAdded listener
+    // } );
+
+    Node.call( this );
+    this.addChild( new Rectangle( 0, 0, 250, 250,
+      {
+        lineWidth: 5,
+        stroke: 'white',
+      } ) );
+    var thisNode = this;
+
+    // Handle the comings and goings of movable shapes.
+    model.particles.addItemAddedListener( function( addedParticle ) {
+      // Create and add the view representation for this shape.
+      var particleNode = new ParticleNode( addedParticle, modelViewTransform );
+      thisNode.addChild( particleNode );
+      console.log('adding');
+
+      // Add the removal listener for if and when this shape is removed from the model.
+      model.particles.addItemRemovedListener( function removalListener( removedParticle ) {
+        if ( removedParticle === addedParticle ) {
+          thisNode.removeChild( particleNode );
+          model.particles.removeItemRemovedListener( removalListener );
+        }
+      } );
+
     } );
 
-    // Position this node so that the origin of the canvas, i.e. position
-    // x=0, y=0, is at the lower left corner of the container.
-    double xPos = 0;
-    double yPos = -this.containmentAreaHeight;
-    setOffset( xPos, yPos );
+    model.particles.forEach( function( particle ) {
+      thisNode.addChild( new ParticleNode( particle, modelViewTransform ) );
+    } );
+
+    this.mutate( options );
   }
 
   return inherit( Node, ParticleContainerNode );

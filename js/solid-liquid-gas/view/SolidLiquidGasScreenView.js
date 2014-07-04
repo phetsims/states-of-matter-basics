@@ -14,6 +14,8 @@ define( function( require ) {
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var VBox = require( 'SCENERY/nodes/VBox' );
   var HeatCoolSlider = require( 'STATES_OF_MATTER_BASICS/solid-liquid-gas/view/HeatCoolSlider' );
+  var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/StatesOfMatterConstants' );
+  var ParticleContainerNode = require( 'STATES_OF_MATTER_BASICS/view/ParticleContainerNode' );
   var Property = require( 'AXON/Property' );
   var TextPushButton = require( 'SUN/buttons/TextPushButton' );
   var Panel = require( 'SUN/Panel' );
@@ -21,7 +23,7 @@ define( function( require ) {
   var Vector2 = require( 'DOT/Vector2' );
 
   /**
-   * @param {SolidLiquidGasModel} model
+   * @param {MultipleParticleModel} model
    * @constructor
    */
   function SolidLiquidGasScreenView( model ) {
@@ -30,10 +32,8 @@ define( function( require ) {
     // model-view transform
     var modelViewTransform = ModelViewTransform2.createSinglePointScaleInvertedYMapping( new Vector2( 0, 0 ), new Vector2( 0, 0 ), 1 );
 
-    this.addChild( new Rectangle( 0, 0, 200, 250,
+    this.addChild( new ParticleContainerNode( model, modelViewTransform,
       {
-        lineWidth: 5,
-        stroke: 'white',
         centerX: this.layoutBounds.centerX,
         centerY: this.layoutBounds.centerY
       } ) );

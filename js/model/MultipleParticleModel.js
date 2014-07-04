@@ -13,6 +13,7 @@ define( function( require ) {
   var PropertySet = require( 'AXON/PropertySet' );
   var ObservableArray = require( 'AXON/ObservableArray' );
   var Rectangle = require( 'DOT/Rectangle' );
+  var Vector2 = require( 'DOT/Vector2' );
   var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/StatesOfMatterConstants' );
   var NeonAtom = require( 'STATES_OF_MATTER_BASICS/model/particle/NeonAtom' );
   var MoleculeForceAndMotionDataSet = require( 'STATES_OF_MATTER_BASICS/model/MoleculeForceAndMotionDataSet' );
@@ -488,7 +489,7 @@ define( function( require ) {
      * number of particles.
      */
     calculateMinAllowableContainerHeight: function() {
-      this.minAllowableContainerHeight = ( this.moleculeDataSet.numberOfMolecules / this.normalizedContainerWidth ) * this.particleDiameter;
+      this.minAllowableContainerHeight = ( this.moleculeDataSet.getNumberOfMolecules() / this.normalizedContainerWidth ) * this.particleDiameter;
     },
 
     /**
@@ -580,29 +581,18 @@ define( function( require ) {
         // size until the lid should be well off the screen.
         if ( this.particleContainerHeight < StatesOfMatterConstants.PARTICLE_CONTAINER_INITIAL_HEIGHT * 10 ) {
           this.particleContainerHeight += MAX_PER_TICK_CONTAINER_EXPANSION;
-          notifyContainerSizeChanged();
         }
       }
 
-      // Record the pressure to see if it changes.
-      var pressureBeforeAlgorithm = this.getModelPressure();
-
-      // Execute the Verlet algorithm.  The algorithm may be run several times
-      // for each time step.
+      // Execute the Verlet algorithm.  The algorithm may be run several times for each time step.
       for ( var i = 0; i < VERLET_CALCULATIONS_PER_CLOCK_TICK; i++ ) {
         this.moleculeForceAndMotionCalculator.updateForcesAndMotion();
         this.runThermostat();
       }
 
       // Sync up the positions of the normalized particles (the molecule data
-      // set) with the particles being monitored by the view (the model data
-      // set).
+      // set) with the particles being monitored by the view (the model data set).
       this.syncParticlePositions();
-
-      // If the pressure changed, notify the listeners.
-      if ( this.getModelPressure() !== pressureBeforeAlgorithm ) {
-        notifyPressureChanged();
-      }
 
       // Adjust the temperature if needed.
       this.tempAdjustTickCounter++;
@@ -623,8 +613,6 @@ define( function( require ) {
         this.temperatureSetPoint = newTemperature;
         this.isoKineticThermostat.setTargetTemperature( this.temperatureSetPoint );
         this.andersenThermostat.setTargetTemperature( this.temperatureSetPoint );
-
-        notifyTemperatureChanged();
       }
     },
 
@@ -694,10 +682,10 @@ define( function( require ) {
       // up a fixed amount of the bottom of the container, so the number of
       // molecules that can fit depends on the size of the individual.
       var particleDiameter;
-      if ( moleculeID == StatesOfMatterConstants.NEON ) {
+      if ( moleculeID === StatesOfMatterConstants.NEON ) {
         particleDiameter = NeonAtom.RADIUS * 2;
       }
-      else if ( moleculeID == StatesOfMatterConstants.ARGON ) {
+      else if ( moleculeID === StatesOfMatterConstants.ARGON ) {
         particleDiameter = ArgonAtom.RADIUS * 2;
       }
       else {
@@ -724,24 +712,22 @@ define( function( require ) {
       for ( var i = 0; i < numberOfAtoms; i++ ) {
 
         // Create the atom.
-        var moleculeCenterOfMassPosition = new Vector2( 0, 0 );
-        var moleculeVelocity = new Vector2( 0, 0 );
+        // var moleculeCenterOfMassPosition = new Vector2();
+        // console.log(moleculeCenterOfMassPosition);
+        // var moleculeVelocity = new Vector2( 0, 0 );
         var atomPositions = [];
-        atomPositions.push( new Vector2( 0, 0 ) );
+        atomPositions.push( new Vector2() );
 
         // Add the atom to the data set.
-        this.moleculeDataSet.addMolecule( atomPositions, moleculeCenterOfMassPosition, moleculeVelocity, 0 );
+        this.moleculeDataSet.addMolecule( atomPositions, new Vector2(), new Vector2(), 0 );
 
         // Add particle to model set.
         var atom;
-        if ( moleculeID == StatesOfMatterConstants.NEON ) {
+        if ( moleculeID === StatesOfMatterConstants.NEON ) {
           atom = new NeonAtom( 0, 0 );
         }
-        else if ( moleculeID == StatesOfMatterConstants.ARGON ) {
+        else if ( moleculeID === StatesOfMatterConstants.ARGON ) {
           atom = new ArgonAtom( 0, 0 );
-        }
-        else if ( moleculeID == StatesOfMatterConstants.USER_DEFINED_MOLECULE ) {
-          atom = new ConfigurableStatesOfMatterAtom( 0, 0 );
         }
         else {
           atom = new NeonAtom( 0, 0 );
@@ -760,9 +746,12 @@ define( function( require ) {
     syncParticlePositions: function() {
       var positionMultiplier = this.particleDiameter;
       var atomPositions = this.moleculeDataSet.atomPositions;
-      for ( var i = 0; i < this.moleculeDataSet.numberOfAtoms; i++ ) {
-        this.particles[i].setPosition( atomPositions[i].x * positionMultiplier, atomPositions[i].y * positionMultiplier );
-      }
+      var i = 0;
+
+      this.particles.forEach( function( particle ) {
+        particle.setPosition( atomPositions[i].x * positionMultiplier, atomPositions[i].y * positionMultiplier );
+        i++;
+      } );
       if ( this.moleculeDataSet.numberOfAtoms !== this.particles.length ) {
         console.log( "Inconsistent number of normalized versus non-normalized particles." );
       }
@@ -776,7 +765,7 @@ define( function( require ) {
      */
     convertInternalTemperatureToKelvin: function() {
 
-      if ( this.particles.size() === 0 ) {
+      if ( this.particles.length === 0 ) {
         // Temperature is reported as 0 if there are no particles.
         return 0;
       }

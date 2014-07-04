@@ -11,6 +11,7 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
+  var Vector2 = require( 'DOT/Vector2' );
   var AbstractPhaseStateChanger = require( 'STATES_OF_MATTER_BASICS/model/AbstractPhaseStateChanger' );
   var randomGaussian = require( 'STATES_OF_MATTER_BASICS/model/randomGaussian' );
   var MonatomicAtomPositionUpdater = require( 'STATES_OF_MATTER_BASICS/model/MonatomicAtomPositionUpdater' );
@@ -45,7 +46,7 @@ define( function( require ) {
       var moleculeDataSet = this.model.moleculeDataSet;
 
       // Assume that we've done our job correctly and that all the atoms are in safe positions.
-      this.model.moleculeDataSet.numberOfSafeMolecules = moleculeDataSet.numberOfMolecules;
+      this.model.moleculeDataSet.numberOfSafeMolecules = moleculeDataSet.getNumberOfMolecules();
 
       // Sync up the atom positions with the molecule positions.
       this.positionUpdater.updateAtomPositions( moleculeDataSet );
@@ -64,6 +65,9 @@ define( function( require ) {
 
       // Set the temperature in the model.
       this.model.setTemperature( StatesOfMatterConstants.SOLID_TEMPERATURE );
+
+      this.model.moleculeDataSet.moleculeCenterOfMassPositions = [];
+      this.model.moleculeDataSet.moleculeVelocities = [];
 
       // Create the solid form, a.k.a. a crystal.
       var numberOfAtoms = this.model.moleculeDataSet.numberOfAtoms;
@@ -88,12 +92,17 @@ define( function( require ) {
             xPos += MIN_INITIAL_INTER_PARTICLE_DISTANCE / 2;
           }
           yPos = startingPosY + i * MIN_INITIAL_INTER_PARTICLE_DISTANCE * 0.866;
-          moleculeCenterOfMassPositions[( i * atomsPerLayer ) + j].setLocation( xPos, yPos );
+          // moleculeCenterOfMassPositions[( i * atomsPerLayer ) + j].setXY( xPos, yPos );
+          // tmpPositions.push( new Vector2( xPos, yPos ) );
+          moleculeCenterOfMassPositions.push( new Vector2( xPos, yPos ) );
+
           particlesPlaced++;
 
           // Assign each particle an initial velocity.
-          moleculeVelocities[( i * atomsPerLayer ) + j].setComponents( temperatureSqrt * randomGaussian(),
-                                                                       temperatureSqrt * randomGaussian() );
+          // moleculeVelocities[( i * atomsPerLayer ) + j] = new Vector2( temperatureSqrt * randomGaussian(),
+                                                                       // temperatureSqrt * randomGaussian() );
+          // tmpVelocities.push( new Vector2( temperatureSqrt * randomGaussian(), temperatureSqrt * randomGaussian() ) );
+          moleculeVelocities.push( new Vector2( temperatureSqrt * randomGaussian(), temperatureSqrt * randomGaussian() ) );
         }
       }
     },

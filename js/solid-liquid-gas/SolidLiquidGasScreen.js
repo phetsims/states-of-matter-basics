@@ -24,7 +24,7 @@ define( function( require ) {
   function SolidLiquidGasScreen() {
     Screen.call( this, solidLiquidGasString, new Rectangle( 0, 0, 50, 50 ),
       function() { return new MultipleParticleModel(); },
-      function( model ) { return new SolidLiquidGasScreenView(); },
+      function( model ) { return new SolidLiquidGasScreenView( model ); },
       { backgroundColor: 'black', navigationBarIcon: new Rectangle( 0, 0, 50, 50 ) }
     );
   }

@@ -19,9 +19,6 @@ define( function( require ) {
 
   // Constants that control various aspects of the Verlet algorithm.
   var TIME_STEP = 0.020;  // Time per simulation clock tick, in seconds.
-  var TIME_STEP_SQR_HALF = TIME_STEP * TIME_STEP * 0.5;
-  var TIME_STEP_HALF = TIME_STEP / 2;
-  var PARTICLE_INTERACTION_DISTANCE_THRESH_SQRD = 6.25;
   var PRESSURE_CALC_WEIGHTING = 0.999;
   var WALL_DISTANCE_THRESHOLD = 1.122462048309373017;
   var SAFE_INTER_MOLECULE_DISTANCE = 2.0;
@@ -164,7 +161,7 @@ define( function( require ) {
 
       var moleculeDataSet = this.model.moleculeDataSet;
       var numberOfSafeMolecules = moleculeDataSet.numberOfSafeMolecules;
-      var numberOfMolecules = moleculeDataSet.numberOfMolecules;
+      var numberOfMolecules = moleculeDataSet.getNumberOfMolecules();
 
       if ( numberOfMolecules === numberOfSafeMolecules ) {
         // Nothing to do, so quit now.
@@ -257,5 +254,13 @@ define( function( require ) {
       }
     }
 
+  },
+
+  // static final
+  {
+    TIME_STEP: TIME_STEP,
+    TIME_STEP_SQR_HALF: TIME_STEP * TIME_STEP * 0.5,
+    TIME_STEP_HALF: TIME_STEP / 2,
+    PARTICLE_INTERACTION_DISTANCE_THRESH_SQRD: 6.25
   } );
 } );

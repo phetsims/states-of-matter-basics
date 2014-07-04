@@ -26,7 +26,7 @@ define( function( require ) {
    * @constructor
    */
   function NeonAtom( x, y ) {
-    StateOfMatterAtom.call( this, x, y, RADIUS, MASS );
+    StatesOfMatterAtom.call( this, x, y, RADIUS, MASS );
   }
 
   return inherit( StatesOfMatterAtom, NeonAtom, {
@@ -35,5 +35,11 @@ define( function( require ) {
       return ATOM_TYPE;
     }
 
+  },
+
+  // public static final
+  {
+    RADIUS: RADIUS,
+    EPSILON: EPSILON
   } );
 } );

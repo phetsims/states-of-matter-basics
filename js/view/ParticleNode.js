@@ -27,34 +27,19 @@ define( function( require ) {
     Node.call( this );
 
     this.particle = particle;
-    this.mvt = mvt;
-
-    // Local initialization.
-    this.position = new Vector2( 0, 0 );
+    this.modelViewTransform = modelViewTransform;
 
     // Register for synchronization with model.
     var thisNode = this;
     this.particle.positionProperty.link( function( position ) {
-      thisNode.position = modelViewTransform.modelToViewPosition( position );
+      var location = modelViewTransform.modelToViewPosition( position );
+      thisNode.x = location.x;
+      thisNode.y = location.y;
     } );
 
-    // Set ourself up to listen to this particle.
-    // particle.addListener( new StatesOfMatterAtom.Adapter() {
-    //     public void positionChanged() {
-    //         updatePosition();
-    //     }
-
-    //     public void particleRemoved( StatesOfMatterAtom particle ) {
-    //         handleParticleRemoved();
-    //     }
-
-    //     public void radiusChanged() {
-    //         handleParticleRadiusChanged();
-    //     }
-    // } );
-
     // Decide of the diameter of the sphere/circle.
-    var radius = particle.getRadius() * 2;
+    // var radius = particle.radius * 2;
+    var radius = 10;
 
     this.circle = new Circle( radius, { fill: 'blue' } );
     this.addChild( this.circle );

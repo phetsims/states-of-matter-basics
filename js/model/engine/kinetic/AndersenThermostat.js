@@ -40,7 +40,7 @@ define( function( require ) {
     adjustTemperature: function() {
       // Calculate the internal temperature of the system from the kinetic energy.
       var measuredTemperature, i;
-      var numberOfMolecules = this.moleculeDataSet.numberOfMolecules;
+      var numberOfMolecules = this.moleculeDataSet.getNumberOfMolecules();
       if ( this.moleculeDataSet.atomsPerMolecule > 1 ) {
         // Include rotational inertia in the calculation.
         var centersOfMassKineticEnergy = 0;
@@ -56,9 +56,9 @@ define( function( require ) {
       }
       else {
         var centersOfMassKineticEnergy = 0;
-        for ( i = 0; i < this.moleculeDataSet.numberOfMolecules; i++ ) {
+        for ( i = 0; i < this.moleculeDataSet.getNumberOfMolecules(); i++ ) {
           // For single-atom molecules, exclude rotational inertia from the calculation.
-          centersOfMassKineticEnergy += 0.5 * this.moleculeDataSet.getMoleculeMass() *
+          centersOfMassKineticEnergy += 0.5 * this.moleculeDataSet.moleculeMass *
                                           ( Math.pow( this.moleculeVelocities[i].x, 2 ) + Math.pow( this.moleculeVelocities[i].y, 2 ) );
         }
         measuredTemperature = centersOfMassKineticEnergy / numberOfMolecules;

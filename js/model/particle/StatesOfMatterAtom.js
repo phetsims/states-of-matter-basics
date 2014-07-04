@@ -31,6 +31,10 @@ define( function( require ) {
 
   return inherit( Object, StatesOfMatterAtom, {
 
+    setPosition: function( x, y ) {
+      this.positionProperty.value.setXY( x, y );
+    },
+
     equals: function( other ) {
         if ( this === other ) {
             return true;

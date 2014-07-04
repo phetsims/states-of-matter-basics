@@ -44,15 +44,15 @@ define( function( require ) {
       var moleculeDataSet = this.model.moleculeDataSet;
       var moleculeCenterOfMassPositions = moleculeDataSet.moleculeCenterOfMassPositions;
 
-      if ( moleculeDataSet.getAtomsPerMolecule() === 1 ) {
+      if ( moleculeDataSet.atomsPerMolecule === 1 ) {
         minInitialInterParticleDistance = 1.2;
       }
       else {
         minInitialInterParticleDistance = 1.5;
       }
 
-      var rangeX = this.model.getNormalizedContainerWidth() - ( 2 * MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE );
-      var rangeY = this.model.getNormalizedContainerHeight() - ( 2 * MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE );
+      var rangeX = this.model.normalizedContainerWidth - ( 2 * MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE );
+      var rangeY = this.model.normalizedContainerHeight - ( 2 * MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE );
       for ( var i = 0; i < rangeX / minInitialInterParticleDistance; i++ ) {
         for ( var j = 0; j < rangeY / minInitialInterParticleDistance; j++ ) {
           posX = MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE + ( i * minInitialInterParticleDistance );

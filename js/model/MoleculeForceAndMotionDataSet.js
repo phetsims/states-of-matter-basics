@@ -12,6 +12,8 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
+  var Vector2 = require( 'DOT/Vector2' );
+  var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/StatesOfMatterConstants' );
 
   /**
    * This creates the data set with the capacity to hold the
@@ -26,6 +28,7 @@ define( function( require ) {
 
     this.atomsPerMolecule = atomsPerMolecule;
 
+    var arraySize = StatesOfMatterConstants.MAX_NUM_ATOMS / atomsPerMolecule;
     this.atomPositions = [];
     this.moleculeCenterOfMassPositions = [];
     this.moleculeVelocities = [];
@@ -57,6 +60,10 @@ define( function( require ) {
   }
 
   return inherit( Object, MoleculeForceAndMotionDataSet, {
+
+    getNumberOfMolecules: function() {
+      return this.numberOfAtoms / this.atomsPerMolecule;
+    },
 
     /**
      * Returns a value indicating how many more molecules can be added.
@@ -116,8 +123,13 @@ define( function( require ) {
         return false;
       }
 
+      console.log('adding');
+
       // Add the information for this molecule to the data set.
-      System.arraycopy( atomPositions, 0, this.atomPositions, 0 + this.numberOfAtoms, this.atomsPerMolecule );
+      for ( var i = 0; i < this.atomsPerMolecule; i++ ) {
+        this.atomPositions[i + this.numberOfAtoms] = atomPositions[i].copy();
+      }
+      // System.arraycopy( atomPositions, 0, this.atomPositions, 0 + this.numberOfAtoms, this.atomsPerMolecule );
 
       var numberOfMolecules = this.numberOfAtoms / this.atomsPerMolecule;
       this.moleculeCenterOfMassPositions[numberOfMolecules] = moleculeCenterOfMassPosition;
@@ -125,8 +137,8 @@ define( function( require ) {
       this.moleculeRotationRates[numberOfMolecules] = moleculeRotationRate;
 
       // Allocate memory for the information that is not specified.
-      this.moleculeForces[numberOfMolecules] = new Vector2();
-      this.nextMoleculeForces[numberOfMolecules] = new Vector2();
+      this.moleculeForces[numberOfMolecules] = new Vector2( 0, 0 );
+      this.nextMoleculeForces[numberOfMolecules] = new Vector2( 0, 0 );
 
       // Increment the number of atoms.  Note that we DON'T increment the number of safe atoms - that must
       // be done by some outside entity.
