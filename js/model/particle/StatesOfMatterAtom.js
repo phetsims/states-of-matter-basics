@@ -32,7 +32,7 @@ define( function( require ) {
   return inherit( Object, StatesOfMatterAtom, {
 
     setPosition: function( x, y ) {
-      this.positionProperty.value.setXY( x, y );
+      this.positionProperty.value = new Vector2( x, y );
     },
 
     equals: function( other ) {
