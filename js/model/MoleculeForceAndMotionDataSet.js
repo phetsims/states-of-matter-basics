@@ -123,8 +123,6 @@ define( function( require ) {
         return false;
       }
 
-      console.log('adding');
-
       // Add the information for this molecule to the data set.
       for ( var i = 0; i < this.atomsPerMolecule; i++ ) {
         this.atomPositions[i + this.numberOfAtoms] = atomPositions[i].copy();
@@ -137,12 +135,15 @@ define( function( require ) {
       this.moleculeRotationRates[numberOfMolecules] = moleculeRotationRate;
 
       // Allocate memory for the information that is not specified.
-      this.moleculeForces[numberOfMolecules] = new Vector2( 0, 0 );
-      this.nextMoleculeForces[numberOfMolecules] = new Vector2( 0, 0 );
+      this.moleculeForces[numberOfMolecules] = new Vector2();
+      this.nextMoleculeForces[numberOfMolecules] = new Vector2();
 
       // Increment the number of atoms.  Note that we DON'T increment the number of safe atoms - that must
       // be done by some outside entity.
       this.numberOfAtoms += this.atomsPerMolecule;
+
+      assert && assert( !isNaN( this.moleculeCenterOfMassPositions[numberOfMolecules].x ) );
+      console.log( this.moleculeCenterOfMassPositions[numberOfMolecules] );
 
       return true;
     },

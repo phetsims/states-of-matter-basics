@@ -50,6 +50,9 @@ define( function( require ) {
 
       var i;
 
+      assert && assert( !isNaN(this.model.moleculeDataSet.moleculeCenterOfMassPositions[0].x) );
+      console.log(moleculeCenterOfMassPositions[0]);
+
       // Update the positions of all particles based on their current
       // velocities and the forces acting on them.
       for ( i = 0; i < numberOfAtoms; i++ ) {
@@ -59,6 +62,9 @@ define( function( require ) {
                       ( this.TIME_STEP_SQR_HALF * moleculeForces[i].y );
         moleculeCenterOfMassPositions[i].setXY( xPos, yPos );
       }
+
+      console.log(moleculeCenterOfMassPositions[0].x);
+      assert && assert( !isNaN(this.model.moleculeDataSet.moleculeCenterOfMassPositions[0].x) );
 
       // Calculate the forces exerted on the particles by the container
       // walls and by gravity.

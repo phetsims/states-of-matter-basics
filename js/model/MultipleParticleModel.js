@@ -584,11 +584,15 @@ define( function( require ) {
         }
       }
 
+      assert && assert( !isNaN(this.moleculeDataSet.moleculeCenterOfMassPositions[0].x) );
+      console.log(this.moleculeDataSet.moleculeCenterOfMassPositions[0]);
       // Execute the Verlet algorithm.  The algorithm may be run several times for each time step.
       for ( var i = 0; i < VERLET_CALCULATIONS_PER_CLOCK_TICK; i++ ) {
         this.moleculeForceAndMotionCalculator.updateForcesAndMotion();
         this.runThermostat();
       }
+
+      assert && assert( !isNaN(this.moleculeDataSet.moleculeCenterOfMassPositions[0].x) );
 
       // Sync up the positions of the normalized particles (the molecule data
       // set) with the particles being monitored by the view (the model data set).
@@ -712,14 +716,15 @@ define( function( require ) {
       for ( var i = 0; i < numberOfAtoms; i++ ) {
 
         // Create the atom.
-        // var moleculeCenterOfMassPosition = new Vector2();
-        // console.log(moleculeCenterOfMassPosition);
-        // var moleculeVelocity = new Vector2( 0, 0 );
+        var moleculeCenterOfMassPosition = new Vector2();
+        var moleculeVelocity = new Vector2();
         var atomPositions = [];
         atomPositions.push( new Vector2() );
 
         // Add the atom to the data set.
-        this.moleculeDataSet.addMolecule( atomPositions, new Vector2(), new Vector2(), 0 );
+        this.moleculeDataSet.addMolecule( atomPositions, moleculeCenterOfMassPosition, moleculeVelocity, 0 );
+        assert && assert( !isNaN(this.moleculeDataSet.moleculeCenterOfMassPositions[0].x) );
+        console.log(this.moleculeDataSet.moleculeCenterOfMassPositions[0]);
 
         // Add particle to model set.
         var atom;
@@ -734,6 +739,9 @@ define( function( require ) {
         }
         this.particles.push( atom );
       }
+
+      console.log(this.moleculeDataSet);
+      assert && assert( !isNaN(this.moleculeDataSet.moleculeCenterOfMassPositions[0].x ) );
 
       // Initialize the particle positions according the to requested phase.
       this.setPhase( phase );
