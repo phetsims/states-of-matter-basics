@@ -30,7 +30,7 @@ define( function( require ) {
     ScreenView.call( this, { renderer: 'svg' } );
 
     // model-view transform
-    var modelViewTransform = ModelViewTransform2.createSinglePointScaleInvertedYMapping( new Vector2( 0, 0 ), new Vector2( 0, 0 ), 1 );
+    var modelViewTransform = ModelViewTransform2.createSinglePointScaleInvertedYMapping( new Vector2(), new Vector2( 250, 250 ), 0.05 );
 
     this.addChild( new ParticleContainerNode( model, modelViewTransform,
       {

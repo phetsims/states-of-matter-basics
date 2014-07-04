@@ -39,7 +39,7 @@ define( function( require ) {
 
     // Decide of the diameter of the sphere/circle.
     // var radius = particle.radius * 2;
-    var radius = 10;
+    var radius = 5;
 
     this.circle = new Circle( radius, { fill: 'blue' } );
     this.addChild( this.circle );

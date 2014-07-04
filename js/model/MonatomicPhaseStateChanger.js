@@ -61,6 +61,7 @@ define( function( require ) {
         console.log(moleculeDataSet.moleculeCenterOfMassPositions[0].x);
         assert && assert( !isNaN(moleculeDataSet.moleculeCenterOfMassPositions[0].x) );
       }
+      // this.model.initialized = true;
     },
 
     /**

@@ -51,7 +51,7 @@ define( function( require ) {
       var i;
 
       assert && assert( !isNaN(this.model.moleculeDataSet.moleculeCenterOfMassPositions[0].x) );
-      console.log(moleculeCenterOfMassPositions[0]);
+      console.log(moleculeCenterOfMassPositions[0].x);
 
       // Update the positions of all particles based on their current
       // velocities and the forces acting on them.

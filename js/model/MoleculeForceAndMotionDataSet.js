@@ -143,7 +143,6 @@ define( function( require ) {
       this.numberOfAtoms += this.atomsPerMolecule;
 
       assert && assert( !isNaN( this.moleculeCenterOfMassPositions[numberOfMolecules].x ) );
-      console.log( this.moleculeCenterOfMassPositions[numberOfMolecules] );
 
       return true;
     },

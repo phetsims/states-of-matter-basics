@@ -84,11 +84,11 @@ define( function( require ) {
     // } );
 
     Node.call( this );
-    this.addChild( new Rectangle( 0, 0, 250, 250,
+    var rect = new Rectangle( 375, 0, 250, 250,
       {
         lineWidth: 5,
         stroke: 'white',
-      } ) );
+      } );
     var thisNode = this;
 
     // Handle the comings and goings of movable shapes.
@@ -96,7 +96,6 @@ define( function( require ) {
       // Create and add the view representation for this shape.
       var particleNode = new ParticleNode( addedParticle, modelViewTransform );
       thisNode.addChild( particleNode );
-      console.log('adding');
 
       // Add the removal listener for if and when this shape is removed from the model.
       model.particles.addItemRemovedListener( function removalListener( removedParticle ) {
@@ -113,6 +112,7 @@ define( function( require ) {
     } );
 
     this.mutate( options );
+    this.addChild( rect );
   }
 
   return inherit( Node, ParticleContainerNode );
