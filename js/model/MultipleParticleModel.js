@@ -547,53 +547,54 @@ define( function( require ) {
      * TODO: use dt instead of fixed timestep
      */
     step: function( dt ) {
-      if ( !this.initialized ) {
+      if ( !this.initialized && dt !== 0 ) {
         return;
       }
-      // if ( !this.isExploded ) {
-      //   // Adjust the particle container height if needed.
-      //   if ( this.targetContainerHeight !== this.particleContainerHeight ) {
-      //     this.heightChangeCounter = CONTAINER_SIZE_CHANGE_RESET_COUNT;
-      //     var heightChange = this.targetContainerHeight - this.particleContainerHeight;
-      //     if ( heightChange > 0 ) {
-      //       // The container is growing.
-      //       if ( this.particleContainerHeight + heightChange <= StatesOfMatterConstants.PARTICLE_CONTAINER_INITIAL_HEIGHT ) {
-      //         this.particleContainerHeight += Math.min( heightChange, MAX_PER_TICK_CONTAINER_EXPANSION );
-      //       }
-      //       else {
-      //         this.particleContainerHeight = StatesOfMatterConstants.PARTICLE_CONTAINER_INITIAL_HEIGHT;
-      //       }
-      //     }
-      //     else {
-      //       // The container is shrinking.
-      //       if ( this.particleContainerHeight - heightChange >= this.minAllowableContainerHeight ) {
-      //         this.particleContainerHeight += Math.max( heightChange, -MAX_PER_TICK_CONTAINER_SHRINKAGE );
-      //       }
-      //       else {
-      //         this.particleContainerHeight = this.minAllowableContainerHeight;
-      //       }
-      //     }
-      //     this.normalizedContainerHeight = this.particleContainerHeight / this.particleDiameter;
-      //   }
-      //   else {
-      //     if ( this.heightChangeCounter > 0 ) {
-      //       this.heightChangeCounter--;
-      //     }
-      //   }
-      // }
-      // else {
-      //   // The lid is blowing off the container, so increase the container
-      //   // size until the lid should be well off the screen.
-      //   if ( this.particleContainerHeight < StatesOfMatterConstants.PARTICLE_CONTAINER_INITIAL_HEIGHT * 10 ) {
-      //     this.particleContainerHeight += MAX_PER_TICK_CONTAINER_EXPANSION;
-      //   }
-      // }
+      if ( !this.isExploded ) {
+        // Adjust the particle container height if needed.
+        if ( this.targetContainerHeight !== this.particleContainerHeight ) {
+          this.heightChangeCounter = CONTAINER_SIZE_CHANGE_RESET_COUNT;
+          var heightChange = this.targetContainerHeight - this.particleContainerHeight;
+          if ( heightChange > 0 ) {
+            // The container is growing.
+            if ( this.particleContainerHeight + heightChange <= StatesOfMatterConstants.PARTICLE_CONTAINER_INITIAL_HEIGHT ) {
+              this.particleContainerHeight += Math.min( heightChange, MAX_PER_TICK_CONTAINER_EXPANSION );
+            }
+            else {
+              this.particleContainerHeight = StatesOfMatterConstants.PARTICLE_CONTAINER_INITIAL_HEIGHT;
+            }
+          }
+          else {
+            // The container is shrinking.
+            if ( this.particleContainerHeight - heightChange >= this.minAllowableContainerHeight ) {
+              this.particleContainerHeight += Math.max( heightChange, -MAX_PER_TICK_CONTAINER_SHRINKAGE );
+            }
+            else {
+              this.particleContainerHeight = this.minAllowableContainerHeight;
+            }
+          }
+          this.normalizedContainerHeight = this.particleContainerHeight / this.particleDiameter;
+        }
+        else {
+          if ( this.heightChangeCounter > 0 ) {
+            this.heightChangeCounter--;
+          }
+        }
+      }
+      else {
+        // The lid is blowing off the container, so increase the container
+        // size until the lid should be well off the screen.
+        if ( this.particleContainerHeight < StatesOfMatterConstants.PARTICLE_CONTAINER_INITIAL_HEIGHT * 10 ) {
+          this.particleContainerHeight += MAX_PER_TICK_CONTAINER_EXPANSION;
+        }
+      }
 
       assert && assert( !isNaN(this.moleculeDataSet.moleculeCenterOfMassPositions[0].x) );
       console.log(this.moleculeDataSet.moleculeCenterOfMassPositions[0]);
       // Execute the Verlet algorithm.  The algorithm may be run several times for each time step.
       for ( var i = 0; i < VERLET_CALCULATIONS_PER_CLOCK_TICK; i++ ) {
-        this.moleculeForceAndMotionCalculator.updateForcesAndMotion( this );
+        console.log(this.moleculeForceAndMotionCalculator.model.moleculeDataSet);
+        this.moleculeForceAndMotionCalculator.updateForcesAndMotion();
         this.runThermostat();
       }
 
