@@ -590,18 +590,14 @@ define( function( require ) {
       }
 
       assert && assert( !isNaN(this.moleculeDataSet.moleculeCenterOfMassPositions[0].x) );
-      console.log(this.moleculeDataSet.moleculeCenterOfMassPositions[0]);
+
       // Execute the Verlet algorithm.  The algorithm may be run several times for each time step.
       for ( var i = 0; i < VERLET_CALCULATIONS_PER_CLOCK_TICK; i++ ) {
-        console.log(this.moleculeForceAndMotionCalculator.model.moleculeDataSet);
-        this.moleculeForceAndMotionCalculator.updateForcesAndMotion();
+        this.moleculeForceAndMotionCalculator.updateForcesAndMotion( this );
         this.runThermostat();
       }
 
-      console.log(this.moleculeDataSet);
-      debugger;
       assert && assert( !isNaN(this.moleculeDataSet.moleculeCenterOfMassPositions[0].x ) );
-
 
       // Sync up the positions of the normalized particles (the molecule data
       // set) with the particles being monitored by the view (the model data set).

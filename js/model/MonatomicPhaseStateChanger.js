@@ -51,19 +51,12 @@ define( function( require ) {
       // Sync up the atom positions with the molecule positions.
       this.positionUpdater.updateAtomPositions( moleculeDataSet );
 
-      assert && assert( !isNaN(moleculeDataSet.moleculeCenterOfMassPositions[0].x) );
-      console.log(moleculeDataSet.moleculeCenterOfMassPositions[0]);
-
       // Step the model a number of times in order to prevent the particles
       // from looking too organized.  The number of steps was empirically determined.
       for ( var i = 0; i < 20; i++ ) {
-        console.log('calling step');
         this.model.step( 0 );
-        console.log(moleculeDataSet.moleculeCenterOfMassPositions[0].x);
-        assert && assert( !isNaN(moleculeDataSet.moleculeCenterOfMassPositions[0].x) );
       }
-      console.log(this.model.moleculeForceAndMotionCalculator.model.moleculeDataSet);
-      // this.model.initialized = true;
+      this.model.initialized = true;
     },
 
     /**

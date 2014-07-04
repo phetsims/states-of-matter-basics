@@ -18,6 +18,10 @@ define( function( require ) {
   var MonatomicAtomPositionUpdater = require( 'STATES_OF_MATTER_BASICS/model/MonatomicAtomPositionUpdater' );
   var randomGaussian = require( 'STATES_OF_MATTER_BASICS/model/randomGaussian' );
 
+
+  var MIN_DISTANCE_SQUARED = 0.7225;
+
+
   /**
    * @param {MultipleParticleModel} model
    * @constructor
@@ -26,6 +30,12 @@ define( function( require ) {
     AbstractVerletAlgorithm.call( this, model );
     this.positionUpdater = new MonatomicAtomPositionUpdater();
     this.epsilon = 1; // Controls the strength of particle interaction.
+
+    // why does this not inherit?
+    this.TIME_STEP = AbstractVerletAlgorithm.TIME_STEP;
+    this.TIME_STEP_SQR_HALF = AbstractVerletAlgorithm.TIME_STEP_SQR_HALF;
+    this.TIME_STEP_HALF = AbstractVerletAlgorithm.TIME_STEP_HALF;
+    this.PARTICLE_INTERACTION_DISTANCE_THRESH_SQRD = AbstractVerletAlgorithm.PARTICLE_INTERACTION_DISTANCE_THRESH_SQRD;
   }
 
   return inherit( AbstractVerletAlgorithm, MonatomicVerletAlgorithm, {
@@ -35,13 +45,13 @@ define( function( require ) {
      * them.  This is the heart of this class, and it is here that the actual
      * Verlet algorithm is contained.
      */
-    updateForcesAndMotion: function() {
+    updateForcesAndMotion: function( model ) {
 
       var kineticEnergy = 0;
       var potentialEnergy = 0;
 
       // Obtain references to the model data and parameters so that we can perform fast manipulations.
-      var moleculeDataSet = this.model.moleculeDataSet;
+      var moleculeDataSet = model.moleculeDataSet;
       var numberOfAtoms = moleculeDataSet.numberOfAtoms;
       var moleculeCenterOfMassPositions = moleculeDataSet.moleculeCenterOfMassPositions;
       var moleculeVelocities = moleculeDataSet.moleculeVelocities;
@@ -50,8 +60,7 @@ define( function( require ) {
 
       var i;
 
-      assert && assert( !isNaN(this.model.moleculeDataSet.moleculeCenterOfMassPositions[0].x) );
-      console.log(moleculeCenterOfMassPositions[0].x);
+      assert && assert( !isNaN( model.moleculeDataSet.moleculeCenterOfMassPositions[0].x) );
 
       // Update the positions of all particles based on their current
       // velocities and the forces acting on them.
@@ -63,7 +72,6 @@ define( function( require ) {
         moleculeCenterOfMassPositions[i].setXY( xPos, yPos );
       }
 
-      console.log(moleculeCenterOfMassPositions[0].x);
       assert && assert( !isNaN(this.model.moleculeDataSet.moleculeCenterOfMassPositions[0].x) );
 
       // Calculate the forces exerted on the particles by the container
@@ -143,7 +151,7 @@ define( function( require ) {
 
       // Calculate the new velocities based on the old ones and the forces
       // that are acting on the particle.
-      var velocityIncrement = new Vector2( 0, 0 );
+      var velocityIncrement = new Vector2();
       for ( i = 0; i < numberOfAtoms; i++ ) {
         velocityIncrement.setX( this.TIME_STEP_HALF * ( moleculeForces[i].x + nextMoleculeForces[i].x ) );
         velocityIncrement.setY( this.TIME_STEP_HALF * ( moleculeForces[i].y + nextMoleculeForces[i].y ) );
