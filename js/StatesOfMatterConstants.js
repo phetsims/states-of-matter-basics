@@ -27,6 +27,10 @@ define( function( require ) {
     PARTICLE_CONTAINER_INITIAL_HEIGHT: PARTICLE_CONTAINER_INITIAL_HEIGHT,
     CONTAINER_BOUNDS: new Bounds2( 0, 0, PARTICLE_CONTAINER_WIDTH, PARTICLE_CONTAINER_INITIAL_HEIGHT ),
 
+    // Dimensions of container in view coordinates
+    VIEW_CONTAINER_WIDTH: 300,
+    VIEW_CONTAINER_HEIGHT: 300,
+
     // Maximum temperature, in degrees Kelvin, that the Thermometer will display.
     MAX_DISPLAYED_TEMPERATURE: 1000,
 

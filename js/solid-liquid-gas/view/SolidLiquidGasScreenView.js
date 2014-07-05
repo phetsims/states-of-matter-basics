@@ -29,8 +29,13 @@ define( function( require ) {
   function SolidLiquidGasScreenView( model ) {
     ScreenView.call( this, { renderer: 'svg' } );
 
+    var modelContainmentAreaWidth = StatesOfMatterConstants.CONTAINER_BOUNDS.width;
+    var modelContainmentAreaHeight = StatesOfMatterConstants.CONTAINER_BOUNDS.height;
+    var mvtScale = StatesOfMatterConstants.VIEW_CONTAINER_WIDTH / StatesOfMatterConstants.CONTAINER_BOUNDS.width;
+    console.log(mvtScale);
+
     // model-view transform
-    var modelViewTransform = ModelViewTransform2.createSinglePointScaleInvertedYMapping( new Vector2(), new Vector2( 250, 250 ), 0.05 );
+    var modelViewTransform = ModelViewTransform2.createSinglePointScaleInvertedYMapping( new Vector2(), new Vector2(), mvtScale );
 
     this.addChild( new ParticleContainerNode( model, modelViewTransform,
       {

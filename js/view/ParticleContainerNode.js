@@ -84,11 +84,13 @@ define( function( require ) {
     // } );
 
     Node.call( this );
-    var rect = new Rectangle( 375, 0, 250, 250,
-      {
-        lineWidth: 5,
-        stroke: 'white',
-      } );
+    // var rect = new Rectangle( 0, 0, 250, 250,
+    //   {
+    //     lineWidth: 5,
+    //     stroke: 'white',
+    //   } );
+    // this.addChild( rect );
+
     var thisNode = this;
 
     // Handle the comings and goings of movable shapes.
@@ -112,7 +114,6 @@ define( function( require ) {
     } );
 
     this.mutate( options );
-    this.addChild( rect );
   }
 
   return inherit( Node, ParticleContainerNode );

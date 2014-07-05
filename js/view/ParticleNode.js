@@ -13,6 +13,11 @@ define( function( require ) {
   var Vector2 = require( 'DOT/Vector2' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Circle = require( 'SCENERY/nodes/Circle' );
+  var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/StatesOfMatterConstants' );
+
+  // constants
+  var MVT_SCALE = StatesOfMatterConstants.VIEW_CONTAINER_WIDTH / StatesOfMatterConstants.CONTAINER_BOUNDS.width;
+
 
   /**
    * Main constructor.
@@ -38,8 +43,8 @@ define( function( require ) {
     } );
 
     // Decide of the diameter of the sphere/circle.
-    // var radius = particle.radius * 2;
-    var radius = 5;
+    console.log(particle.radius);
+    var radius = particle.radius * MVT_SCALE;
 
     this.circle = new Circle( radius, { fill: 'blue' } );
     this.addChild( this.circle );
