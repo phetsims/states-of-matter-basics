@@ -14,11 +14,6 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/StatesOfMatterConstants' );
 
-  function nextGaussian() {
-    // TODO
-    return 0;
-  }
-
   /**
    * Constructor for the Andersen thermostat.
    * @param {MoleculeForceAndMotionDataSet} moleculeDataSet Data set on which operations will be performed.

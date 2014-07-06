@@ -385,39 +385,32 @@ define( function( require ) {
      * Get the epsilon value, which is one of the two parameters that describes the Lennard-Jones potential.
      */
     getEpsilon: function() {
-        var epsilon;
-        switch( this.currentMolecule ) {
+      var epsilon;
+      switch( this.currentMolecule ) {
+        case StatesOfMatterConstants.NEON:
+          epsilon = InteractionStrengthTable.getInteractionPotential( AtomType.NEON, AtomType.NEON );
+          break;
+        case StatesOfMatterConstants.ARGON:
+          epsilon = InteractionStrengthTable.getInteractionPotential( AtomType.ARGON, AtomType.ARGON );
+          break;
+        case StatesOfMatterConstants.DIATOMIC_OXYGEN:
+          epsilon = StatesOfMatterConstants.EPSILON_FOR_DIATOMIC_OXYGEN;
+          break;
+        case StatesOfMatterConstants.MONATOMIC_OXYGEN:
+          epsilon = InteractionStrengthTable.getInteractionPotential( AtomType.OXYGEN, AtomType.OXYGEN );
+          break;
+        case StatesOfMatterConstants.WATER:
+          epsilon = StatesOfMatterConstants.EPSILON_FOR_WATER;
+          break;
+        case StatesOfMatterConstants.USER_DEFINED_MOLECULE:
+          epsilon = convertScaledEpsilonToEpsilon( this.moleculeForceAndMotionCalculator.getScaledEpsilon() );
+          break;
+        default:
+          console.log( "Error: Unrecognized molecule type when getting epsilon value." );
+          epsilon = 0;
+      }
 
-            case StatesOfMatterConstants.NEON:
-                epsilon = InteractionStrengthTable.getInteractionPotential( AtomType.NEON, AtomType.NEON );
-                break;
-
-            case StatesOfMatterConstants.ARGON:
-                epsilon = InteractionStrengthTable.getInteractionPotential( AtomType.ARGON, AtomType.ARGON );
-                break;
-
-            case StatesOfMatterConstants.DIATOMIC_OXYGEN:
-                epsilon = StatesOfMatterConstants.EPSILON_FOR_DIATOMIC_OXYGEN;
-                break;
-
-            case StatesOfMatterConstants.MONATOMIC_OXYGEN:
-                epsilon = InteractionStrengthTable.getInteractionPotential( AtomType.OXYGEN, AtomType.OXYGEN );
-                break;
-
-            case StatesOfMatterConstants.WATER:
-                epsilon = StatesOfMatterConstants.EPSILON_FOR_WATER;
-                break;
-
-            case StatesOfMatterConstants.USER_DEFINED_MOLECULE:
-                epsilon = convertScaledEpsilonToEpsilon( this.moleculeForceAndMotionCalculator.getScaledEpsilon() );
-                break;
-
-            default:
-                console.log( "Error: Unrecognized molecule type when getting epsilon value." );
-                epsilon = 0;
-        }
-
-        return epsilon;
+      return epsilon;
     },
 
     //----------------------------------------------------------------------------
@@ -480,10 +473,10 @@ define( function( require ) {
     //----------------------------------------------------------------------------
 
     removeAllParticles: function() {
-        this.particles.clear();
+      this.particles.clear();
 
-        // Get rid of the normalized particles.
-        this.moleculeDataSet = null;
+      // Get rid of the normalized particles.
+      this.moleculeDataSet = null;
     },
 
     /**
