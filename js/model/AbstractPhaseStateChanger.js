@@ -16,8 +16,6 @@ define( function( require ) {
   var AtomType = require( 'STATES_OF_MATTER_BASICS/model/AtomType' );
 
   // constants
-  var DISTANCE_BETWEEN_PARTICLES_IN_CRYSTAL = 0.12;  // In particle diameters.
-  var MAX_PLACEMENT_ATTEMPTS = 500; // For random placement of particles.
   var MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE = 2.5;
 
   /**
@@ -74,13 +72,17 @@ define( function( require ) {
       }
       console.error( "Error: No open positions available for molecule." );
       return null;
-    }
+    },
+
+    MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE: MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE,
+    DISTANCE_BETWEEN_PARTICLES_IN_CRYSTAL: 0.12,  // In particle diameters.
+    MAX_PLACEMENT_ATTEMPTS: 500 // For random placement of particles.
   },
 
   // public static final
   {
     PHASE_SOLID: 1,
     PHASE_LIQUID: 2,
-    PHASE_GAS: 3
+    PHASE_GAS: 3,
   } );
 } );

@@ -232,7 +232,7 @@ define( function( require ) {
 
     var thisModel = this;
     this.addDerivedProperty( 'normalizedContainerHeight', [ 'particleContainerHeight' ],
-      function( height ) { return height / thisModel.particleDiameter; } );
+      function( height ) { console.log('called with', height / thisModel.particleDiameter ); return height / thisModel.particleDiameter; } );
 
     initializeModelParameters( this );
     setMoleculeType( this, DEFAULT_MOLECULE );
@@ -933,7 +933,10 @@ define( function( require ) {
     convertScaledEpsilonToEpsilon: function( scaledEpsilon ) {
       var epsilon = scaledEpsilon * StatesOfMatterConstants.MAX_EPSILON / 2;
       return epsilon;
-    }
+    },
 
+    PHASE_SOLID: PHASE_SOLID,
+    PHASE_LIQUID: PHASE_LIQUID,
+    PHASE_GAS: PHASE_GAS
   } );
 } );

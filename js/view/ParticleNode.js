@@ -43,7 +43,6 @@ define( function( require ) {
     } );
 
     // Decide of the diameter of the sphere/circle.
-    console.log(particle.radius);
     var radius = particle.radius * MVT_SCALE;
 
     this.circle = new Circle( radius, { fill: 'blue' } );

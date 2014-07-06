@@ -252,12 +252,9 @@ define( function( require ) {
           this.model.explodeContainer();
         }
       }
-    }
+    },
 
-  },
-
-  // static final
-  {
+    // static final
     TIME_STEP: TIME_STEP,
     TIME_STEP_SQR_HALF: TIME_STEP * TIME_STEP * 0.5,
     TIME_STEP_HALF: TIME_STEP / 2,

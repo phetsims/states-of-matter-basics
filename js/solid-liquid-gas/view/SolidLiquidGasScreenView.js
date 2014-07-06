@@ -32,10 +32,9 @@ define( function( require ) {
     var modelContainmentAreaWidth = StatesOfMatterConstants.CONTAINER_BOUNDS.width;
     var modelContainmentAreaHeight = StatesOfMatterConstants.CONTAINER_BOUNDS.height;
     var mvtScale = StatesOfMatterConstants.VIEW_CONTAINER_WIDTH / StatesOfMatterConstants.CONTAINER_BOUNDS.width;
-    console.log(mvtScale);
 
     // model-view transform
-    var modelViewTransform = ModelViewTransform2.createSinglePointScaleInvertedYMapping( new Vector2(), new Vector2(), mvtScale );
+    var modelViewTransform = ModelViewTransform2.createSinglePointScaleInvertedYMapping( new Vector2( 0, 0 ), new Vector2( 0, StatesOfMatterConstants.VIEW_CONTAINER_HEIGHT ), mvtScale );
 
     this.addChild( new ParticleContainerNode( model, modelViewTransform,
       {
@@ -47,9 +46,9 @@ define( function( require ) {
     var sliderValueProperty = new Property( 50 );
     this.addChild( new HeatCoolSlider( temperatureProperty, sliderValueProperty, { centerX: this.layoutBounds.centerX, bottom: this.layoutBounds.bottom } ) );
 
-    var solidButton = new TextPushButton( 'Solid' );
-    var liquidButton = new TextPushButton( 'Liquid' );
-    var gasButton = new TextPushButton( 'Gas' );
+    var solidButton = new TextPushButton( 'Solid', { listener: function() { model.setPhase( model.PHASE_SOLID ); } } );
+    var liquidButton = new TextPushButton( 'Liquid', { listener: function() { model.setPhase( model.PHASE_LIQUID ); } } );
+    var gasButton = new TextPushButton( 'Gas', { listener: function() { model.setPhase( model.PHASE_GAS ); } } );
 
     this.addChild( new Panel( new VBox( { children: [ solidButton, liquidButton, gasButton ] } ) ) );
   }

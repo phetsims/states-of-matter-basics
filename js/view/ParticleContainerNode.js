@@ -84,12 +84,12 @@ define( function( require ) {
     // } );
 
     Node.call( this );
-    // var rect = new Rectangle( 0, 0, 250, 250,
-    //   {
-    //     lineWidth: 5,
-    //     stroke: 'white',
-    //   } );
-    // this.addChild( rect );
+    var rect = new Rectangle( 0, 0, StatesOfMatterConstants.VIEW_CONTAINER_WIDTH, StatesOfMatterConstants.VIEW_CONTAINER_HEIGHT,
+      {
+        lineWidth: 5,
+        stroke: 'white',
+      } );
+    this.addChild( rect );
 
     var thisNode = this;
 
@@ -110,7 +110,7 @@ define( function( require ) {
     } );
 
     model.particles.forEach( function( particle ) {
-      thisNode.addChild( new ParticleNode( particle, modelViewTransform ) );
+      rect.addChild( new ParticleNode( particle, modelViewTransform ) );
     } );
 
     this.mutate( options );

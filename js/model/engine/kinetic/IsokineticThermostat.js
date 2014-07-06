@@ -40,25 +40,25 @@ define( function( require ) {
       var temperature = this.targetTemperature;
 
       if ( temperature <= this.minModelTemperature ) {
-          // Use a values that will cause the molecules to stop
-          // moving if we are below the minimum temperature, since
-          // we want to create the appearance of absolute zero.
-          gammaX = 0.992;
-          gammaY = 0.999;   // Scale a little differently in Y direction so particles don't
-          // stop falling when absolute zero is reached.
-          temperature = 0;
+        // Use a values that will cause the molecules to stop
+        // moving if we are below the minimum temperature, since
+        // we want to create the appearance of absolute zero.
+        gammaX = 0.992;
+        gammaY = 0.999;   // Scale a little differently in Y direction so particles don't
+        // stop falling when absolute zero is reached.
+        temperature = 0;
       }
 
-      var massInverse = 1 / this.moleculeDataSet.getMoleculeMass();
-      var inertiaInverse = 1 / this.moleculeDataSet.getMoleculeRotationalInertia();
+      var massInverse = 1 / this.moleculeDataSet.moleculeMass;
+      var inertiaInverse = 1 / this.moleculeDataSet.moleculeRotationalInertia;
       var velocityScalingFactor = Math.sqrt( temperature * massInverse * ( 1 - Math.pow( gammaX, 2 ) ) );
       var rotationScalingFactor = Math.sqrt( temperature * inertiaInverse * ( 1 - Math.pow( gammaX, 2 ) ) );
 
       for ( var i = 0; i < this.moleculeDataSet.getNumberOfMolecules(); i++ ) {
-          var xVel = m_moleculeVelocities[i].getX() * gammaX + nextGaussian() * velocityScalingFactor;
-          var yVel = m_moleculeVelocities[i].getY() * gammaY + nextGaussian() * velocityScalingFactor;
-          this.moleculeVelocities[i].setComponents( xVel, yVel );
-          this.moleculeRotationRates[i] = gammaX * m_moleculeRotationRates[i] + nextGaussian() * rotationScalingFactor;
+        var xVel = this.moleculeVelocities[i].x * gammaX + randomGaussian() * velocityScalingFactor;
+        var yVel = this.moleculeVelocities[i].y * gammaY + randomGaussian() * velocityScalingFactor;
+        this.moleculeVelocities[i].setXY( xVel, yVel );
+        this.moleculeRotationRates[i] = gammaX * this.moleculeRotationRates[i] + randomGaussian() * rotationScalingFactor;
       }
     }
 

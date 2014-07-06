@@ -116,28 +116,28 @@ define( function( require ) {
       var moleculeVelocities = this.model.moleculeDataSet.moleculeVelocities;
       for ( var i = 0; i < numberOfAtoms; i++ ) {
           // Assign each particle an initial velocity.
-          moleculeVelocities[i].setComponents( temperatureSqrt * randomGaussian(),
-                                               temperatureSqrt * randomGaussian() );
+          moleculeVelocities[i].setXY( temperatureSqrt * randomGaussian(),
+                                       temperatureSqrt * randomGaussian() );
       }
 
       // Assign each atom to a position centered on its blob.
 
       var atomsPlaced = 0;
 
-      var centerPoint = new Vector2( this.model.normalizedContainerWidth / 2, this.model.normalizedContainerHeight / 4 );
+      var centerPoint = new Vector2( this.model.normalizedContainerWidth / 2, this.model.normalizedContainerWidth / 4 );
+      // var centerPoint = new Vector2( this.model.normalizedContainerWidth / 2, this.model.normalizedContainerHeight / 4 );
       var currentLayer = 0;
       var particlesOnCurrentLayer = 0;
       var particlesThatWillFitOnCurrentLayer = 1;
 
       for ( var j = 0; j < numberOfAtoms; j++ ) {
-
-        for ( var k = 0; k < MAX_PLACEMENT_ATTEMPTS; k++ ) {
+        for ( var k = 0; k < this.MAX_PLACEMENT_ATTEMPTS; k++ ) {
 
           var distanceFromCenter = currentLayer * MIN_INITIAL_INTER_PARTICLE_DISTANCE;
           var angle = ( particlesOnCurrentLayer / particlesThatWillFitOnCurrentLayer * 2 * Math.PI ) +
                       ( particlesThatWillFitOnCurrentLayer / ( 4 * Math.PI ) );
-          var xPos = centerPoint.getX() + ( distanceFromCenter * Math.cos( angle ) );
-          var yPos = centerPoint.getY() + ( distanceFromCenter * Math.sin( angle ) );
+          var xPos = centerPoint.x + ( distanceFromCenter * Math.cos( angle ) );
+          var yPos = centerPoint.y + ( distanceFromCenter * Math.sin( angle ) );
           particlesOnCurrentLayer++;  // Consider this spot used even if we don't actually put the particle there.
           if ( particlesOnCurrentLayer >= particlesThatWillFitOnCurrentLayer ) {
 
@@ -151,13 +151,13 @@ define( function( require ) {
           // that we don't check inter-particle distances here - we
           // rely on the placement algorithm to make sure that we don't
           // run into problems with this.
-          if ( ( xPos > MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE ) &&
-               ( xPos < this.model.normalizedContainerWidth - MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE ) &&
-               ( yPos > MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE ) &&
-               ( xPos < this.model.normalizedContainerHeight - MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE ) ) {
+          if ( ( xPos > this.MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE ) &&
+               ( xPos < this.model.normalizedContainerWidth - this.MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE ) &&
+               ( yPos > this.MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE ) &&
+               ( xPos < this.model.normalizedContainerHeight - this.MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE ) ) {
 
             // This is an acceptable position.
-            moleculeCenterOfMassPositions[atomsPlaced++].setLocation( xPos, yPos );
+            moleculeCenterOfMassPositions[atomsPlaced++].setXY( xPos, yPos );
             break;
           }
         }
@@ -172,31 +172,31 @@ define( function( require ) {
       // Set the temperature for the new state.
       this.model.setTemperature( StatesOfMatterConstants.GAS_TEMPERATURE );
       var temperatureSqrt = Math.sqrt( StatesOfMatterConstants.GAS_TEMPERATURE );
-
       var numberOfAtoms = this.model.moleculeDataSet.numberOfAtoms;
       var moleculeCenterOfMassPositions = this.model.moleculeDataSet.moleculeCenterOfMassPositions;
       var moleculeVelocities = this.model.moleculeDataSet.moleculeVelocities;
 
       for ( var i = 0; i < numberOfAtoms; i++ ) {
         // Temporarily position the particles at (0,0).
-        moleculeCenterOfMassPositions[i].setLocation( 0, 0 );
+        moleculeCenterOfMassPositions[i].setXY( 0, 0 );
 
         // Assign each particle an initial velocity.
-        moleculeVelocities[i].setComponents( temperatureSqrt * randomGaussian(),
-                                             temperatureSqrt * randomGaussian() );
+        moleculeVelocities[i].setXY( temperatureSqrt * randomGaussian(), temperatureSqrt * randomGaussian() );
       }
 
       // Redistribute the particles randomly around the container, but make
       // sure that they are not too close together or they end up with a
       // disproportionate amount of kinetic energy.
       var newPosX, newPosY;
-      var rangeX = this.model.normalizedContainerWidth - ( 2 * MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE );
-      var rangeY = this.model.normalizedContainerHeight - ( 2 * MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE );
+      var rangeX = this.model.normalizedContainerWidth - ( 2 * this.MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE );
+      var rangeY = this.model.normalizedContainerWidth - ( 2 * this.MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE );
+      // var rangeY = this.model.normalizedContainerHeight - ( 2 * this.MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE );
       for ( var i = 0; i < numberOfAtoms; i++ ) {
-        for ( var j = 0; j < MAX_PLACEMENT_ATTEMPTS; j++ ) {
+        for ( var j = 0; j < this.MAX_PLACEMENT_ATTEMPTS; j++ ) {
+
           // Pick a random position.
-          newPosX = MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE + ( Math.random() * rangeX );
-          newPosY = MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE + ( Math.random() * rangeY );
+          newPosX = this.MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE + ( Math.random() * rangeX );
+          newPosY = this.MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE + ( Math.random() * rangeY );
           var positionAvailable = true;
           // See if this position is available.
           for ( var k = 0; k < i; k++ ) {
@@ -207,12 +207,12 @@ define( function( require ) {
           }
           if ( positionAvailable ) {
             // We found an open position.
-            moleculeCenterOfMassPositions[i].setLocation( newPosX, newPosY );
+            moleculeCenterOfMassPositions[i].setXY( newPosX, newPosY );
             break;
           }
-          else if ( j == MAX_PLACEMENT_ATTEMPTS - 1 ) {
+          else if ( j === this.MAX_PLACEMENT_ATTEMPTS - 1 ) {
             // This is the last attempt, so use this position anyway.
-            moleculeCenterOfMassPositions[i].setLocation( newPosX, newPosY );
+            moleculeCenterOfMassPositions[i].setXY( newPosX, newPosY );
           }
         }
       }

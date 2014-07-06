@@ -42,14 +42,14 @@ define( function( require ) {
     this.nextMoleculeTorques = [];
 
     // Set default values.
-    if ( atomsPerMolecule == 1 ) {
+    if ( atomsPerMolecule === 1 ) {
       this.moleculeMass = 1;
     }
-    else if ( atomsPerMolecule == 2 ) {
+    else if ( atomsPerMolecule === 2 ) {
       this.moleculeMass = 2; // Two molecules, assumed to be the same.
       this.moleculeRotationalInertia = Math.pow( StatesOfMatterConstants.DIATOMIC_PARTICLE_DISTANCE, 2 ) / 2;
     }
-    else if ( atomsPerMolecule == 3 ) {
+    else if ( atomsPerMolecule === 3 ) {
       // NOTE: These settings only work for water, since that is the
       // only supported triatomic molecule at the time of this writing
       // (Nov 2008).  If other 3-atom molecules are added, this will

@@ -30,12 +30,6 @@ define( function( require ) {
     AbstractVerletAlgorithm.call( this, model );
     this.positionUpdater = new MonatomicAtomPositionUpdater();
     this.epsilon = 1; // Controls the strength of particle interaction.
-
-    // why does this not inherit?
-    this.TIME_STEP = AbstractVerletAlgorithm.TIME_STEP;
-    this.TIME_STEP_SQR_HALF = AbstractVerletAlgorithm.TIME_STEP_SQR_HALF;
-    this.TIME_STEP_HALF = AbstractVerletAlgorithm.TIME_STEP_HALF;
-    this.PARTICLE_INTERACTION_DISTANCE_THRESH_SQRD = AbstractVerletAlgorithm.PARTICLE_INTERACTION_DISTANCE_THRESH_SQRD;
   }
 
   return inherit( AbstractVerletAlgorithm, MonatomicVerletAlgorithm, {
