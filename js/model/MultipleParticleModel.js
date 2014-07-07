@@ -185,8 +185,6 @@ define( function( require ) {
    */
   function MultipleParticleModel() {
 
-    this.initialized = false;
-
     //----------------------------------------
     // All attributes ported from java version
     // ---------------------------------------
@@ -544,9 +542,6 @@ define( function( require ) {
      * TODO: use dt instead of fixed timestep
      */
     step: function( dt ) {
-      if ( !this.initialized && dt !== 0 ) {
-        return;
-      }
       if ( !this.isExploded ) {
         // Adjust the particle container height if needed.
         if ( this.targetContainerHeight !== this.particleContainerHeight ) {

@@ -54,9 +54,8 @@ define( function( require ) {
       // Step the model a number of times in order to prevent the particles
       // from looking too organized.  The number of steps was empirically determined.
       for ( var i = 0; i < 20; i++ ) {
-        this.model.step( 0 );
+        this.model.step();
       }
-      this.model.initialized = true;
     },
 
     /**

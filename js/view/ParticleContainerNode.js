@@ -89,13 +89,10 @@ define( function( require ) {
 
     var thisNode = this;
 
-    // Handle the comings and goings of movable shapes.
     model.particles.addItemAddedListener( function( addedParticle ) {
-      // Create and add the view representation for this shape.
       var particleNode = new ParticleNode( addedParticle, modelViewTransform );
       thisNode.addChild( particleNode );
 
-      // Add the removal listener for if and when this shape is removed from the model.
       model.particles.addItemRemovedListener( function removalListener( removedParticle ) {
         if ( removedParticle === addedParticle ) {
           thisNode.removeChild( particleNode );
