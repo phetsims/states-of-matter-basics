@@ -13,7 +13,7 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var randomGaussian = require( 'STATES_OF_MATTER_BASICS/model/randomGaussian' );
+  var Random = require( 'STATES_OF_MATTER_BASICS/model/Random' );
   var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/StatesOfMatterConstants' );
 
   /**
@@ -30,6 +30,8 @@ define( function( require ) {
 
     this.moleculeVelocities = moleculeDataSet.moleculeVelocities;
     this.moleculeRotationRates = moleculeDataSet.moleculeRotationRates;
+
+    this.random = new Random();
   }
 
   return inherit( Object, IsokineticThermostat, {
@@ -55,10 +57,10 @@ define( function( require ) {
       var rotationScalingFactor = Math.sqrt( temperature * inertiaInverse * ( 1 - Math.pow( gammaX, 2 ) ) );
 
       for ( var i = 0; i < this.moleculeDataSet.getNumberOfMolecules(); i++ ) {
-        var xVel = this.moleculeVelocities[i].x * gammaX + randomGaussian() * velocityScalingFactor;
-        var yVel = this.moleculeVelocities[i].y * gammaY + randomGaussian() * velocityScalingFactor;
+        var xVel = this.moleculeVelocities[i].x * gammaX + this.random.nextGaussian() * velocityScalingFactor;
+        var yVel = this.moleculeVelocities[i].y * gammaY + this.random.nextGaussian() * velocityScalingFactor;
         this.moleculeVelocities[i].setXY( xVel, yVel );
-        this.moleculeRotationRates[i] = gammaX * this.moleculeRotationRates[i] + randomGaussian() * rotationScalingFactor;
+        this.moleculeRotationRates[i] = gammaX * this.moleculeRotationRates[i] + this.random.nextGaussian() * rotationScalingFactor;
       }
     }
 

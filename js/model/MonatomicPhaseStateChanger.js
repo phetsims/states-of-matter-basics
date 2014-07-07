@@ -13,7 +13,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Vector2 = require( 'DOT/Vector2' );
   var AbstractPhaseStateChanger = require( 'STATES_OF_MATTER_BASICS/model/AbstractPhaseStateChanger' );
-  var randomGaussian = require( 'STATES_OF_MATTER_BASICS/model/randomGaussian' );
+  var Random = require( 'STATES_OF_MATTER_BASICS/model/Random' );
   var MonatomicAtomPositionUpdater = require( 'STATES_OF_MATTER_BASICS/model/MonatomicAtomPositionUpdater' );
   var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/StatesOfMatterConstants' );
 
@@ -26,6 +26,7 @@ define( function( require ) {
   function MonatomicPhaseStateChanger( model ) {
     AbstractPhaseStateChanger.call( this, model );
     this.positionUpdater = new MonatomicAtomPositionUpdater();
+    this.random = new Random();
   }
 
   return inherit( AbstractPhaseStateChanger, MonatomicPhaseStateChanger, {
@@ -94,8 +95,8 @@ define( function( require ) {
           particlesPlaced++;
 
           // Assign each particle an initial velocity.
-          moleculeVelocities[( i * atomsPerLayer ) + j] = new Vector2( temperatureSqrt * randomGaussian(),
-                                                                       temperatureSqrt * randomGaussian() );
+          moleculeVelocities[( i * atomsPerLayer ) + j] = new Vector2( temperatureSqrt * this.random.nextGaussian(),
+                                                                       temperatureSqrt * this.random.nextGaussian() );
         }
       }
     },
@@ -115,7 +116,7 @@ define( function( require ) {
       var moleculeVelocities = this.model.moleculeDataSet.moleculeVelocities;
       for ( var i = 0; i < numberOfAtoms; i++ ) {
           // Assign each particle an initial velocity.
-          moleculeVelocities[i].setXY( temperatureSqrt * randomGaussian(), temperatureSqrt * randomGaussian() );
+          moleculeVelocities[i].setXY( temperatureSqrt * this.random.nextGaussian(), temperatureSqrt * this.random.nextGaussian() );
       }
 
       // Assign each atom to a position centered on its blob.
@@ -179,7 +180,7 @@ define( function( require ) {
         moleculeCenterOfMassPositions[i].setXY( 0, 0 );
 
         // Assign each particle an initial velocity.
-        moleculeVelocities[i].setXY( temperatureSqrt * randomGaussian(), temperatureSqrt * randomGaussian() );
+        moleculeVelocities[i].setXY( temperatureSqrt * this.random.nextGaussian(), temperatureSqrt * this.random.nextGaussian() );
       }
 
       // Redistribute the particles randomly around the container, but make
