@@ -13,14 +13,10 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var Vector2 = require( 'DOT/Vector2' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/StatesOfMatterConstants' );
   var ParticleNode = require( 'STATES_OF_MATTER_BASICS/view/ParticleNode' );
-  var Circle = require( 'SCENERY/nodes/Circle' );
-
-
 
   //----------------------------------------------------------------------------
   // Private Methods

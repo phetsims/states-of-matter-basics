@@ -28,7 +28,6 @@ define( function( require ) {
 
     this.atomsPerMolecule = atomsPerMolecule;
 
-    var arraySize = StatesOfMatterConstants.MAX_NUM_ATOMS / atomsPerMolecule;
     this.atomPositions = [];
     this.moleculeCenterOfMassPositions = [];
     this.moleculeVelocities = [];
@@ -85,7 +84,7 @@ define( function( require ) {
       var kineticEnergyPerMolecule;
       var i;
 
-      if ( this.atomsPerMolecule == 1 ) {
+      if ( this.atomsPerMolecule === 1 ) {
         for ( i = 0; i < this.numberOfAtoms; i++ ) {
           translationalKineticEnergy += ( ( this.moleculeVelocities[i].x * this.moleculeVelocities[i].x ) +
                                           ( this.moleculeVelocities[i].y * this.moleculeVelocities[i].y ) ) / 2;
@@ -181,7 +180,11 @@ define( function( require ) {
 
       // Handle all data arrays that are maintained on a per-atom basis.
       for ( i = moleculeIndex * this.atomsPerMolecule; i < this.numberOfAtoms - this.atomsPerMolecule; i += this.atomsPerMolecule ) {
-          System.arraycopy( this.atomPositions, i + this.atomsPerMolecule + 0, this.atomPositions, i + 0, this.atomsPerMolecule );
+
+        for ( var j = 0; j < this.atomsPerMolecule; j++ ) {
+          this.atomPositions[i + this.atomsPerMolecule + j] = this.atomPositions[i + this.atomsPerMolecule];
+        }
+        // System.arraycopy( this.atomPositions, i + this.atomsPerMolecule + 0, this.atomPositions, i + 0, this.atomsPerMolecule );
       }
 
       // Reduce the atom count.

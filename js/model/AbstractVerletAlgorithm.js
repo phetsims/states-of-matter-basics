@@ -14,8 +14,6 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var PropertySet = require( 'AXON/PropertySet' );
-  var AbstractPhaseStateChanger = require( 'STATES_OF_MATTER_BASICS/model/AbstractPhaseStateChanger' );
-  var randomGaussian = require( 'STATES_OF_MATTER_BASICS/model/randomGaussian' );
 
   // Constants that control various aspects of the Verlet algorithm.
   var TIME_STEP = 0.020;  // Time per simulation clock tick, in seconds.
@@ -192,7 +190,7 @@ define( function( require ) {
         if ( !moleculeIsUnsafe ) {
           // The molecule just tested was safe, so adjust the arrays
           // accordingly.
-          if ( i != numberOfSafeMolecules ) {
+          if ( i !== numberOfSafeMolecules ) {
             // There is at least one unsafe atom/molecule in front of
             // this one in the arrays, so some swapping must be done
             // before the number of safe atoms can be incremented.
@@ -200,7 +198,7 @@ define( function( require ) {
             // Swap the atoms that comprise the safe molecules with the
             // first unsafe one.
             var tempAtomPosition;
-            for ( var j = 0; j < atomsPerMolecule; j++ ) {
+            for ( j = 0; j < atomsPerMolecule; j++ ) {
                 tempAtomPosition = atomPositions[( numberOfSafeMolecules * atomsPerMolecule ) + j];
                 atomPositions[( numberOfSafeMolecules * atomsPerMolecule ) + j] =
                         atomPositions[( atomsPerMolecule * i ) + j];

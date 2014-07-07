@@ -85,7 +85,7 @@ define( function( require ) {
       for ( var i = 0; particlesPlaced < numberOfAtoms; i++ ) { // One iteration per layer.
         for ( var j = 0; ( j < atomsPerLayer ) && ( particlesPlaced < numberOfAtoms ); j++ ) {
           xPos = startingPosX + ( j * MIN_INITIAL_INTER_PARTICLE_DISTANCE );
-          if ( i % 2 != 0 ) {
+          if ( i % 2 !== 0 ) {
             // Every other row is shifted a bit to create hexagonal pattern.
             xPos += MIN_INITIAL_INTER_PARTICLE_DISTANCE / 2;
           }
@@ -190,7 +190,7 @@ define( function( require ) {
       var rangeX = this.model.normalizedContainerWidth - ( 2 * this.MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE );
       var rangeY = this.model.normalizedContainerWidth - ( 2 * this.MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE );
       // var rangeY = this.model.normalizedContainerHeight - ( 2 * this.MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE );
-      for ( var i = 0; i < numberOfAtoms; i++ ) {
+      for ( i = 0; i < numberOfAtoms; i++ ) {
         for ( var j = 0; j < this.MAX_PLACEMENT_ATTEMPTS; j++ ) {
 
           // Pick a random position.

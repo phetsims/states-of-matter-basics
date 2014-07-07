@@ -14,8 +14,10 @@ define( function( require ) {
   var ObservableArray = require( 'AXON/ObservableArray' );
   var Rectangle = require( 'DOT/Rectangle' );
   var Vector2 = require( 'DOT/Vector2' );
+  var Util = require( 'DOT/Util' );
   var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/StatesOfMatterConstants' );
   var NeonAtom = require( 'STATES_OF_MATTER_BASICS/model/particle/NeonAtom' );
+  var AtomType = require( 'STATES_OF_MATTER_BASICS/model/AtomType' );
   var MoleculeForceAndMotionDataSet = require( 'STATES_OF_MATTER_BASICS/model/MoleculeForceAndMotionDataSet' );
   var AbstractPhaseStateChanger = require( 'STATES_OF_MATTER_BASICS/model/AbstractPhaseStateChanger' );
   var MonatomicVerletAlgorithm = require( 'STATES_OF_MATTER_BASICS/model/MonatomicVerletAlgorithm' );
@@ -125,7 +127,6 @@ define( function( require ) {
          ( moleculeID !== StatesOfMatterConstants.USER_DEFINED_MOLECULE ) ) {
 
       throw new Error( "ERROR: Unsupported molecule type." );
-      moleculeID = StatesOfMatterConstants.NEON;
     }
 
     // Retain the current phase so that we can set the particles back to
@@ -166,7 +167,7 @@ define( function( require ) {
         context.minModelTemperature = 0.5 * TRIPLE_POINT_MONATOMIC_MODEL_TEMPERATURE / ADJUSTABLE_ATOM_TRIPLE_POINT_IN_KELVIN;
         break;
       default:
-        debugger; // Should never happen, so it should be debugged if it does.
+        throw new Error( 'Invalid current molecule' ); // Should never happen, so it should be debugged if it does.
     }
 
     // Reset the container size. This must be done after the diameter is
@@ -293,11 +294,11 @@ define( function( require ) {
 
     setGravitationalAcceleration: function( acceleration ) {
       if ( acceleration > MAX_GRAVITATIONAL_ACCEL ) {
-        throw new Error( "WARNING: Attempt to set out-of-range value for gravitational acceleration." );
+        console.warning( 'WARNING: Attempt to set out-of-range value for gravitational acceleration.' );
         this.gravitationalAcceleration = MAX_GRAVITATIONAL_ACCEL;
       }
       else if ( acceleration < 0 ) {
-        throw new Error( "WARNING: Attempt to set out-of-range value for gravitational acceleration." );
+        console.warning( 'WARNING: Attempt to set out-of-range value for gravitational acceleration.' );
         this.gravitationalAcceleration = 0;
       }
       else {
@@ -652,13 +653,13 @@ define( function( require ) {
         // is used to set the system temperature set point.
         setTemperature( this.moleculeDataSet.calculateTemperatureFromKineticEnergy() );
       }
-      else if ( ( this.thermostatType == ISOKINETIC_THERMOSTAT ) ||
-                ( this.thermostatType == ADAPTIVE_THERMOSTAT && ( temperatureIsChanging || this.temperatureSetPoint > LIQUID_TEMPERATURE ) ) ) {
+      else if ( ( this.thermostatType === ISOKINETIC_THERMOSTAT ) ||
+                ( this.thermostatType === ADAPTIVE_THERMOSTAT && ( temperatureIsChanging || this.temperatureSetPoint > LIQUID_TEMPERATURE ) ) ) {
         // Use the isokinetic thermostat.
         this.isoKineticThermostat.adjustTemperature();
       }
-      else if ( ( this.thermostatType == ANDERSEN_THERMOSTAT ) ||
-                ( this.thermostatType == ADAPTIVE_THERMOSTAT && !temperatureIsChanging ) ) {
+      else if ( ( this.thermostatType === ANDERSEN_THERMOSTAT ) ||
+                ( this.thermostatType === ADAPTIVE_THERMOSTAT && !temperatureIsChanging ) ) {
         // The temperature isn't changing and it is below a certain
         // threshold, so use the Andersen thermostat.  This is done for
         // purely visual reasons - it looks better than the isokinetic in
@@ -680,7 +681,7 @@ define( function( require ) {
     initializeMonatomic: function( moleculeID, phase ) {
 
       // Verify that a valid molecule ID was provided.
-      assert && assert( moleculeID === StatesOfMatterConstants.NEON || moleculeID === StatesOfMatterConstants.ARGON )
+      assert && assert( moleculeID === StatesOfMatterConstants.NEON || moleculeID === StatesOfMatterConstants.ARGON );
 
       // Determine the number of atoms/molecules to create.  This will be a cube
       // (really a square, since it's 2D, but you get the idea) that takes

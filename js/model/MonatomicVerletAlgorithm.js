@@ -16,11 +16,9 @@ define( function( require ) {
   var Vector2 = require( 'DOT/Vector2' );
   var AbstractVerletAlgorithm = require( 'STATES_OF_MATTER_BASICS/model/AbstractVerletAlgorithm' );
   var MonatomicAtomPositionUpdater = require( 'STATES_OF_MATTER_BASICS/model/MonatomicAtomPositionUpdater' );
-  var randomGaussian = require( 'STATES_OF_MATTER_BASICS/model/randomGaussian' );
 
-
+  // constants
   var MIN_DISTANCE_SQUARED = 0.7225;
-
 
   /**
    * @param {MultipleParticleModel} model
@@ -108,7 +106,7 @@ define( function( require ) {
       // Calculate the forces created through interactions with other
       // particles.
       var force = new Vector2( 0, 0 );
-      for ( var i = 0; i < numberOfSafeAtoms; i++ ) {
+      for ( i = 0; i < numberOfSafeAtoms; i++ ) {
         for ( var j = i + 1; j < numberOfSafeAtoms; j++ ) {
 
           var dx = moleculeCenterOfMassPositions[i].x - moleculeCenterOfMassPositions[j].x;
@@ -161,7 +159,7 @@ define( function( require ) {
       this.positionUpdater.updateAtomPositions( moleculeDataSet );
 
       // Replace the new forces with the old ones.
-      for ( var i = 0; i < numberOfAtoms; i++ ) {
+      for ( i = 0; i < numberOfAtoms; i++ ) {
         moleculeForces[i].setXY( nextMoleculeForces[i].x, nextMoleculeForces[i].y );
       }
     }

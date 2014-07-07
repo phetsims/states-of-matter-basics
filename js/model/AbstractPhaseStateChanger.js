@@ -12,8 +12,7 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var StatesOfMatterAtom = require( 'STATES_OF_MATTER_BASICS/model/particle/StatesOfMatterAtom' );
-  var AtomType = require( 'STATES_OF_MATTER_BASICS/model/AtomType' );
+  var Vector2 = require( 'DOT/Vector2' );
 
   // constants
   var MIN_INITIAL_PARTICLE_TO_WALL_DISTANCE = 2.5;
