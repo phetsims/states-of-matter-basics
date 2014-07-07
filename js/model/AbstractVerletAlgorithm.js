@@ -127,7 +127,7 @@ define( function( require ) {
             // The particles are energetic enough to end up outside
             // the container, so consider it to be exploded (if it
             // isn't already).
-            this.model.explodeContainer();
+            this.model.isExploded = true;
           }
           yPos = minDistance;
         }
@@ -249,7 +249,7 @@ define( function( require ) {
         if ( ( this.pressure > EXPLOSION_PRESSURE ) && !this.model.isExploded ) {
           // The pressure has reached the point where the container should
           // explode, so blow 'er up.
-          this.model.explodeContainer();
+          this.model.isExploded = true;
         }
       }
     },

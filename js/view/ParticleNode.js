@@ -38,6 +38,7 @@ define( function( require ) {
     var thisNode = this;
     this.particle.positionProperty.link( function( position ) {
       var location = modelViewTransform.modelToViewPosition( position );
+      assert && assert( location.x < StatesOfMatterConstants.VIEW_CONTAINER_WIDTH );
       thisNode.x = location.x;
       thisNode.y = location.y;
     } );

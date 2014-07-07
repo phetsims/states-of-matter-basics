@@ -116,16 +116,15 @@ define( function( require ) {
       var moleculeVelocities = this.model.moleculeDataSet.moleculeVelocities;
       for ( var i = 0; i < numberOfAtoms; i++ ) {
           // Assign each particle an initial velocity.
-          moleculeVelocities[i].setXY( temperatureSqrt * randomGaussian(),
-                                       temperatureSqrt * randomGaussian() );
+          moleculeVelocities[i].setXY( temperatureSqrt * randomGaussian(), temperatureSqrt * randomGaussian() );
       }
 
       // Assign each atom to a position centered on its blob.
 
       var atomsPlaced = 0;
 
-      var centerPoint = new Vector2( this.model.normalizedContainerWidth / 2, this.model.normalizedContainerWidth / 4 );
-      // var centerPoint = new Vector2( this.model.normalizedContainerWidth / 2, this.model.normalizedContainerHeight / 4 );
+      // var centerPoint = new Vector2( this.model.normalizedContainerWidth / 2, this.model.normalizedContainerWidth / 4 );
+      var centerPoint = new Vector2( this.model.normalizedContainerWidth / 2, this.model.normalizedContainerHeight / 4 );
       var currentLayer = 0;
       var particlesOnCurrentLayer = 0;
       var particlesThatWillFitOnCurrentLayer = 1;

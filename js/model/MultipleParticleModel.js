@@ -230,9 +230,11 @@ define( function( require ) {
       }
     );
 
+    this.normalizedContainerHeight = this.particleContainerHeight / this.particleDiameter;
+
     var thisModel = this;
-    this.addDerivedProperty( 'normalizedContainerHeight', [ 'particleContainerHeight' ],
-      function( height ) { console.log('called with', height / thisModel.particleDiameter ); return height / thisModel.particleDiameter; } );
+    // this.addDerivedProperty( 'normalizedContainerHeight', [ 'particleContainerHeight' ],
+    //   function( height ) { console.log('called with', height / thisModel.particleDiameter ); return height / thisModel.particleDiameter; } );
 
     initializeModelParameters( this );
     setMoleculeType( this, DEFAULT_MOLECULE );
@@ -533,6 +535,7 @@ define( function( require ) {
       this.particleContainerHeight = StatesOfMatterConstants.PARTICLE_CONTAINER_INITIAL_HEIGHT;
       this.targetContainerHeight = StatesOfMatterConstants.PARTICLE_CONTAINER_INITIAL_HEIGHT;
       this.normalizedContainerWidth = StatesOfMatterConstants.PARTICLE_CONTAINER_WIDTH / this.particleDiameter;
+      this.normalizedContainerHeight = this.particleContainerHeight / this.particleDiameter;
     },
 
     /**
