@@ -102,9 +102,8 @@ define( function( require ) {
 
     } );
 
-    model.particles.forEach( function( particle ) {
-      rect.addChild( new ParticleNode( particle, modelViewTransform ) );
-    } );
+    // reset to trigger draw of particles
+    model.reset();
 
     this.mutate( options );
   }

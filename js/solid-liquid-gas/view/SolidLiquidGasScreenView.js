@@ -46,6 +46,7 @@ define( function( require ) {
       } );
     this.addChild( containerNode );
 
+    // add temperature text
     var temperatureTextNode = new Text( 0, { font: new PhetFont( 20 ), fill: 'white', right: containerNode.right, bottom: containerNode.top } );
     model.temperatureSetPointProperty.link( function( temperature ) {
       temperatureTextNode.setText( Math.round( model.getTemperatureInKelvin() ) );
