@@ -123,8 +123,7 @@ define( function( require ) {
         if ( yPos < minDistance ) {
           if ( ( yPos < 0 ) && ( !this.model.isExploded ) ) {
             // The particles are energetic enough to end up outside
-            // the container, so consider it to be exploded (if it
-            // isn't already).
+            // the container, so consider it to be exploded (if it isn't already).
             this.model.isExploded = true;
           }
           yPos = minDistance;

@@ -56,9 +56,9 @@ define( function( require ) {
       // velocities and the forces acting on them.
       for ( i = 0; i < numberOfAtoms; i++ ) {
         var xPos = moleculeCenterOfMassPositions[i].x + ( this.TIME_STEP * moleculeVelocities[i].x ) +
-                      ( this.TIME_STEP_SQR_HALF * moleculeForces[i].x );
+                                                        ( this.TIME_STEP_SQR_HALF * moleculeForces[i].x );
         var yPos = moleculeCenterOfMassPositions[i].y + ( this.TIME_STEP * moleculeVelocities[i].y ) +
-                      ( this.TIME_STEP_SQR_HALF * moleculeForces[i].y );
+                                                        ( this.TIME_STEP_SQR_HALF * moleculeForces[i].y );
         moleculeCenterOfMassPositions[i].setXY( xPos, yPos );
       }
 

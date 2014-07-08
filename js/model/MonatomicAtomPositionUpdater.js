@@ -28,15 +28,13 @@ define( function( require ) {
       // Make sure this is not being used on an inappropriate data set.
       assert && assert( moleculeDataSet.atomsPerMolecule === 1 );
 
-      moleculeDataSet.atomPositions = [];
-
       // Get direct references to the data in the data set.
       var atomPositions = moleculeDataSet.atomPositions;
       var moleculeCenterOfMassPositions = moleculeDataSet.moleculeCenterOfMassPositions;
 
       // Position the atoms to match the position of the molecules.
       for ( var i = 0; i < moleculeDataSet.getNumberOfMolecules(); i++ ) {
-        atomPositions.push( moleculeCenterOfMassPositions[i] );
+        atomPositions[i] = moleculeCenterOfMassPositions[i];
       }
     }
 

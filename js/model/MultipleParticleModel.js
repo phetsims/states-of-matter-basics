@@ -45,8 +45,7 @@ define( function( require ) {
   var MIN_INJECTED_MOLECULE_VELOCITY = 0.5;
   var MAX_INJECTED_MOLECULE_VELOCITY = 2.0;
   var MAX_INJECTED_MOLECULE_ANGLE = Math.PI * 0.8;
-  var VERLET_CALCULATIONS_PER_CLOCK_TICK = 4; // originally 8
-  // var VERLET_CALCULATIONS_PER_CLOCK_TICK = 8;
+  var VERLET_CALCULATIONS_PER_CLOCK_TICK = 8;
 
   // Constants used for setting the phase directly.
   var PHASE_SOLID = 1;
@@ -127,7 +126,7 @@ define( function( require ) {
          ( moleculeID !== StatesOfMatterConstants.WATER ) &&
          ( moleculeID !== StatesOfMatterConstants.USER_DEFINED_MOLECULE ) ) {
 
-      throw new Error( "ERROR: Unsupported molecule type." );
+      throw new Error( 'ERROR: Unsupported molecule type.' );
     }
 
     // Retain the current phase so that we can set the particles back to
@@ -201,8 +200,6 @@ define( function( require ) {
     // Attributes of the container and simulation as a whole.
     this.minAllowableContainerHeight = null;
     this.particles = new ObservableArray();
-    this.isExploded = false;
-    // final ConstantDtClock this.clock;
 
     // Data set containing the atom and molecule position, motion, and force information.
     this.moleculeDataSet = null; // will be initialized in initializeMonatomic
@@ -221,16 +218,19 @@ define( function( require ) {
     PropertySet.call( this, {
         particleContainerHeight: StatesOfMatterConstants.PARTICLE_CONTAINER_INITIAL_HEIGHT,
         targetContainerHeight: StatesOfMatterConstants.PARTICLE_CONTAINER_INITIAL_HEIGHT,
+        isExploded: false, // notifyContainerExplodedStateChanged
+
         numParticles: 0, // notifyParticleAdded
         temperatureSetPoint: 0, // notifyTemperatureChanged
         pressure: 0, // notifyPressureChanged
         moleculeType: 0, // notifyMoleculeTypeChanged,
-        containerExplodedState: 0, // notifyContainerExplodedStateChanged
         interactionStrength: 0 // notifyInteractionStrengthChanged
       }
     );
 
     this.normalizedContainerHeight = this.particleContainerHeight / this.particleDiameter;
+
+    this.isExplodedProperty.link( function( i ) { console.log(i); } );
 
     var thisModel = this;
     // this.addDerivedProperty( 'normalizedContainerHeight', [ 'particleContainerHeight' ],
@@ -750,7 +750,7 @@ define( function( require ) {
         i++;
       } );
       if ( this.moleculeDataSet.numberOfAtoms !== this.particles.length ) {
-        console.log( "Inconsistent number of normalized versus non-normalized particles." );
+        console.log( 'Inconsistent number of normalized versus non-normalized particles.' );
       }
     },
 
@@ -874,7 +874,7 @@ define( function( require ) {
       var threshold = this.normalizedContainerHeight - PARTICLE_EDGE_PROXIMITY_RANGE;
       var particlesNearTop = false;
 
-      for ( var i = 0; i < this.moleculeDataSet.numberOfMolecules; i++ ) {
+      for ( var i = 0; i < this.moleculeDataSet.getNumberOfMolecules(); i++ ) {
         if ( moleculesPositions[i].y > threshold ) {
           particlesNearTop = true;
           break;

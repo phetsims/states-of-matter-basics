@@ -54,7 +54,7 @@ define( function( require ) {
         for ( i = 0; i < this.moleculeDataSet.getNumberOfMolecules(); i++ ) {
           // For single-atom molecules, exclude rotational inertia from the calculation.
           centersOfMassKineticEnergy += 0.5 * this.moleculeDataSet.moleculeMass *
-                                          ( Math.pow( this.moleculeVelocities[i].x, 2 ) + Math.pow( this.moleculeVelocities[i].y, 2 ) );
+                                        ( Math.pow( this.moleculeVelocities[i].x, 2 ) + Math.pow( this.moleculeVelocities[i].y, 2 ) );
         }
         measuredTemperature = centersOfMassKineticEnergy / numberOfMolecules;
       }
@@ -76,9 +76,9 @@ define( function( require ) {
       }
 
       // Adjust the temperature by scaling the velocity of each molecule by the appropriate amount.
-      for ( var i = 0; i < this.moleculeDataSet.numberOfMolecules; i++ ) {
-        this.moleculeVelocities[i].setComponents( this.moleculeVelocities[i].x * temperatureScaleFactor,
-                                                  this.moleculeVelocities[i].y * temperatureScaleFactor );
+      for ( var i = 0; i < this.moleculeDataSet.getNumberOfMolecules(); i++ ) {
+        this.moleculeVelocities[i].setXY( this.moleculeVelocities[i].x * temperatureScaleFactor,
+                                          this.moleculeVelocities[i].y * temperatureScaleFactor );
         this.moleculeRotationRates[i] *= temperatureScaleFactor; // Doesn't hurt anything in the monatomic case.
       }
     }
