@@ -45,7 +45,8 @@ define( function( require ) {
   var MIN_INJECTED_MOLECULE_VELOCITY = 0.5;
   var MAX_INJECTED_MOLECULE_VELOCITY = 2.0;
   var MAX_INJECTED_MOLECULE_ANGLE = Math.PI * 0.8;
-  var VERLET_CALCULATIONS_PER_CLOCK_TICK = 8;
+  var VERLET_CALCULATIONS_PER_CLOCK_TICK = 4; // originally 8
+  // var VERLET_CALCULATIONS_PER_CLOCK_TICK = 8;
 
   // Constants used for setting the phase directly.
   var PHASE_SOLID = 1;
@@ -581,15 +582,11 @@ define( function( require ) {
         }
       }
 
-      assert && assert( !isNaN(this.moleculeDataSet.moleculeCenterOfMassPositions[0].x) );
-
       // Execute the Verlet algorithm.  The algorithm may be run several times for each time step.
       for ( var i = 0; i < VERLET_CALCULATIONS_PER_CLOCK_TICK; i++ ) {
-        this.moleculeForceAndMotionCalculator.updateForcesAndMotion( this );
+        this.moleculeForceAndMotionCalculator.updateForcesAndMotion();
         this.runThermostat();
       }
-
-      assert && assert( !isNaN(this.moleculeDataSet.moleculeCenterOfMassPositions[0].x ) );
 
       // Sync up the positions of the normalized particles (the molecule data
       // set) with the particles being monitored by the view (the model data set).
@@ -612,8 +609,8 @@ define( function( require ) {
           newTemperature = this.minModelTemperature;
         }
         this.temperatureSetPoint = newTemperature;
-        this.isoKineticThermostat.setTargetTemperature( this.temperatureSetPoint );
-        this.andersenThermostat.setTargetTemperature( this.temperatureSetPoint );
+        this.isoKineticThermostat.targetTemperature = this.temperatureSetPoint;
+        this.andersenThermostat.targetTemperature = this.temperatureSetPoint;
       }
     },
 

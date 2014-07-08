@@ -18,7 +18,6 @@ define( function( require ) {
   var HeatCoolSlider = require( 'STATES_OF_MATTER_BASICS/solid-liquid-gas/view/HeatCoolSlider' );
   var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/StatesOfMatterConstants' );
   var ParticleContainerNode = require( 'STATES_OF_MATTER_BASICS/view/ParticleContainerNode' );
-  var Property = require( 'AXON/Property' );
   var TextPushButton = require( 'SUN/buttons/TextPushButton' );
   var Panel = require( 'SUN/Panel' );
   var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
@@ -53,9 +52,7 @@ define( function( require ) {
     } );
     this.addChild( temperatureTextNode );
 
-    var temperatureProperty = new Property( 50 );
-    var sliderValueProperty = new Property( 50 );
-    this.addChild( new HeatCoolSlider( temperatureProperty, sliderValueProperty, { centerX: this.layoutBounds.centerX, bottom: this.layoutBounds.bottom } ) );
+    this.addChild( new HeatCoolSlider( model, { centerX: this.layoutBounds.centerX, bottom: this.layoutBounds.bottom } ) );
 
     var solidButton = new TextPushButton( 'Solid', { listener: function() { model.setPhase( model.PHASE_SOLID ); } } );
     var liquidButton = new TextPushButton( 'Liquid', { listener: function() { model.setPhase( model.PHASE_LIQUID ); } } );

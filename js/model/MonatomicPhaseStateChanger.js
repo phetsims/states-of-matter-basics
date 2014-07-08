@@ -123,7 +123,6 @@ define( function( require ) {
 
       var atomsPlaced = 0;
 
-      // var centerPoint = new Vector2( this.model.normalizedContainerWidth / 2, this.model.normalizedContainerWidth / 4 );
       var centerPoint = new Vector2( this.model.normalizedContainerWidth / 2, this.model.normalizedContainerHeight / 4 );
       var currentLayer = 0;
       var particlesOnCurrentLayer = 0;

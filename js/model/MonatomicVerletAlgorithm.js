@@ -37,13 +37,13 @@ define( function( require ) {
      * them.  This is the heart of this class, and it is here that the actual
      * Verlet algorithm is contained.
      */
-    updateForcesAndMotion: function( model ) {
+    updateForcesAndMotion: function() {
 
       var kineticEnergy = 0;
       var potentialEnergy = 0;
 
       // Obtain references to the model data and parameters so that we can perform fast manipulations.
-      var moleculeDataSet = model.moleculeDataSet;
+      var moleculeDataSet = this.model.moleculeDataSet;
       var numberOfAtoms = moleculeDataSet.numberOfAtoms;
       var moleculeCenterOfMassPositions = moleculeDataSet.moleculeCenterOfMassPositions;
       var moleculeVelocities = moleculeDataSet.moleculeVelocities;
@@ -51,8 +51,6 @@ define( function( require ) {
       var nextMoleculeForces = moleculeDataSet.nextMoleculeForces;
 
       var i;
-
-      assert && assert( !isNaN( model.moleculeDataSet.moleculeCenterOfMassPositions[0].x) );
 
       // Update the positions of all particles based on their current
       // velocities and the forces acting on them.
@@ -64,10 +62,7 @@ define( function( require ) {
         moleculeCenterOfMassPositions[i].setXY( xPos, yPos );
       }
 
-      assert && assert( !isNaN(this.model.moleculeDataSet.moleculeCenterOfMassPositions[0].x) );
-
-      // Calculate the forces exerted on the particles by the container
-      // walls and by gravity.
+      // Calculate the forces exerted on the particles by the container walls and by gravity.
       var pressureZoneWallForce = 0;
       for ( i = 0; i < numberOfAtoms; i++ ) {
 
@@ -103,9 +98,8 @@ define( function( require ) {
 
       var numberOfSafeAtoms = moleculeDataSet.numberOfSafeMolecules;
 
-      // Calculate the forces created through interactions with other
-      // particles.
-      var force = new Vector2( 0, 0 );
+      // Calculate the forces created through interactions with other particles.
+      var force = new Vector2();
       for ( i = 0; i < numberOfSafeAtoms; i++ ) {
         for ( var j = i + 1; j < numberOfSafeAtoms; j++ ) {
 
