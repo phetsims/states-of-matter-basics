@@ -54,7 +54,8 @@ define( function( require ) {
       // (Nov 2008).  If other 3-atom molecules are added, this will
       // need to be changed.
       this.moleculeMass = 1.5; // Two molecules, assumed to be the same.
-      this.moleculeRotationalInertia = WaterMoleculeStructure.getInstance().getRotationalInertia();
+
+      // this.moleculeRotationalInertia = WaterMoleculeStructure.getInstance().getRotationalInertia();
     }
   }
 

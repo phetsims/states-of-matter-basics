@@ -17,7 +17,10 @@ define( function( require ) {
   var Util = require( 'DOT/Util' );
   var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/StatesOfMatterConstants' );
   var NeonAtom = require( 'STATES_OF_MATTER_BASICS/model/particle/NeonAtom' );
+  var ArgonAtom = require( 'STATES_OF_MATTER_BASICS/model/particle/ArgonAtom' );
+  var OxygenAtom = require( 'STATES_OF_MATTER_BASICS/model/particle/OxygenAtom' );
   var AtomType = require( 'STATES_OF_MATTER_BASICS/model/AtomType' );
+  var InteractionStrengthTable = require( 'STATES_OF_MATTER_BASICS/model/InteractionStrengthTable' );
   var MoleculeForceAndMotionDataSet = require( 'STATES_OF_MATTER_BASICS/model/MoleculeForceAndMotionDataSet' );
   var AbstractPhaseStateChanger = require( 'STATES_OF_MATTER_BASICS/model/AbstractPhaseStateChanger' );
   var MonatomicVerletAlgorithm = require( 'STATES_OF_MATTER_BASICS/model/MonatomicVerletAlgorithm' );
@@ -27,32 +30,27 @@ define( function( require ) {
   var AndersenThermostat = require( 'STATES_OF_MATTER_BASICS/model/engine/kinetic/AndersenThermostat' );
 
   // statics
-  // The internal model temperature values for the various states.
-  var SOLID_TEMPERATURE = 0.15;
-  var SLUSH_TEMPERATURE = 0.33;
-  var LIQUID_TEMPERATURE = 0.34;
-  var GAS_TEMPERATURE = 1.0;
 
   // Constants that control various aspects of the model behavior.
   var DEFAULT_MOLECULE = StatesOfMatterConstants.NEON;
-  var INITIAL_TEMPERATURE = SOLID_TEMPERATURE;
+  var INITIAL_TEMPERATURE = StatesOfMatterConstants.SOLID_TEMPERATURE;
   var MAX_TEMPERATURE = 50.0;
   var MIN_TEMPERATURE = 0.0001;
   var INITIAL_GRAVITATIONAL_ACCEL = 0.045;
   var MAX_GRAVITATIONAL_ACCEL = 0.4;
   var MAX_TEMPERATURE_CHANGE_PER_ADJUSTMENT = 0.025;
   var TICKS_PER_TEMP_ADJUSTMENT = 10;
-  var MIN_INJECTED_MOLECULE_VELOCITY = 0.5;
-  var MAX_INJECTED_MOLECULE_VELOCITY = 2.0;
-  var MAX_INJECTED_MOLECULE_ANGLE = Math.PI * 0.8;
+  // var MIN_INJECTED_MOLECULE_VELOCITY = 0.5;
+  // var MAX_INJECTED_MOLECULE_VELOCITY = 2.0;
+  // var MAX_INJECTED_MOLECULE_ANGLE = Math.PI * 0.8;
   var VERLET_CALCULATIONS_PER_CLOCK_TICK = 8;
 
   // Constants used for setting the phase directly.
   var PHASE_SOLID = 1;
   var PHASE_LIQUID = 2;
   var PHASE_GAS = 3;
-  var INJECTION_POINT_HORIZ_PROPORTION = 0.95;
-  var INJECTION_POINT_VERT_PROPORTION = 0.5;
+  // var INJECTION_POINT_HORIZ_PROPORTION = 0.95;
+  // var INJECTION_POINT_VERT_PROPORTION = 0.5;
 
   // Possible thermostat settings.
   var NO_THERMOSTAT = 0;
@@ -162,10 +160,10 @@ define( function( require ) {
         context.particleDiameter = OxygenAtom.RADIUS * 2.9;
         context.minModelTemperature = 0.5 * TRIPLE_POINT_MONATOMIC_MODEL_TEMPERATURE / WATER_TRIPLE_POINT_IN_KELVIN;
         break;
-      case StatesOfMatterConstants.USER_DEFINED_MOLECULE:
-        context.particleDiameter = ConfigurableStatesOfMatterAtom.DEFAULT_RADIUS * 2;
-        context.minModelTemperature = 0.5 * TRIPLE_POINT_MONATOMIC_MODEL_TEMPERATURE / ADJUSTABLE_ATOM_TRIPLE_POINT_IN_KELVIN;
-        break;
+      // case StatesOfMatterConstants.USER_DEFINED_MOLECULE:
+      //   context.particleDiameter = ConfigurableStatesOfMatterAtom.DEFAULT_RADIUS * 2;
+      //   context.minModelTemperature = 0.5 * TRIPLE_POINT_MONATOMIC_MODEL_TEMPERATURE / ADJUSTABLE_ATOM_TRIPLE_POINT_IN_KELVIN;
+      //   break;
       default:
         throw new Error( 'Invalid current molecule' ); // Should never happen, so it should be debugged if it does.
     }
@@ -366,11 +364,11 @@ define( function( require ) {
         case StatesOfMatterConstants.WATER:
           sigma = StatesOfMatterConstants.SIGMA_FOR_WATER;
           break;
-        case StatesOfMatterConstants.USER_DEFINED_MOLECULE:
-          sigma = ConfigurableStatesOfMatterAtom.DEFAULT_RADIUS * 2;
-          break;
+        // case StatesOfMatterConstants.USER_DEFINED_MOLECULE:
+        //   sigma = ConfigurableStatesOfMatterAtom.DEFAULT_RADIUS * 2;
+        //   break;
         default:
-          console.error( "Error: Unrecognized molecule type when setting sigma value." );
+          console.error( 'Error: Unrecognized molecule type when setting sigma value.' );
           sigma = 0;
       }
 
@@ -398,11 +396,11 @@ define( function( require ) {
         case StatesOfMatterConstants.WATER:
           epsilon = StatesOfMatterConstants.EPSILON_FOR_WATER;
           break;
-        case StatesOfMatterConstants.USER_DEFINED_MOLECULE:
-          epsilon = convertScaledEpsilonToEpsilon( this.moleculeForceAndMotionCalculator.getScaledEpsilon() );
-          break;
+        // case StatesOfMatterConstants.USER_DEFINED_MOLECULE:
+        //   epsilon = convertScaledEpsilonToEpsilon( this.moleculeForceAndMotionCalculator.getScaledEpsilon() );
+        //   break;
         default:
-          console.log( "Error: Unrecognized molecule type when getting epsilon value." );
+          console.log( 'Error: Unrecognized molecule type when getting epsilon value.' );
           epsilon = 0;
       }
 
@@ -438,7 +436,7 @@ define( function( require ) {
           break;
 
         default:
-          console.error( "Error: Invalid state specified." );
+          console.error( 'Error: Invalid state specified.' );
           // Treat it as a solid.
           this.phaseStateChanger.setPhase( AbstractPhaseStateChanger.PHASE_SOLID );
           break;
@@ -594,7 +592,7 @@ define( function( require ) {
         if ( newTemperature >= MAX_TEMPERATURE ) {
           newTemperature = MAX_TEMPERATURE;
         }
-        else if ( ( newTemperature <= SOLID_TEMPERATURE * 0.9 ) && ( this.heatingCoolingAmount < 0 ) ) {
+        else if ( ( newTemperature <= StatesOfMatterConstants.SOLID_TEMPERATURE * 0.9 ) && ( this.heatingCoolingAmount < 0 ) ) {
           // The temperature goes down more slowly as we begin to
           // approach absolute zero.
           newTemperature = this.temperatureSetPoint * 0.95;  // Multiplier determined empirically.
@@ -629,7 +627,7 @@ define( function( require ) {
         temperatureIsChanging = true;
       }
 
-      if ( this.heightChangeCounter !== 0 && particlesNearTop() ) {
+      if ( this.heightChangeCounter !== 0 && this.particlesNearTop() ) {
         // The height of the container is currently changing and there
         // are particles close enough to the top that they may be
         // interacting with it.  Since this can end up adding or removing
@@ -637,10 +635,10 @@ define( function( require ) {
         // run in this case.  Instead, the temperature determined by
         // looking at the kinetic energy of the molecules and that value
         // is used to set the system temperature set point.
-        setTemperature( this.moleculeDataSet.calculateTemperatureFromKineticEnergy() );
+        this.setTemperature( this.moleculeDataSet.calculateTemperatureFromKineticEnergy() );
       }
       else if ( ( this.thermostatType === ISOKINETIC_THERMOSTAT ) ||
-                ( this.thermostatType === ADAPTIVE_THERMOSTAT && ( temperatureIsChanging || this.temperatureSetPoint > LIQUID_TEMPERATURE ) ) ) {
+                ( this.thermostatType === ADAPTIVE_THERMOSTAT && ( temperatureIsChanging || this.temperatureSetPoint > StatesOfMatterConstants.LIQUID_TEMPERATURE ) ) ) {
         // Use the isokinetic thermostat.
         this.isoKineticThermostat.adjustTemperature();
       }
@@ -833,19 +831,19 @@ define( function( require ) {
       switch( this.currentMolecule ) {
 
         case StatesOfMatterConstants.NEON:
-          pressureInAtmospheres = 200 * getModelPressure();
+          pressureInAtmospheres = 200 * this.getModelPressure();
           break;
 
         case StatesOfMatterConstants.ARGON:
-          pressureInAtmospheres = 125 * getModelPressure();
+          pressureInAtmospheres = 125 * this.getModelPressure();
           break;
 
         case StatesOfMatterConstants.WATER:
-          pressureInAtmospheres = 200 * getModelPressure();
+          pressureInAtmospheres = 200 * this.getModelPressure();
           break;
 
         case StatesOfMatterConstants.DIATOMIC_OXYGEN:
-          pressureInAtmospheres = 125 * getModelPressure();
+          pressureInAtmospheres = 125 * this.getModelPressure();
           break;
 
         default:
@@ -885,10 +883,10 @@ define( function( require ) {
      */
     mapTemperatureToPhase: function() {
       var phase;
-      if ( this.temperatureSetPoint < SOLID_TEMPERATURE + ( ( LIQUID_TEMPERATURE - SOLID_TEMPERATURE ) / 2 ) ) {
+      if ( this.temperatureSetPoint < StatesOfMatterConstants.SOLID_TEMPERATURE + ( ( StatesOfMatterConstants.LIQUID_TEMPERATURE - StatesOfMatterConstants.SOLID_TEMPERATURE ) / 2 ) ) {
         phase = PHASE_SOLID;
       }
-      else if ( this.temperatureSetPoint < LIQUID_TEMPERATURE + ( ( GAS_TEMPERATURE - LIQUID_TEMPERATURE ) / 2 ) ) {
+      else if ( this.temperatureSetPoint < StatesOfMatterConstants.LIQUID_TEMPERATURE + ( ( StatesOfMatterConstants.GAS_TEMPERATURE - StatesOfMatterConstants.LIQUID_TEMPERATURE ) / 2 ) ) {
         phase = PHASE_LIQUID;
       }
       else {

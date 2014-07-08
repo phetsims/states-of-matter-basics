@@ -21,16 +21,12 @@ define( function( require ) {
   var WALL_DISTANCE_THRESHOLD = 1.122462048309373017;
   var SAFE_INTER_MOLECULE_DISTANCE = 2.0;
 
-  // Constant used to limit how close the atoms are allowed to get to one
-  // another so that we don't end up getting crazy big forces.
-  var MIN_DISTANCE_SQUARED = 0.7225;
-
   // Parameters that control the increasing of gravity as the temperature
   // approaches zero.  This is done to counteract the tendency of the
   // thermostat to slow falling molecules noticeably at low temps.  This is
   // a "hollywooding" thing.
-  var TEMPERATURE_BELOW_WHICH_GRAVITY_INCREASES = 0.10;
-  var LOW_TEMPERATURE_GRAVITY_INCREASE_RATE = 50;
+  // var TEMPERATURE_BELOW_WHICH_GRAVITY_INCREASES = 0.10;
+  // var LOW_TEMPERATURE_GRAVITY_INCREASE_RATE = 50;
 
   // Pressure at which explosion of the container will occur.
   var EXPLOSION_PRESSURE = 1.05;  // Currently set so that container blows roughly
@@ -255,6 +251,10 @@ define( function( require ) {
     TIME_STEP: TIME_STEP,
     TIME_STEP_SQR_HALF: TIME_STEP * TIME_STEP * 0.5,
     TIME_STEP_HALF: TIME_STEP / 2,
-    PARTICLE_INTERACTION_DISTANCE_THRESH_SQRD: 6.25
+    PARTICLE_INTERACTION_DISTANCE_THRESH_SQRD: 6.25,
+
+    // Constant used to limit how close the atoms are allowed to get to one
+    // another so that we don't end up getting crazy big forces.
+    MIN_DISTANCE_SQUARED: 0.7225
   } );
 } );

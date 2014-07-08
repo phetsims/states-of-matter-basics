@@ -17,9 +17,6 @@ define( function( require ) {
   var AbstractVerletAlgorithm = require( 'STATES_OF_MATTER_BASICS/model/AbstractVerletAlgorithm' );
   var MonatomicAtomPositionUpdater = require( 'STATES_OF_MATTER_BASICS/model/MonatomicAtomPositionUpdater' );
 
-  // constants
-  var MIN_DISTANCE_SQUARED = 0.7225;
-
   /**
    * @param {MultipleParticleModel} model
    * @constructor
@@ -120,8 +117,8 @@ define( function( require ) {
           if ( distanceSqrd < this.PARTICLE_INTERACTION_DISTANCE_THRESH_SQRD ) {
             // This pair of particles is close enough to one another
             // that we need to calculate their interaction forces.
-            if ( distanceSqrd < MIN_DISTANCE_SQUARED ) {
-              distanceSqrd = MIN_DISTANCE_SQUARED;
+            if ( distanceSqrd < this.MIN_DISTANCE_SQUARED ) {
+              distanceSqrd = this.MIN_DISTANCE_SQUARED;
             }
             var r2inv = 1 / distanceSqrd;
             var r6inv = r2inv * r2inv * r2inv;
