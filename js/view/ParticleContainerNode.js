@@ -33,32 +33,31 @@ define( function( require ) {
     // changed.
     var containerHeight = this.model.particleContainerHeight;
     if ( !this.model.isExploded ) {
-        if ( this.containerLid.getRotation() != 0 ) {
-            this.containerLid.setRotation( 0 );
-        }
-        this.containerLid.setOffset( ( this.containmentAreaWidth - this.containerLid.getFullBoundsReference().width ) / 2,
-                                  this.containmentAreaHeight - containerHeight - ( this.containerLid.getFullBoundsReference().height / 2 ) + LID_POSITION_TWEAK_FACTOR );
+      if ( this.containerLid.getRotation() !== 0 ) {
+        this.containerLid.setRotation( 0 );
+      }
+      this.containerLid.setOffset( ( this.containmentAreaWidth - this.containerLid.getFullBoundsReference().width ) / 2,
+                                this.containmentAreaHeight - containerHeight - ( this.containerLid.getFullBoundsReference().height / 2 ) + LID_POSITION_TWEAK_FACTOR );
     }
     else {
-        // Rotate the lid to create the visual appearance of it being
-        // blown off the top of the container.
-        this.containerLid.rotateAboutPoint( this.rotationAmount, ( this.containmentAreaWidth / 2 ) / this.containerLid.getScale(), 0 );
-        var centerPosY = this.containmentAreaHeight - containerHeight - ( this.containerLid.getFullBoundsReference().height / 2 ) + LID_POSITION_TWEAK_FACTOR;
-        var currentPosY = this.containerLid.getOffset().getY();
-        var newPosX = this.containerLid.getOffset().getX();
-        var newPosY;
-        if ( currentPosY > centerPosY ) {
-            newPosY = centerPosY;
-        }
-        else {
-            newPosY = currentPosY;
-        }
-        this.containerLid.setOffset( newPosX, newPosY );
+      // Rotate the lid to create the visual appearance of it being
+      // blown off the top of the container.
+      this.containerLid.rotateAboutPoint( this.rotationAmount, ( this.containmentAreaWidth / 2 ) / this.containerLid.getScale(), 0 );
+      var centerPosY = this.containmentAreaHeight - containerHeight - ( this.containerLid.getFullBoundsReference().height / 2 ) + LID_POSITION_TWEAK_FACTOR;
+      var currentPosY = this.containerLid.getOffset().getY();
+      var newPosX = this.containerLid.getOffset().getX();
+      var newPosY;
+      if ( currentPosY > centerPosY ) {
+          newPosY = centerPosY;
+      }
+      else {
+          newPosY = currentPosY;
+      }
+      this.containerLid.setOffset( newPosX, newPosY );
     }
 
     updatePressureGauge();
-  }
-
+  };
 
   /**
    * Main constructor.

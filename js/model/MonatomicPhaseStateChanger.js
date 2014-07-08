@@ -115,8 +115,8 @@ define( function( require ) {
       var moleculeCenterOfMassPositions = this.model.moleculeDataSet.moleculeCenterOfMassPositions;
       var moleculeVelocities = this.model.moleculeDataSet.moleculeVelocities;
       for ( var i = 0; i < numberOfAtoms; i++ ) {
-          // Assign each particle an initial velocity.
-          moleculeVelocities[i].setXY( temperatureSqrt * this.random.nextGaussian(), temperatureSqrt * this.random.nextGaussian() );
+        // Assign each particle an initial velocity.
+        moleculeVelocities[i].setXY( temperatureSqrt * this.random.nextGaussian(), temperatureSqrt * this.random.nextGaussian() );
       }
 
       // Assign each atom to a position centered on its blob.

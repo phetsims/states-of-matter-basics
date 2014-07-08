@@ -11,7 +11,6 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var ScreenView = require( 'JOIST/ScreenView' );
-  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var VBox = require( 'SCENERY/nodes/VBox' );
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );

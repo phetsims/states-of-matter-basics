@@ -230,12 +230,6 @@ define( function( require ) {
 
     this.normalizedContainerHeight = this.particleContainerHeight / this.particleDiameter;
 
-    this.isExplodedProperty.link( function( i ) { console.log(i); } );
-
-    var thisModel = this;
-    // this.addDerivedProperty( 'normalizedContainerHeight', [ 'particleContainerHeight' ],
-    //   function( height ) { console.log('called with', height / thisModel.particleDiameter ); return height / thisModel.particleDiameter; } );
-
     initializeModelParameters( this );
     setMoleculeType( this, DEFAULT_MOLECULE );
 
