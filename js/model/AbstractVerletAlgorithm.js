@@ -161,7 +161,7 @@ define( function( require ) {
         return;
       }
 
-      var atomsPerMolecule = moleculeDataSet.getAtomsPerMolecule();
+      var atomsPerMolecule = moleculeDataSet.atomsPerMolecule;
       var moleculeCenterOfMassPositions = moleculeDataSet.moleculeCenterOfMassPositions;
       var atomPositions = moleculeDataSet.atomPositions;
       var moleculeVelocities = moleculeDataSet.moleculeVelocities;

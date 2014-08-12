@@ -19,6 +19,7 @@ define( function( require ) {
   var NeonAtom = require( 'STATES_OF_MATTER_BASICS/model/particle/NeonAtom' );
   var ArgonAtom = require( 'STATES_OF_MATTER_BASICS/model/particle/ArgonAtom' );
   var OxygenAtom = require( 'STATES_OF_MATTER_BASICS/model/particle/OxygenAtom' );
+  var HydrogenAtom = require( 'STATES_OF_MATTER_BASICS/model/particle/HydrogenAtom' );
   var AtomType = require( 'STATES_OF_MATTER_BASICS/model/AtomType' );
   var InteractionStrengthTable = require( 'STATES_OF_MATTER_BASICS/model/InteractionStrengthTable' );
   var MoleculeForceAndMotionDataSet = require( 'STATES_OF_MATTER_BASICS/model/MoleculeForceAndMotionDataSet' );
@@ -40,17 +41,17 @@ define( function( require ) {
   var MAX_GRAVITATIONAL_ACCEL = 0.4;
   var MAX_TEMPERATURE_CHANGE_PER_ADJUSTMENT = 0.025;
   var TICKS_PER_TEMP_ADJUSTMENT = 10;
-  // var MIN_INJECTED_MOLECULE_VELOCITY = 0.5;
-  // var MAX_INJECTED_MOLECULE_VELOCITY = 2.0;
-  // var MAX_INJECTED_MOLECULE_ANGLE = Math.PI * 0.8;
+  var MIN_INJECTED_MOLECULE_VELOCITY = 0.5;
+  var MAX_INJECTED_MOLECULE_VELOCITY = 2.0;
+  var MAX_INJECTED_MOLECULE_ANGLE = Math.PI * 0.8;
   var VERLET_CALCULATIONS_PER_CLOCK_TICK = 8;
 
   // Constants used for setting the phase directly.
   var PHASE_SOLID = 1;
   var PHASE_LIQUID = 2;
   var PHASE_GAS = 3;
-  // var INJECTION_POINT_HORIZ_PROPORTION = 0.95;
-  // var INJECTION_POINT_VERT_PROPORTION = 0.5;
+  var INJECTION_POINT_HORIZ_PROPORTION = 0.95;
+  var INJECTION_POINT_VERT_PROPORTION = 0.5;
 
   // Possible thermostat settings.
   var NO_THERMOSTAT = 0;
@@ -243,7 +244,7 @@ define( function( require ) {
     //----------------------------------------------------------------------------
 
     getNumMolecules: function() {
-      return this.particles.length / this.moleculeDataSet.getAtomsPerMolecule();
+      return this.particles.length / this.moleculeDataSet.atomsPerMolecule;
     },
 
     /**
@@ -457,10 +458,96 @@ define( function( require ) {
     },
 
     /**
-     * Inject a new molecule of the current type into the model.  This uses
+     * Inject a new molecule of the current type into the model. This uses
      * the current temperature to assign an initial velocity.
      */
-    injectMolecule: function() {},
+    injectMolecule: function() {
+
+      var injectionPointX = StatesOfMatterConstants.CONTAINER_BOUNDS.width / this.particleDiameter * INJECTION_POINT_HORIZ_PROPORTION;
+      var injectionPointY = StatesOfMatterConstants.CONTAINER_BOUNDS.height / this.particleDiameter * INJECTION_POINT_VERT_PROPORTION;
+
+      // Make sure that it is okay to inject a new molecule.
+      if ( ( this.moleculeDataSet.getNumberOfRemainingSlots() > 1 ) &&
+           ( this.normalizedContainerHeight > injectionPointY * 1.05 ) &&
+           ( !this.isExploded ) ) {
+
+        var angle = Math.PI + ( ( Math.random() - 0.5 ) * MAX_INJECTED_MOLECULE_ANGLE );
+        var velocity = MIN_INJECTED_MOLECULE_VELOCITY + ( Math.random() *
+                                                        ( MAX_INJECTED_MOLECULE_VELOCITY - MIN_INJECTED_MOLECULE_VELOCITY ) );
+        var xVel = Math.cos( angle ) * velocity;
+        var yVel = Math.sin( angle ) * velocity;
+        var atomsPerMolecule = this.moleculeDataSet.atomsPerMolecule;
+        var moleculeCenterOfMassPosition = new Vector2( injectionPointX, injectionPointY );
+        var moleculeVelocity = new Vector2( xVel, yVel );
+        var moleculeRotationRate = ( Math.random() - 0.5 ) * ( Math.PI / 2 );
+        var atomPositions = [];
+        for ( var i = 0; i < atomsPerMolecule; i++ ) {
+          atomPositions[i] = new Vector2();
+        }
+
+        // Add the newly created molecule to the data set.
+        this.moleculeDataSet.addMolecule( atomPositions, moleculeCenterOfMassPosition, moleculeVelocity, moleculeRotationRate );
+
+        // Position the atoms that comprise the molecules.
+        this.atomPositionUpdater.updateAtomPositions( this.moleculeDataSet );
+
+        if ( this.moleculeDataSet.atomsPerMolecule === 1 ) {
+
+          // Add particle to model set.
+          var particle;
+          switch( this.currentMolecule ) {
+            case StatesOfMatterConstants.ARGON:
+              particle = new ArgonAtom( 0, 0 );
+              break;
+            case StatesOfMatterConstants.NEON:
+              particle = new NeonAtom( 0, 0 );
+              break;
+            // case StatesOfMatterConstants.USER_DEFINED_MOLECULE:
+            //   particle = new ConfigurableStatesOfMatterAtom( 0, 0 );
+            //   break;
+            default:
+              // Use the default.
+              particle = new NeonAtom( 0, 0 );
+              break;
+          }
+          this.particles.add( particle );
+        }
+        else if ( this.moleculeDataSet.atomsPerMolecule === 2 ) {
+
+          assert && assert( this.currentMolecule === StatesOfMatterConstants.DIATOMIC_OXYGEN );
+
+          // Add particles to model set.
+          for ( var j = 0; j < atomsPerMolecule; j++ ) {
+            this.particles.add( new OxygenAtom( 0, 0 ) );
+            atomPositions[j] = new Vector2();
+          }
+        }
+        else if ( atomsPerMolecule === 3 ) {
+
+          assert && assert( this.currentMolecule === StatesOfMatterConstants.WATER );
+
+          // Add atoms to model set.
+          this.particles.add( new OxygenAtom( 0, 0 ) );
+          atomPositions[0] = new Vector2();
+          this.particles.add( new HydrogenAtom( 0, 0 ) );
+          atomPositions[1] = new Vector2();
+          this.particles.add( new HydrogenAtom( 0, 0 ) );
+          atomPositions[2] = new Vector2();
+        }
+
+        if ( this.particles.length === 1 ) {
+          // Adding the first particle is considered a temperature
+          // change, because (in this sim anyway), no particles means a
+          // temperature of zero.
+          // notifyTemperatureChanged();
+        }
+
+        this.syncParticlePositions();
+      }
+
+      // Recalculate the minimum allowable container size, since it depends on the number of particles.
+      this.calculateMinAllowableContainerHeight();
+    },
 
     //----------------------------------------------------------------------------
     // Private Methods

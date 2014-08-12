@@ -54,8 +54,9 @@ define( function( require ) {
     var solidButton = new TextPushButton( 'Solid', { listener: function() { model.setPhase( model.PHASE_SOLID ); } } );
     var liquidButton = new TextPushButton( 'Liquid', { listener: function() { model.setPhase( model.PHASE_LIQUID ); } } );
     var gasButton = new TextPushButton( 'Gas', { listener: function() { model.setPhase( model.PHASE_GAS ); } } );
+    var injectButton = new TextPushButton( 'Inject', { listener: function() { model.injectMolecule(); } } );
 
-    this.addChild( new Panel( new VBox( { children: [ solidButton, liquidButton, gasButton ] } ) ) );
+    this.addChild( new Panel( new VBox( { children: [ solidButton, liquidButton, gasButton, injectButton ] } ) ) );
 
     // Add reset all button
     var resetAllButton = new ResetAllButton(
