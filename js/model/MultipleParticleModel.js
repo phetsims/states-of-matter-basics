@@ -30,8 +30,6 @@ define( function( require ) {
   var IsokineticThermostat = require( 'STATES_OF_MATTER_BASICS/model/engine/kinetic/IsokineticThermostat' );
   var AndersenThermostat = require( 'STATES_OF_MATTER_BASICS/model/engine/kinetic/AndersenThermostat' );
 
-  // statics
-
   // Constants that control various aspects of the model behavior.
   var DEFAULT_MOLECULE = StatesOfMatterConstants.NEON;
   var INITIAL_TEMPERATURE = StatesOfMatterConstants.SOLID_TEMPERATURE;
@@ -63,8 +61,7 @@ define( function( require ) {
   var MAX_PER_TICK_CONTAINER_SHRINKAGE = 50;
   var MAX_PER_TICK_CONTAINER_EXPANSION = 200;
 
-  // Countdown value used when recalculating temperature when the
-  // container size is changing.
+  // Countdown value used when recalculating temperature when the container size is changing.
   var CONTAINER_SIZE_CHANGE_RESET_COUNT = 25;
 
   // Range for deciding if the temperature is near the current set point.
@@ -75,9 +72,8 @@ define( function( require ) {
   // edges of the container.
   var PARTICLE_EDGE_PROXIMITY_RANGE = 2.5;
 
-  // Values used for converting from model temperature to the temperature
-  // for a given particle.
-  var TRIPLE_POINT_MONATOMIC_MODEL_TEMPERATURE = 0.26;    // Empirically determined.
+  // Values used for converting from model temperature to the temperature for a given particle.
+  var TRIPLE_POINT_MONATOMIC_MODEL_TEMPERATURE = 0.26;   // Empirically determined.
   var CRITICAL_POINT_MONATOMIC_MODEL_TEMPERATURE = 0.8;  // Empirically determined.
   var NEON_TRIPLE_POINT_IN_KELVIN = 23;   // Tweaked a little from actual value for better temperature mapping.
   var NEON_CRITICAL_POINT_IN_KELVIN = 44;
@@ -102,82 +98,6 @@ define( function( require ) {
   // below was arrived at empirically and seems to work reasonably well.
   // var MIN_ADJUSTABLE_EPSILON = 1.5 * NeonAtom.EPSILON;
   // var MAX_ADJUSTABLE_EPSILON = StatesOfMatterConstants.EPSILON_FOR_WATER;
-
-
-  var initializeModelParameters = function( context ) {
-    // Initialize the system parameters.
-    context = ( !context ) ? this : context;
-
-    context.gravitationalAcceleration = INITIAL_GRAVITATIONAL_ACCEL;
-    context.heatingCoolingAmount = 0;
-    context.tempAdjustTickCounter = 0;
-    context.temperatureSetPoint = INITIAL_TEMPERATURE;
-    context.isExploded = false;
-  };
-
-  var setMoleculeType = function( context, moleculeID ) {
-    context = ( !context ) ? this : context;
-
-    // Verify that this is a supported value.
-    if ( ( moleculeID !== StatesOfMatterConstants.DIATOMIC_OXYGEN ) &&
-         ( moleculeID !== StatesOfMatterConstants.NEON ) &&
-         ( moleculeID !== StatesOfMatterConstants.ARGON ) &&
-         ( moleculeID !== StatesOfMatterConstants.WATER ) &&
-         ( moleculeID !== StatesOfMatterConstants.USER_DEFINED_MOLECULE ) ) {
-
-      throw new Error( 'ERROR: Unsupported molecule type.' );
-    }
-
-    // Retain the current phase so that we can set the particles back to
-    // this phase once they have been created and initialized.
-    var phase = context.mapTemperatureToPhase();
-
-    // Remove existing particles and reset the global model parameters.
-    context.removeAllParticles();
-    context.initializeModelParameters();
-
-    // Set the new molecule type.
-    context.currentMolecule = moleculeID;
-
-    // Set the model parameters that are dependent upon the molecule type.
-    switch( context.currentMolecule ) {
-      case StatesOfMatterConstants.DIATOMIC_OXYGEN:
-        context.particleDiameter = OxygenAtom.RADIUS * 2;
-        context.minModelTemperature = 0.5 * TRIPLE_POINT_MONATOMIC_MODEL_TEMPERATURE / O2_TRIPLE_POINT_IN_KELVIN;
-        break;
-      case StatesOfMatterConstants.NEON:
-        context.particleDiameter = NeonAtom.RADIUS * 2;
-        context.minModelTemperature = 0.5 * TRIPLE_POINT_MONATOMIC_MODEL_TEMPERATURE / NEON_TRIPLE_POINT_IN_KELVIN;
-        break;
-      case StatesOfMatterConstants.ARGON:
-        context.particleDiameter = ArgonAtom.RADIUS * 2;
-        context.minModelTemperature = 0.5 * TRIPLE_POINT_MONATOMIC_MODEL_TEMPERATURE / ARGON_TRIPLE_POINT_IN_KELVIN;
-        break;
-      case StatesOfMatterConstants.WATER:
-        // Use a radius value that is artificially large, because the
-        // educators have requested that water look "spaced out" so that
-        // users can see the crystal structure better, and so that the
-        // solid form will look larger (since water expands when frozen).
-        context.particleDiameter = OxygenAtom.RADIUS * 2.9;
-        context.minModelTemperature = 0.5 * TRIPLE_POINT_MONATOMIC_MODEL_TEMPERATURE / WATER_TRIPLE_POINT_IN_KELVIN;
-        break;
-      // case StatesOfMatterConstants.USER_DEFINED_MOLECULE:
-      //   context.particleDiameter = ConfigurableStatesOfMatterAtom.DEFAULT_RADIUS * 2;
-      //   context.minModelTemperature = 0.5 * TRIPLE_POINT_MONATOMIC_MODEL_TEMPERATURE / ADJUSTABLE_ATOM_TRIPLE_POINT_IN_KELVIN;
-      //   break;
-      default:
-        throw new Error( 'Invalid current molecule' ); // Should never happen, so it should be debugged if it does.
-    }
-
-    // Reset the container size. This must be done after the diameter is
-    // initialized because the normalized size is dependent upon the
-    // particle diameter.
-    context.resetContainerSize();
-
-    // Initiate a reset in order to get the particles into predetermined
-    // locations and energy levels.
-    context.initializeParticles( phase );
-  };
 
   /**
    * @constructor
@@ -229,12 +149,11 @@ define( function( require ) {
 
     this.normalizedContainerHeight = this.particleContainerHeight / this.particleDiameter;
 
-    initializeModelParameters( this );
-    setMoleculeType( this, DEFAULT_MOLECULE );
-
     // Do just enough initialization to allow the view and control
     // portions of the simulation to be properly created.  The rest of the
     // initialization will occur when the model is reset.
+    this.initializeModelParameters();
+    this.setMoleculeType( DEFAULT_MOLECULE );
   }
 
   return inherit( PropertySet, MultipleParticleModel, {
@@ -314,7 +233,65 @@ define( function( require ) {
      * @param {Number} moleculeID
      */
     setMoleculeType: function( moleculeID ) {
-      setMoleculeType( this, moleculeID );
+      // Verify that this is a supported value.
+      if ( ( moleculeID !== StatesOfMatterConstants.DIATOMIC_OXYGEN ) &&
+           ( moleculeID !== StatesOfMatterConstants.NEON ) &&
+           ( moleculeID !== StatesOfMatterConstants.ARGON ) &&
+           ( moleculeID !== StatesOfMatterConstants.WATER ) &&
+           ( moleculeID !== StatesOfMatterConstants.USER_DEFINED_MOLECULE ) ) {
+
+        throw new Error( 'ERROR: Unsupported molecule type.' );
+      }
+
+      // Retain the current phase so that we can set the particles back to
+      // this phase once they have been created and initialized.
+      var phase = this.mapTemperatureToPhase();
+
+      // Remove existing particles and reset the global model parameters.
+      this.removeAllParticles();
+      this.initializeModelParameters();
+
+      // Set the new molecule type.
+      this.currentMolecule = moleculeID;
+
+      // Set the model parameters that are dependent upon the molecule type.
+      switch( this.currentMolecule ) {
+        case StatesOfMatterConstants.DIATOMIC_OXYGEN:
+          this.particleDiameter = OxygenAtom.RADIUS * 2;
+          this.minModelTemperature = 0.5 * TRIPLE_POINT_MONATOMIC_MODEL_TEMPERATURE / O2_TRIPLE_POINT_IN_KELVIN;
+          break;
+        case StatesOfMatterConstants.NEON:
+          this.particleDiameter = NeonAtom.RADIUS * 2;
+          this.minModelTemperature = 0.5 * TRIPLE_POINT_MONATOMIC_MODEL_TEMPERATURE / NEON_TRIPLE_POINT_IN_KELVIN;
+          break;
+        case StatesOfMatterConstants.ARGON:
+          this.particleDiameter = ArgonAtom.RADIUS * 2;
+          this.minModelTemperature = 0.5 * TRIPLE_POINT_MONATOMIC_MODEL_TEMPERATURE / ARGON_TRIPLE_POINT_IN_KELVIN;
+          break;
+        case StatesOfMatterConstants.WATER:
+          // Use a radius value that is artificially large, because the
+          // educators have requested that water look "spaced out" so that
+          // users can see the crystal structure better, and so that the
+          // solid form will look larger (since water expands when frozen).
+          this.particleDiameter = OxygenAtom.RADIUS * 2.9;
+          this.minModelTemperature = 0.5 * TRIPLE_POINT_MONATOMIC_MODEL_TEMPERATURE / WATER_TRIPLE_POINT_IN_KELVIN;
+          break;
+        // case StatesOfMatterConstants.USER_DEFINED_MOLECULE:
+        //   this.particleDiameter = ConfigurableStatesOfMatterAtom.DEFAULT_RADIUS * 2;
+        //   this.minModelTemperature = 0.5 * TRIPLE_POINT_MONATOMIC_MODEL_TEMPERATURE / ADJUSTABLE_ATOM_TRIPLE_POINT_IN_KELVIN;
+        //   break;
+        default:
+          throw new Error( 'Invalid current molecule' ); // Should never happen, so it should be debugged if it does.
+      }
+
+      // Reset the container size. This must be done after the diameter is
+      // initialized because the normalized size is dependent upon the
+      // particle diameter.
+      this.resetContainerSize();
+
+      // Initiate a reset in order to get the particles into predetermined
+      // locations and energy levels.
+      this.initializeParticles( phase );
     },
 
     setThermostatType: function( type ) {
@@ -602,7 +579,12 @@ define( function( require ) {
     },
 
     initializeModelParameters: function() {
-      initializeModelParameters( this );
+      // Initialize the system parameters
+      this.gravitationalAcceleration = INITIAL_GRAVITATIONAL_ACCEL;
+      this.heatingCoolingAmount = 0;
+      this.tempAdjustTickCounter = 0;
+      this.temperatureSetPoint = INITIAL_TEMPERATURE;
+      this.isExploded = false;
     },
 
     /**
