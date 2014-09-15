@@ -64,7 +64,7 @@ define( function( require ) {
    *
    * @param {MultipleParticleModel} model
    * @param {ModelViewTransform} modelViewTransform The model view transform for transforming particle position.
-   * @param {Object} options
+   * @param {Object} [options]
    * @constructor
    */
   function ParticleContainerNode( model, modelViewTransform, options ) {
