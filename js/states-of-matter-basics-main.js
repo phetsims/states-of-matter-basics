@@ -20,13 +20,13 @@ define( function( require ) {
 
   var simOptions = {
     credits: {
-      // all credits fields are optional
-
       // TODO: get correct names
       // leadDesign: 'Bryce Gruneich',
-      // softwareDevelopment: 'Aaron Davis (lead developer), Sam Reid',
-      // designTeam: 'Ariel Paul, Kathy Perkins',
-      // interviews: 'Bryce Gruneich'
+      // softwareDevelopment: 'Aaron Davis, Sam Reid',
+      // team: 'Ariel Paul, Kathy Perkins'
+      // qualityAssurance: '',
+      // graphicArts: '',
+      // thanks: ''
     }
   };
 
