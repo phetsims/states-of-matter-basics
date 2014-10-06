@@ -23,6 +23,9 @@ define( function( require ) {
   var Vector2 = require( 'DOT/Vector2' );
   var ResetAllButton = require( 'SCENERY_PHET/ResetAllButton' );
 
+  // constants
+  var BUTTON_FONT = new PhetFont( 20 );
+
   /**
    * @param {MultipleParticleModel} model
    * @constructor
@@ -51,10 +54,10 @@ define( function( require ) {
 
     this.addChild( new HeatCoolSlider( model, { centerX: this.layoutBounds.centerX, bottom: this.layoutBounds.bottom } ) );
 
-    var solidButton = new TextPushButton( 'Solid', { listener: function() { model.setPhase( model.PHASE_SOLID ); } } );
-    var liquidButton = new TextPushButton( 'Liquid', { listener: function() { model.setPhase( model.PHASE_LIQUID ); } } );
-    var gasButton = new TextPushButton( 'Gas', { listener: function() { model.setPhase( model.PHASE_GAS ); } } );
-    var injectButton = new TextPushButton( 'Inject', { listener: function() { model.injectMolecule(); } } );
+    var solidButton = new TextPushButton( 'Solid', { font: BUTTON_FONT, listener: function() { model.setPhase( model.PHASE_SOLID ); } } );
+    var liquidButton = new TextPushButton( 'Liquid', { font: BUTTON_FONT, listener: function() { model.setPhase( model.PHASE_LIQUID ); } } );
+    var gasButton = new TextPushButton( 'Gas', { font: BUTTON_FONT, listener: function() { model.setPhase( model.PHASE_GAS ); } } );
+    var injectButton = new TextPushButton( 'Inject', { font: BUTTON_FONT, listener: function() { model.injectMolecule(); } } );
 
     this.addChild( new Panel( new VBox( { children: [ solidButton, liquidButton, gasButton, injectButton ] } ) ) );
 
