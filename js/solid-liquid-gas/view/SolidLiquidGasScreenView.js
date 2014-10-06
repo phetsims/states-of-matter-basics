@@ -21,7 +21,7 @@ define( function( require ) {
   var Panel = require( 'SUN/Panel' );
   var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   var Vector2 = require( 'DOT/Vector2' );
-  var ResetAllButton = require( 'SCENERY_PHET/ResetAllButton' );
+  var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
 
   // constants
   var BUTTON_FONT = new PhetFont( 20 );
