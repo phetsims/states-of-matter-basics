@@ -11,8 +11,8 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/StatesOfMatterConstants' );
-  var AtomType = require( 'STATES_OF_MATTER_BASICS/model/AtomType' );
+  var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/experimental/StatesOfMatterConstants' );
+  var AtomType = require( 'STATES_OF_MATTER_BASICS/experimental/model/AtomType' );
 
   /**
    * @constructor

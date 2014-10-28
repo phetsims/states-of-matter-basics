@@ -194,10 +194,10 @@ define( function( require ) {
             // first unsafe one.
             var tempAtomPosition;
             for ( j = 0; j < atomsPerMolecule; j++ ) {
-                tempAtomPosition = atomPositions[( numberOfSafeMolecules * atomsPerMolecule ) + j];
-                atomPositions[( numberOfSafeMolecules * atomsPerMolecule ) + j] =
-                        atomPositions[( atomsPerMolecule * i ) + j];
-                atomPositions[( atomsPerMolecule * i ) + j] = tempAtomPosition;
+              tempAtomPosition = atomPositions[( numberOfSafeMolecules * atomsPerMolecule ) + j];
+              atomPositions[( numberOfSafeMolecules * atomsPerMolecule ) + j] =
+              atomPositions[( atomsPerMolecule * i ) + j];
+              atomPositions[( atomsPerMolecule * i ) + j] = tempAtomPosition;
             }
 
             var firstUnsafeMoleculeIndex = numberOfSafeMolecules;

@@ -14,9 +14,9 @@ define( function( require ) {
   var VBox = require( 'SCENERY/nodes/VBox' );
   var Text = require( 'SCENERY/nodes/Text' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
-  var HeatCoolSlider = require( 'STATES_OF_MATTER_BASICS/solid-liquid-gas/view/HeatCoolSlider' );
-  var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/StatesOfMatterConstants' );
-  var ParticleContainerNode = require( 'STATES_OF_MATTER_BASICS/view/ParticleContainerNode' );
+  var HeatCoolSlider = require( 'STATES_OF_MATTER_BASICS/experimental/solid-liquid-gas/view/HeatCoolSlider' );
+  var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/experimental/StatesOfMatterConstants' );
+  var ParticleContainerNode = require( 'STATES_OF_MATTER_BASICS/experimental/view/ParticleContainerNode' );
   var TextPushButton = require( 'SUN/buttons/TextPushButton' );
   var Panel = require( 'SUN/Panel' );
   var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );

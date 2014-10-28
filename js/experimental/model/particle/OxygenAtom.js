@@ -11,8 +11,8 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var StatesOfMatterAtom = require( 'STATES_OF_MATTER_BASICS/model/particle/StatesOfMatterAtom' );
-  var AtomType = require( 'STATES_OF_MATTER_BASICS/model/AtomType' );
+  var StatesOfMatterAtom = require( 'STATES_OF_MATTER_BASICS/experimental/model/particle/StatesOfMatterAtom' );
+  var AtomType = require( 'STATES_OF_MATTER_BASICS/experimental/model/AtomType' );
 
   // constants
   var RADIUS = 162;   // In picometers.
@@ -30,14 +30,14 @@ define( function( require ) {
 
   return inherit( StatesOfMatterAtom, OxygenAtom, {
 
-    getType: function() {
-      return ATOM_TYPE;
-    }
+      getType: function() {
+        return ATOM_TYPE;
+      }
 
-  },
+    },
 
-  // public static final
-  {
-    RADIUS: RADIUS,
-  } );
+    // public static final
+    {
+      RADIUS: RADIUS,
+    } );
 } );

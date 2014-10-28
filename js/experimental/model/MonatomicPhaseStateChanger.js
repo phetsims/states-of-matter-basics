@@ -12,10 +12,10 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var Vector2 = require( 'DOT/Vector2' );
-  var AbstractPhaseStateChanger = require( 'STATES_OF_MATTER_BASICS/model/AbstractPhaseStateChanger' );
-  var Random = require( 'STATES_OF_MATTER_BASICS/model/Random' );
-  var MonatomicAtomPositionUpdater = require( 'STATES_OF_MATTER_BASICS/model/MonatomicAtomPositionUpdater' );
-  var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/StatesOfMatterConstants' );
+  var AbstractPhaseStateChanger = require( 'STATES_OF_MATTER_BASICS/experimental/model/AbstractPhaseStateChanger' );
+  var Random = require( 'STATES_OF_MATTER_BASICS/experimental/model/Random' );
+  var MonatomicAtomPositionUpdater = require( 'STATES_OF_MATTER_BASICS/experimental/model/MonatomicAtomPositionUpdater' );
+  var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/experimental/StatesOfMatterConstants' );
 
   // constants
   var MIN_INITIAL_INTER_PARTICLE_DISTANCE = 1.12;

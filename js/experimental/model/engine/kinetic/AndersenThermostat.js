@@ -13,8 +13,8 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var Random = require( 'STATES_OF_MATTER_BASICS/model/Random' );
-  var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/StatesOfMatterConstants' );
+  var Random = require( 'STATES_OF_MATTER_BASICS/experimental/model/Random' );
+  var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/experimental/StatesOfMatterConstants' );
 
   /**
    * Constructor for the Isokinetic thermostat.

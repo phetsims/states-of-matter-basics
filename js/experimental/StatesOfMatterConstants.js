@@ -19,7 +19,7 @@ define( function( require ) {
   var SOLID_TEMPERATURE = 0.15;
 
   return {
-   // Maximum number of atoms that can be simulated.
+    // Maximum number of atoms that can be simulated.
     MAX_NUM_ATOMS: 500,
 
     // Dimensions of the container in which the particles will reside, in picometers.

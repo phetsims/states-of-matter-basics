@@ -15,20 +15,20 @@ define( function( require ) {
   var Rectangle = require( 'DOT/Rectangle' );
   var Vector2 = require( 'DOT/Vector2' );
   var Util = require( 'DOT/Util' );
-  var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/StatesOfMatterConstants' );
-  var NeonAtom = require( 'STATES_OF_MATTER_BASICS/model/particle/NeonAtom' );
-  var ArgonAtom = require( 'STATES_OF_MATTER_BASICS/model/particle/ArgonAtom' );
-  var OxygenAtom = require( 'STATES_OF_MATTER_BASICS/model/particle/OxygenAtom' );
-  var HydrogenAtom = require( 'STATES_OF_MATTER_BASICS/model/particle/HydrogenAtom' );
-  var AtomType = require( 'STATES_OF_MATTER_BASICS/model/AtomType' );
-  var InteractionStrengthTable = require( 'STATES_OF_MATTER_BASICS/model/InteractionStrengthTable' );
-  var MoleculeForceAndMotionDataSet = require( 'STATES_OF_MATTER_BASICS/model/MoleculeForceAndMotionDataSet' );
-  var AbstractPhaseStateChanger = require( 'STATES_OF_MATTER_BASICS/model/AbstractPhaseStateChanger' );
-  var MonatomicVerletAlgorithm = require( 'STATES_OF_MATTER_BASICS/model/MonatomicVerletAlgorithm' );
-  var MonatomicPhaseStateChanger = require( 'STATES_OF_MATTER_BASICS/model/MonatomicPhaseStateChanger' );
-  var MonatomicAtomPositionUpdater = require( 'STATES_OF_MATTER_BASICS/model/MonatomicAtomPositionUpdater' );
-  var IsokineticThermostat = require( 'STATES_OF_MATTER_BASICS/model/engine/kinetic/IsokineticThermostat' );
-  var AndersenThermostat = require( 'STATES_OF_MATTER_BASICS/model/engine/kinetic/AndersenThermostat' );
+  var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/experimental/StatesOfMatterConstants' );
+  var NeonAtom = require( 'STATES_OF_MATTER_BASICS/experimental/model/particle/NeonAtom' );
+  var ArgonAtom = require( 'STATES_OF_MATTER_BASICS/experimental/model/particle/ArgonAtom' );
+  var OxygenAtom = require( 'STATES_OF_MATTER_BASICS/experimental/model/particle/OxygenAtom' );
+  var HydrogenAtom = require( 'STATES_OF_MATTER_BASICS/experimental/model/particle/HydrogenAtom' );
+  var AtomType = require( 'STATES_OF_MATTER_BASICS/experimental/model/AtomType' );
+  var InteractionStrengthTable = require( 'STATES_OF_MATTER_BASICS/experimental/model/InteractionStrengthTable' );
+  var MoleculeForceAndMotionDataSet = require( 'STATES_OF_MATTER_BASICS/experimental/model/MoleculeForceAndMotionDataSet' );
+  var AbstractPhaseStateChanger = require( 'STATES_OF_MATTER_BASICS/experimental/model/AbstractPhaseStateChanger' );
+  var MonatomicVerletAlgorithm = require( 'STATES_OF_MATTER_BASICS/experimental/model/MonatomicVerletAlgorithm' );
+  var MonatomicPhaseStateChanger = require( 'STATES_OF_MATTER_BASICS/experimental/model/MonatomicPhaseStateChanger' );
+  var MonatomicAtomPositionUpdater = require( 'STATES_OF_MATTER_BASICS/experimental/model/MonatomicAtomPositionUpdater' );
+  var IsokineticThermostat = require( 'STATES_OF_MATTER_BASICS/experimental/model/engine/kinetic/IsokineticThermostat' );
+  var AndersenThermostat = require( 'STATES_OF_MATTER_BASICS/experimental/model/engine/kinetic/AndersenThermostat' );
 
   // Constants that control various aspects of the model behavior.
   var DEFAULT_MOLECULE = StatesOfMatterConstants.NEON;

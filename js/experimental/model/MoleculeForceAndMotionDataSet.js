@@ -13,7 +13,7 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var Vector2 = require( 'DOT/Vector2' );
-  var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/StatesOfMatterConstants' );
+  var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/experimental/StatesOfMatterConstants' );
 
   /**
    * This creates the data set with the capacity to hold the

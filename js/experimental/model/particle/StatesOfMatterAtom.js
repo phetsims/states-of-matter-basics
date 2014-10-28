@@ -36,37 +36,37 @@ define( function( require ) {
     },
 
     equals: function( other ) {
-        if ( this === other ) {
-            return true;
-        }
-        // if model is instance of subclass
-        // if ( other === null || !(other instanceof this ) {
-        //     return false;
-        // }
-
-        if ( this.mass !== other.mass ) {
-            return false;
-        }
-        if ( this.radius !== other.radius ) {
-            return false;
-        }
-        if ( !this.velocity.equals( other.velocity ) ) {
-            return false;
-        }
-        if ( !this.positionProperty.equals( other.positionProperty ) ) {
-            return false;
-        }
-        if ( !this.accel.equals( other.accel ) ) {
-            return false;
-        }
-
+      if ( this === other ) {
         return true;
+      }
+      // if model is instance of subclass
+      // if ( other === null || !(other instanceof this ) {
+      //     return false;
+      // }
+
+      if ( this.mass !== other.mass ) {
+        return false;
+      }
+      if ( this.radius !== other.radius ) {
+        return false;
+      }
+      if ( !this.velocity.equals( other.velocity ) ) {
+        return false;
+      }
+      if ( !this.positionProperty.equals( other.positionProperty ) ) {
+        return false;
+      }
+      if ( !this.accel.equals( other.accel ) ) {
+        return false;
+      }
+
+      return true;
     },
 
     clone: function() {},
 
     toString: function() {
-        // return getClass().getName() + "[x=" + getX() + ",y=" + getY() + ",radius=" + m_radius + ",mass=" + m_mass + ",vx=" + getVx() + ",vy=" + getVy() + ",ax=" + getAx() + ",ay=" + getAy() + "]";
+      // return getClass().getName() + "[x=" + getX() + ",y=" + getY() + ",radius=" + m_radius + ",mass=" + m_mass + ",vx=" + getVx() + ",vy=" + getVy() + ",ax=" + getAx() + ",ay=" + getAy() + "]";
     },
 
   } );

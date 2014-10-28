@@ -14,8 +14,8 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var Vector2 = require( 'DOT/Vector2' );
-  var AbstractVerletAlgorithm = require( 'STATES_OF_MATTER_BASICS/model/AbstractVerletAlgorithm' );
-  var MonatomicAtomPositionUpdater = require( 'STATES_OF_MATTER_BASICS/model/MonatomicAtomPositionUpdater' );
+  var AbstractVerletAlgorithm = require( 'STATES_OF_MATTER_BASICS/experimental/model/AbstractVerletAlgorithm' );
+  var MonatomicAtomPositionUpdater = require( 'STATES_OF_MATTER_BASICS/experimental/model/MonatomicAtomPositionUpdater' );
 
   /**
    * @param {MultipleParticleModel} model
@@ -53,9 +53,9 @@ define( function( require ) {
       // velocities and the forces acting on them.
       for ( i = 0; i < numberOfAtoms; i++ ) {
         var xPos = moleculeCenterOfMassPositions[i].x + ( this.TIME_STEP * moleculeVelocities[i].x ) +
-                                                        ( this.TIME_STEP_SQR_HALF * moleculeForces[i].x );
+                   ( this.TIME_STEP_SQR_HALF * moleculeForces[i].x );
         var yPos = moleculeCenterOfMassPositions[i].y + ( this.TIME_STEP * moleculeVelocities[i].y ) +
-                                                        ( this.TIME_STEP_SQR_HALF * moleculeForces[i].y );
+                   ( this.TIME_STEP_SQR_HALF * moleculeForces[i].y );
         moleculeCenterOfMassPositions[i].setXY( xPos, yPos );
       }
 
@@ -68,7 +68,7 @@ define( function( require ) {
 
         // Get the force values caused by the container walls.
         this.calculateWallForce( moleculeCenterOfMassPositions[i], this.model.normalizedContainerWidth,
-                                 this.model.normalizedContainerHeight, nextMoleculeForces[i] );
+          this.model.normalizedContainerHeight, nextMoleculeForces[i] );
 
         // Accumulate this force value as part of the pressure being
         // exerted on the walls of the container.

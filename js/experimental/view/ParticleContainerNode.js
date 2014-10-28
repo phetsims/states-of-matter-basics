@@ -15,8 +15,8 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/StatesOfMatterConstants' );
-  var ParticleNode = require( 'STATES_OF_MATTER_BASICS/view/ParticleNode' );
+  var StatesOfMatterConstants = require( 'STATES_OF_MATTER_BASICS/experimental/StatesOfMatterConstants' );
+  var ParticleNode = require( 'STATES_OF_MATTER_BASICS/experimental/view/ParticleNode' );
 
   //----------------------------------------------------------------------------
   // Private Methods
@@ -82,7 +82,7 @@ define( function( require ) {
     var rect = new Rectangle( 0, 0, StatesOfMatterConstants.VIEW_CONTAINER_WIDTH, StatesOfMatterConstants.VIEW_CONTAINER_HEIGHT,
       {
         lineWidth: 5,
-        stroke: 'white',
+        stroke: 'white'
       } );
     this.addChild( rect );
 

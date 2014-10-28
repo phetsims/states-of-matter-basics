@@ -11,8 +11,8 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var Screen = require( 'JOIST/Screen' );
-  var SolidLiquidGasScreenView = require( 'STATES_OF_MATTER_BASICS/solid-liquid-gas/view/SolidLiquidGasScreenView' );
-  var MultipleParticleModel = require( 'STATES_OF_MATTER_BASICS/model/MultipleParticleModel' );
+  var SolidLiquidGasScreenView = require( 'STATES_OF_MATTER_BASICS/experimental/solid-liquid-gas/view/SolidLiquidGasScreenView' );
+  var MultipleParticleModel = require( 'STATES_OF_MATTER_BASICS/experimental/model/MultipleParticleModel' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
 
   // strings
