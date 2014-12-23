@@ -26,7 +26,7 @@ require.config(
       string: '../../chipper/requirejs-plugins/string',
 
       // common directories, uppercase names to identify them in require imports
-        AXON: '../../axon/js',
+      AXON: '../../axon/js',
       BRAND: '../../brand/js',
       DOT: '../../dot/js',
       JOIST: '../../joist/js',
@@ -36,6 +36,9 @@ require.config(
       SCENERY: '../../scenery/js',
       SCENERY_PHET: '../../scenery-phet/js',
       SUN: '../../sun/js',
+      STATES_OF_MATTER: '../../states-of-matter/js',
+
+      ATOMIC_INTERACTIONS: '../../atomic-interactions/js',
 
       // this sim
       STATES_OF_MATTER_BASICS: '.'
