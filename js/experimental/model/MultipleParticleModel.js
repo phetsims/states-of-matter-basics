@@ -316,8 +316,8 @@ define( function( require ) {
      */
     setTargetParticleContainerHeight: function( desiredContainerHeight ) {
       desiredContainerHeight = Util.clamp( this.minAllowableContainerHeight,
-                                           desiredContainerHeight,
-                                           StatesOfMatterConstants.PARTICLE_CONTAINER_INITIAL_HEIGHT );
+        desiredContainerHeight,
+        StatesOfMatterConstants.PARTICLE_CONTAINER_INITIAL_HEIGHT );
       this.targetContainerHeight = desiredContainerHeight;
     },
 
@@ -450,7 +450,7 @@ define( function( require ) {
 
         var angle = Math.PI + ( ( Math.random() - 0.5 ) * MAX_INJECTED_MOLECULE_ANGLE );
         var velocity = MIN_INJECTED_MOLECULE_VELOCITY + ( Math.random() *
-                                                        ( MAX_INJECTED_MOLECULE_VELOCITY - MIN_INJECTED_MOLECULE_VELOCITY ) );
+                                                          ( MAX_INJECTED_MOLECULE_VELOCITY - MIN_INJECTED_MOLECULE_VELOCITY ) );
         var xVel = Math.cos( angle ) * velocity;
         var yVel = Math.sin( angle ) * velocity;
         var atomsPerMolecule = this.moleculeDataSet.atomsPerMolecule;
@@ -459,7 +459,7 @@ define( function( require ) {
         var moleculeRotationRate = ( Math.random() - 0.5 ) * ( Math.PI / 2 );
         var atomPositions = [];
         for ( var i = 0; i < atomsPerMolecule; i++ ) {
-          atomPositions[i] = new Vector2();
+          atomPositions[ i ] = new Vector2();
         }
 
         // Add the newly created molecule to the data set.
@@ -496,7 +496,7 @@ define( function( require ) {
           // Add particles to model set.
           for ( var j = 0; j < atomsPerMolecule; j++ ) {
             this.particles.add( new OxygenAtom( 0, 0 ) );
-            atomPositions[j] = new Vector2();
+            atomPositions[ j ] = new Vector2();
           }
         }
         else if ( atomsPerMolecule === 3 ) {
@@ -505,11 +505,11 @@ define( function( require ) {
 
           // Add atoms to model set.
           this.particles.add( new OxygenAtom( 0, 0 ) );
-          atomPositions[0] = new Vector2();
+          atomPositions[ 0 ] = new Vector2();
           this.particles.add( new HydrogenAtom( 0, 0 ) );
-          atomPositions[1] = new Vector2();
+          atomPositions[ 1 ] = new Vector2();
           this.particles.add( new HydrogenAtom( 0, 0 ) );
-          atomPositions[2] = new Vector2();
+          atomPositions[ 2 ] = new Vector2();
         }
 
         if ( this.particles.length === 1 ) {
@@ -807,7 +807,7 @@ define( function( require ) {
       var i = 0;
 
       this.particles.forEach( function( particle ) {
-        particle.setPosition( atomPositions[i].x * positionMultiplier, atomPositions[i].y * positionMultiplier );
+        particle.setPosition( atomPositions[ i ].x * positionMultiplier, atomPositions[ i ].y * positionMultiplier );
         i++;
       } );
       if ( this.moleculeDataSet.numberOfAtoms !== this.particles.length ) {
@@ -936,7 +936,7 @@ define( function( require ) {
       var particlesNearTop = false;
 
       for ( var i = 0; i < this.moleculeDataSet.getNumberOfMolecules(); i++ ) {
-        if ( moleculesPositions[i].y > threshold ) {
+        if ( moleculesPositions[ i ].y > threshold ) {
           particlesNearTop = true;
           break;
         }

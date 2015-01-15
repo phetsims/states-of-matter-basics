@@ -38,7 +38,7 @@ define( function( require ) {
   }
 
   SimLauncher.launch( function() {
-    var sim = new Sim( simTitle, [new SolidLiquidGasScreen(), new PhaseChangesScreen( false )], simOptions );
+    var sim = new Sim( simTitle, [ new SolidLiquidGasScreen(), new PhaseChangesScreen( false ) ], simOptions );
     sim.start();
   } );
 } );

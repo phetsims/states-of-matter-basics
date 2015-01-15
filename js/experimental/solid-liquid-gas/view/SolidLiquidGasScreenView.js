@@ -67,7 +67,7 @@ define( function( require ) {
       {
         listener: function() { model.reset(); },
         bottom: this.layoutBounds.bottom - 5,
-        right: this.layoutBounds.right + 5,
+        right:  this.layoutBounds.right + 5,
         radius: 18
       } );
 
