@@ -14,6 +14,10 @@ define( function( require ) {
   var PhaseChangesScreen = require( 'STATES_OF_MATTER/phase-changes/PhaseChangesScreen' );
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
+  var GlobalOptionsNode = require( 'ATOMIC_INTERACTIONS/view/GlobalOptionsNode' );
+  var Property = require( 'AXON/Property' );
+
+  var colorsProperty = new Property( false );
 
   // strings
   var simTitle = require( 'string!STATES_OF_MATTER_BASICS/states-of-matter-basics.name' );
@@ -27,7 +31,7 @@ define( function( require ) {
       // qualityAssurance: '',
       // graphicArts: '',
       // thanks: ''
-    }
+    }, optionsNode: new GlobalOptionsNode( colorsProperty )
   };
 
   // Appending '?dev' to the URL will enable developer-only features.
@@ -38,7 +42,8 @@ define( function( require ) {
   }
 
   SimLauncher.launch( function() {
-    var sim = new Sim( simTitle, [ new SolidLiquidGasScreen(), new PhaseChangesScreen( false ) ], simOptions );
+    var sim = new Sim( simTitle, [ new SolidLiquidGasScreen( colorsProperty ),
+      new PhaseChangesScreen( false, colorsProperty ) ], simOptions );
     sim.start();
   } );
 } );
