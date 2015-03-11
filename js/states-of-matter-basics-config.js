@@ -37,8 +37,6 @@ require.config( {
     SUN: '../../sun/js',
     STATES_OF_MATTER: '../../states-of-matter/js',
 
-    ATOMIC_INTERACTIONS: '../../atomic-interactions/js',
-
     // this sim
     STATES_OF_MATTER_BASICS: '.'
   },

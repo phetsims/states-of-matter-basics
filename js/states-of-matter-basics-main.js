@@ -14,7 +14,7 @@ define( function( require ) {
   var PhaseChangesScreen = require( 'STATES_OF_MATTER/phase-changes/PhaseChangesScreen' );
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
-  var GlobalOptionsNode = require( 'ATOMIC_INTERACTIONS/atomic-interactions/view/GlobalOptionsNode' );
+  var GlobalOptionsNode = require( 'STATES_OF_MATTER/atomic-interactions/view/GlobalOptionsNode' );
   var Property = require( 'AXON/Property' );
 
   var colorsProperty = new Property( false );
