@@ -17,10 +17,11 @@ define( function( require ) {
   var GlobalOptionsNode = require( 'STATES_OF_MATTER/common/view/GlobalOptionsNode' );
   var Property = require( 'AXON/Property' );
 
-  var colorsProperty = new Property( false );
-
   // strings
   var simTitle = require( 'string!STATES_OF_MATTER_BASICS/states-of-matter-basics.name' );
+
+  // property used for switching color options
+  var colorsProperty = new Property( false );
 
   var simOptions = {
     credits: {
