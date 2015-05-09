@@ -42,7 +42,7 @@ define( function( require ) {
 
   SimLauncher.launch( function() {
     var sim = new Sim( simTitle, [ new SolidLiquidGasScreen( colorsProperty ),
-      new PhaseChangesScreen( false, colorsProperty ) ], simOptions );
+      new PhaseChangesScreen( colorsProperty, false ) ], simOptions );
     sim.start();
   } );
 } );
