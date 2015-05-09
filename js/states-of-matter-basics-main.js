@@ -21,7 +21,7 @@ define( function( require ) {
   var simTitle = require( 'string!STATES_OF_MATTER_BASICS/states-of-matter-basics.name' );
 
   // property used for switching color options
-  var colorsProperty = new Property( false );
+  var projectorModeProperty = new Property( false );
 
   var simOptions = {
     credits: {
@@ -30,7 +30,7 @@ define( function( require ) {
       team: 'Wendy Adams, Jack Barbera, Kelly Lancaster, Kathy Perkins',
       qualityAssurance: 'Steele Dalton',
       thanks: 'Thanks to Actual Concepts for working with the PhET development team\nto convert this simulation to HTML5.'
-    }, optionsNode: new GlobalOptionsNode( colorsProperty )
+    }, optionsNode: new GlobalOptionsNode( projectorModeProperty )
   };
 
   // Appending '?dev' to the URL will enable developer-only features.
@@ -41,8 +41,8 @@ define( function( require ) {
   }
 
   SimLauncher.launch( function() {
-    var sim = new Sim( simTitle, [ new SolidLiquidGasScreen( colorsProperty ),
-      new PhaseChangesScreen( colorsProperty, false ) ], simOptions );
+    var sim = new Sim( simTitle, [ new SolidLiquidGasScreen( projectorModeProperty ),
+      new PhaseChangesScreen( projectorModeProperty, false ) ], simOptions );
     sim.start();
   } );
 } );
