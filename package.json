@@ -3,7 +3,7 @@
   "version": "1.0.0-dev.2",
   "license": "GPLv3",
   "requirejsNamespace": "STATES_OF_MATTER_BASICS",
-  "simTitleStringKey": "STATES_OF_MATTER/states-of-matter.name",
+  "simTitleStringKey": "STATES_OF_MATTER_BASICS/states-of-matter-basics.name",
   "phetLibs": [
     "states-of-matter-basics",
     "states-of-matter"
