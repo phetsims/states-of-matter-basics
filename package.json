@@ -2,12 +2,6 @@
   "name": "states-of-matter-basics",
   "version": "1.0.0-dev.2",
   "license": "GPLv3",
-  "requirejsNamespace": "STATES_OF_MATTER_BASICS",
-  "simTitleStringKey": "STATES_OF_MATTER_BASICS/states-of-matter-basics.name",
-  "phetLibs": [
-    "states-of-matter-basics",
-    "states-of-matter"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/phetsims/states-of-matter-basics.git"
@@ -18,5 +12,13 @@
     "grunt-contrib-jshint": "~0.6.4",
     "uglify-js": "~2.4.0",
     "requirejs": "~2.1.8"
+  },
+  "phet": {
+    "requirejsNamespace": "STATES_OF_MATTER_BASICS",
+    "simTitleStringKey": "STATES_OF_MATTER_BASICS/states-of-matter-basics.name",
+    "phetLibs": [
+      "states-of-matter-basics",
+      "states-of-matter"
+    ]
   }
 }
