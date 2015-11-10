@@ -18,7 +18,7 @@ define( function( require ) {
   var Property = require( 'AXON/Property' );
 
   // strings
-  var simTitle = require( 'string!STATES_OF_MATTER_BASICS/states-of-matter-basics.title' );
+  var statesOfMatterBasicsTitleString = require( 'string!STATES_OF_MATTER_BASICS/states-of-matter-basics.title' );
 
   // property used for switching color options
   var projectorModeProperty = new Property( false );
@@ -41,7 +41,7 @@ define( function( require ) {
   }
 
   SimLauncher.launch( function() {
-    var sim = new Sim( simTitle, [ new StatesScreen( projectorModeProperty ),
+    var sim = new Sim( statesOfMatterBasicsTitleString, [ new StatesScreen( projectorModeProperty ),
       new PhaseChangesScreen( projectorModeProperty, false ) ], simOptions );
     sim.start();
   } );
