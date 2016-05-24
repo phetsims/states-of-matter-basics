@@ -41,8 +41,8 @@ define( function( require ) {
   }
 
   SimLauncher.launch( function() {
-    var sim = new Sim( statesOfMatterBasicsTitleString, [ new StatesScreen( projectorModeProperty ),
-      new PhaseChangesScreen( projectorModeProperty, false ) ], simOptions );
+    var sim = new Sim( statesOfMatterBasicsTitleString, [ new StatesScreen( ),
+      new PhaseChangesScreen( false ) ], simOptions );
     sim.start();
   } );
 } );
