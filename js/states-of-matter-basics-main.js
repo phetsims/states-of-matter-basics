@@ -10,18 +10,19 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var StatesScreen = require( 'STATES_OF_MATTER/states/StatesScreen' );
+  var GlobalOptionsNode = require( 'STATES_OF_MATTER/common/view/GlobalOptionsNode' );
   var PhaseChangesScreen = require( 'STATES_OF_MATTER/phase-changes/PhaseChangesScreen' );
+  var Property = require( 'AXON/Property' );
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
-  var GlobalOptionsNode = require( 'STATES_OF_MATTER/common/view/GlobalOptionsNode' );
-  var Property = require( 'AXON/Property' );
+  var StatesOfMatterBasicsQueryParameters = require( 'STATES_OF_MATTER_BASICS/StatesOfMatterBasicsQueryParameters' );
+  var StatesScreen = require( 'STATES_OF_MATTER/states/StatesScreen' );
 
   // strings
   var statesOfMatterBasicsTitleString = require( 'string!STATES_OF_MATTER_BASICS/states-of-matter-basics.title' );
 
-  // property used for switching color options
-  var projectorModeProperty = new Property( false );
+  // property that controls projector mode, initial value can be set via a query parameter
+  var projectorModeProperty = new Property( StatesOfMatterBasicsQueryParameters.PROJECTOR_MODE );
 
   var simOptions = {
     credits: {
