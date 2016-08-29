@@ -9,7 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var statesOfMatter = require( 'STATES_OF_MATTER_BASICS/statesOfMatterBasics' );
+  var statesOfMatterBasics = require( 'STATES_OF_MATTER_BASICS/statesOfMatterBasics' );
 
   var getQueryParameter = phet.chipper.getQueryParameter;
 
@@ -19,7 +19,7 @@ define( function( require ) {
     PROJECTOR_MODE: !!getQueryParameter( 'projectorMode' )
   };
 
-  statesOfMatter.register( 'StatesOfMatterBasicsQueryParameters', StatesOfMatterBasicsQueryParameters );
+  statesOfMatterBasics.register( 'StatesOfMatterBasicsQueryParameters', StatesOfMatterBasicsQueryParameters );
 
   return StatesOfMatterBasicsQueryParameters;
 } );
