@@ -35,13 +35,6 @@ define( function( require ) {
     optionsNode: new GlobalOptionsNode( projectorModeProperty )
   };
 
-  // Appending '?dev' to the URL will enable developer-only features.
-  if ( phet.chipper.getQueryParameter( 'dev' ) ) {
-    simOptions = _.extend( {
-      // add dev-specific options here
-    }, simOptions );
-  }
-
   SimLauncher.launch( function() {
     var sim = new Sim( statesOfMatterBasicsTitleString, [ new StatesScreen( ),
       new PhaseChangesScreen( false ) ], simOptions );
