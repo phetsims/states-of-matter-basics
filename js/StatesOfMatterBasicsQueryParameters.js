@@ -11,13 +11,11 @@ define( function( require ) {
   // modules
   var statesOfMatterBasics = require( 'STATES_OF_MATTER_BASICS/statesOfMatterBasics' );
 
-  var getQueryParameter = phet.chipper.getQueryParameter;
-
-  var StatesOfMatterBasicsQueryParameters = {
+  var StatesOfMatterBasicsQueryParameters = QueryStringMachine.getAll( {
 
     // fill the shape placement boards on the 'Explore' screen during startup, useful for testing
-    PROJECTOR_MODE: !!getQueryParameter( 'projectorMode' )
-  };
+    projectorMode: { type: 'flag' }
+  } );
 
   statesOfMatterBasics.register( 'StatesOfMatterBasicsQueryParameters', StatesOfMatterBasicsQueryParameters );
 

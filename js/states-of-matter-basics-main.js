@@ -22,7 +22,7 @@ define( function( require ) {
   var statesOfMatterBasicsTitleString = require( 'string!STATES_OF_MATTER_BASICS/states-of-matter-basics.title' );
 
   // property that controls projector mode, initial value can be set via a query parameter
-  var projectorModeProperty = new Property( StatesOfMatterBasicsQueryParameters.PROJECTOR_MODE );
+  var projectorModeProperty = new Property( StatesOfMatterBasicsQueryParameters.projectorMode );
 
   var simOptions = {
     credits: {
