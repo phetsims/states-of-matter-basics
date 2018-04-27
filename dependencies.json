@@ -1,5 +1,5 @@
 {
-  "comment": "# states-of-matter-basics 1.0.3-rc.1 Mon Apr 23 2018 17:38:05 GMT-0600 (MDT)",
+  "comment": "# states-of-matter-basics 1.0.3 Fri Apr 27 2018 15:36:00 GMT-0600 (MDT)",
   "assert": {
     "sha": "1ea1df653504bc6eeb454051cedc7fb970a10cac",
     "branch": "HEAD"
@@ -61,7 +61,7 @@
     "branch": "HEAD"
   },
   "states-of-matter-basics": {
-    "sha": "edad0b5d39af12182899a02cad634b7dba701dc3",
+    "sha": "4b43f29bc832c6c83ff6e9ff4b44ecd74baf42a8",
     "branch": "1.0"
   },
   "sun": {
