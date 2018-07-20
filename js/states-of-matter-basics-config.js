@@ -41,6 +41,7 @@ require.config( {
     STATES_OF_MATTER: '../../states-of-matter/js',
     STATES_OF_MATTER_BASICS: '.',
     SUN: '../../sun/js',
+    TAMBO: '../../tambo/js',
     TANDEM: '../../tandem/js'
   },
 
