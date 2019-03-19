@@ -1,5 +1,5 @@
 {
-  "comment": "# states-of-matter-basics 1.0.7 Tue Mar 19 2019 15:05:22 GMT-0400 (EDT)",
+  "comment": "# states-of-matter-basics 1.0.7 Tue Mar 19 2019 17:20:28 GMT-0400 (EDT)",
   "assert": {
     "sha": "1ea1df653504bc6eeb454051cedc7fb970a10cac",
     "branch": "HEAD"
@@ -10,11 +10,11 @@
   },
   "brand": {
     "sha": "c767d63e3cdb862400107ca3d270f0d6720a04f4",
-    "branch": "states-of-matter-basics-1.0"
+    "branch": "HEAD"
   },
   "chipper": {
-    "sha": "bdc29ae048e42d8937f1f1012973f0beb8880f70",
-    "branch": "HEAD"
+    "sha": "3b244f6a56230db46c3b91e6fb7639702ab6345e",
+    "branch": "states-of-matter-basics-1.0"
   },
   "dot": {
     "sha": "a014950f7aa5a27f4e053138dac562e6fa3b3e22",
@@ -22,7 +22,7 @@
   },
   "joist": {
     "sha": "44c4caf956fcfa2379f645522a632ffa225ec2c7",
-    "branch": "states-of-matter-basics-1.0"
+    "branch": "HEAD"
   },
   "kite": {
     "sha": "e5affc4c2cdfa007e7d93ce977f3249d7b449270",
@@ -38,6 +38,10 @@
   },
   "phetcommon": {
     "sha": "af942d1ac63fd3515f5f27829b6b31dd69e23500",
+    "branch": "HEAD"
+  },
+  "phetmarks": {
+    "sha": "6e379ededa81fa42826a1ed68aeb044a23a1f30c",
     "branch": "HEAD"
   },
   "query-string-machine": {
@@ -61,7 +65,7 @@
     "branch": "HEAD"
   },
   "states-of-matter-basics": {
-    "sha": "419269811fcc73128ddb83121b6f594a107a8a7b",
+    "sha": "ad5a4bd30c6150ca50e3b57e67d75c4912a243f3",
     "branch": "1.0"
   },
   "sun": {
@@ -71,9 +75,5 @@
   "tandem": {
     "sha": "b83eb2e2513aa384a38cf206cb6b4f42ce53520f",
     "branch": "HEAD"
-  },
-  "phetmarks": {
-    "branch": "master",
-    "sha": "6e379ededa81fa42826a1ed68aeb044a23a1f30c"
   }
 }
