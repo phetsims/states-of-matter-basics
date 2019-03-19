@@ -1,5 +1,5 @@
 {
-  "comment": "# states-of-matter-basics 1.0.7 Tue Nov 06 2018 14:41:34 GMT-0700 (MST)",
+  "comment": "# states-of-matter-basics 1.0.7 Tue Mar 19 2019 15:05:22 GMT-0400 (EDT)",
   "assert": {
     "sha": "1ea1df653504bc6eeb454051cedc7fb970a10cac",
     "branch": "HEAD"
@@ -9,8 +9,8 @@
     "branch": "HEAD"
   },
   "brand": {
-    "sha": "2c7dc287c75f020db24637a240b597c078a29711",
-    "branch": "HEAD"
+    "sha": "c767d63e3cdb862400107ca3d270f0d6720a04f4",
+    "branch": "states-of-matter-basics-1.0"
   },
   "chipper": {
     "sha": "bdc29ae048e42d8937f1f1012973f0beb8880f70",
@@ -21,8 +21,8 @@
     "branch": "HEAD"
   },
   "joist": {
-    "sha": "f7968e3d2dc1cf0b2d48ee70b9dd084ea09fac07",
-    "branch": "HEAD"
+    "sha": "44c4caf956fcfa2379f645522a632ffa225ec2c7",
+    "branch": "states-of-matter-basics-1.0"
   },
   "kite": {
     "sha": "e5affc4c2cdfa007e7d93ce977f3249d7b449270",
@@ -61,7 +61,7 @@
     "branch": "HEAD"
   },
   "states-of-matter-basics": {
-    "sha": "313048b3f5593dffa7db587b147139c29adf5335",
+    "sha": "419269811fcc73128ddb83121b6f594a107a8a7b",
     "branch": "1.0"
   },
   "sun": {
@@ -71,9 +71,5 @@
   "tandem": {
     "sha": "b83eb2e2513aa384a38cf206cb6b4f42ce53520f",
     "branch": "HEAD"
-  },
-  "phetmarks": {
-    "branch": "master",
-    "sha": "6e379ededa81fa42826a1ed68aeb044a23a1f30c"
   }
 }
