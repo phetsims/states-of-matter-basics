@@ -1,5 +1,5 @@
 {
-  "comment": "# states-of-matter-basics 1.1.0-rc.2 Tue Mar 19 2019 14:00:17 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# states-of-matter-basics 1.1.0-rc.2 Fri Mar 29 2019 14:21:56 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "928741cfc8fe804334d5b35292140314511f8678",
     "branch": "HEAD"
@@ -9,12 +9,12 @@
     "branch": "HEAD"
   },
   "brand": {
-    "sha": "a17e1a749b114327274939a3a6865e3901cef4e8",
-    "branch": "HEAD"
+    "sha": "2654c1c23a947be8397d89010f612e098bd1bce5",
+    "branch": "states-of-matter-basics-1.1"
   },
   "chipper": {
     "sha": "b3f57168f3595f32e3cf35e7c5512d42ee0fe85f",
-    "branch": "states-of-matter-basics-1.1"
+    "branch": "HEAD"
   },
   "dot": {
     "sha": "820111c8c6bdfa729446dd40fa5493511cdb5c05",
@@ -85,7 +85,7 @@
     "branch": "HEAD"
   },
   "states-of-matter-basics": {
-    "sha": "3b33502c4fd81c9ba3d80df6008e3a38c198dc89",
+    "sha": "6fb94f559108c7f9c8733ff399a6ef088a002b71",
     "branch": "1.1"
   },
   "sun": {
