@@ -19,7 +19,7 @@ define( require => {
   // strings
   const statesOfMatterBasicsTitleString = require( 'string!STATES_OF_MATTER_BASICS/states-of-matter-basics.title' );
 
-  var simOptions = {
+  const simOptions = {
     credits: {
       leadDesign: 'Paul Beale, Yuen-ying Carpenter, Sarah McKagan, Emily B. Moore, Noah Podolefsky,<br>Amy Rouinfar',
       softwareDevelopment: 'John Blanco, Aaron Davis, Aadish Gupta',
@@ -34,7 +34,7 @@ define( require => {
   };
 
   SimLauncher.launch( function() {
-    var sim = new Sim( statesOfMatterBasicsTitleString, [ new StatesScreen( ),
+    const sim = new Sim( statesOfMatterBasicsTitleString, [ new StatesScreen( ),
       new PhaseChangesScreen( false ) ], simOptions );
     sim.start();
   } );
