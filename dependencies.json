@@ -1,5 +1,5 @@
 {
-  "comment": "# states-of-matter-basics 1.1.7 Tue Oct 15 2019 16:12:09 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# states-of-matter-basics 1.1.8-rc.1 Tue Oct 15 2019 19:37:09 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "928741cfc8fe804334d5b35292140314511f8678",
     "branch": "HEAD"
@@ -34,7 +34,7 @@
   },
   "phet-core": {
     "sha": "66b1216ba44e48a9d59d2a5a9b4f2339c9daef89",
-    "branch": "states-of-matter-basics-1.1"
+    "branch": "HEAD"
   },
   "phet-io": {
     "sha": "364077cf054107e19df5006edf17e7f30dc8b69c",
@@ -73,7 +73,7 @@
     "branch": "HEAD"
   },
   "states-of-matter-basics": {
-    "sha": "53f7ed653474a1d77a0e95fc5bbe2642f38da646",
+    "sha": "7c29b533b0568a554aeeca40af322f8d63217f33",
     "branch": "1.1"
   },
   "sun": {
