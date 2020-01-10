@@ -15,6 +15,7 @@ define( require => {
   const Sim = require( 'JOIST/Sim' );
   const SimLauncher = require( 'JOIST/SimLauncher' );
   const StatesScreen = require( 'STATES_OF_MATTER/states/StatesScreen' );
+  const Tandem = require( 'TANDEM/Tandem' );
 
   // strings
   const statesOfMatterBasicsTitleString = require( 'string!STATES_OF_MATTER_BASICS/states-of-matter-basics.title' );
@@ -34,8 +35,10 @@ define( require => {
   };
 
   SimLauncher.launch( function() {
-    const sim = new Sim( statesOfMatterBasicsTitleString, [ new StatesScreen( ),
-      new PhaseChangesScreen( false ) ], simOptions );
+    const sim = new Sim( statesOfMatterBasicsTitleString, [
+      new StatesScreen( Tandem.ROOT.createTandem( 'statesScreen' ) ),
+      new PhaseChangesScreen( false, Tandem.ROOT.createTandem( 'phaseChangesScreen' ) )
+    ], simOptions );
     sim.start();
   } );
 } );
