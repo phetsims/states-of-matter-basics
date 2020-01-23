@@ -92,6 +92,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.general.barrierRectangle.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.general.barrierRectangle.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -391,6 +404,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.general.navigationBar.homeButton.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.general.navigationBar.homeButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -508,6 +534,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.general.navigationBar.phaseChangesScreenButton.icon.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.general.navigationBar.phaseChangesScreenButton.icon.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -546,6 +585,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.general.navigationBar.phaseChangesScreenButton.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.general.navigationBar.phaseChangesScreenButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -611,6 +663,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.general.navigationBar.phaseChangesScreenButton.text.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.general.navigationBar.phaseChangesScreenButton.text.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -794,6 +859,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule.archetype.closeButton.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule.archetype.closeButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -872,6 +950,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule.archetype.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule.archetype.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -910,6 +1001,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule.archetype.termsPrivacyAndLicensingText.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule.archetype.termsPrivacyAndLicensingText.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -976,6 +1080,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule.archetype.thirdPartyCreditsLinkText.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule.archetype.thirdPartyCreditsLinkText.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -1040,6 +1157,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule.archetype.translationCreditsLinkText.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule.archetype.translationCreditsLinkText.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -1158,6 +1288,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.general.navigationBar.phetButton.phetMenu.aboutMenuItem.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.general.navigationBar.phetButton.phetMenu.aboutMenuItem.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -1262,6 +1405,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.general.navigationBar.phetButton.phetMenu.optionsDialogCapsule.archetype.closeButton.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.general.navigationBar.phetButton.phetMenu.optionsDialogCapsule.archetype.closeButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -1340,6 +1496,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.general.navigationBar.phetButton.phetMenu.optionsDialogCapsule.archetype.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.general.navigationBar.phetButton.phetMenu.optionsDialogCapsule.archetype.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -1378,6 +1547,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.general.navigationBar.phetButton.phetMenu.optionsDialogCapsule.archetype.title.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.general.navigationBar.phetButton.phetMenu.optionsDialogCapsule.archetype.title.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -1496,6 +1678,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.general.navigationBar.phetButton.phetMenu.optionsMenuItem.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.general.navigationBar.phetButton.phetMenu.optionsMenuItem.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -1586,6 +1781,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.general.navigationBar.phetButton.phetMenu.screenshotMenuItem.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.general.navigationBar.phetButton.phetMenu.screenshotMenuItem.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -1717,6 +1925,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.general.navigationBar.statesScreenButton.icon.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.general.navigationBar.statesScreenButton.icon.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -1755,6 +1976,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.general.navigationBar.statesScreenButton.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.general.navigationBar.statesScreenButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -1820,6 +2054,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.general.navigationBar.statesScreenButton.text.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.general.navigationBar.statesScreenButton.text.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -1899,6 +2146,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.general.navigationBar.titleTextNode.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.general.navigationBar.titleTextNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -1976,6 +2236,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.general.screenIndexProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.general.showHomeScreenProperty": {
       "phetioDocumentation": "Whether or not home screen is displayed. This is independent of the \"current sim screen\" stored in the \"screenIndexProperty.\"",
@@ -2067,6 +2340,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.globalOptionsNode.projectorModeCheckbox.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.globalOptionsNode.projectorModeCheckbox.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -2172,6 +2458,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.homeScreen.view.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.homeScreen.view.phaseChangesScreenLargeButton": {
       "phetioDocumentation": "A pressable button in the simulation, in the home screen",
       "phetioDynamicElement": false,
@@ -2237,6 +2536,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.homeScreen.view.phaseChangesScreenLargeButton.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.homeScreen.view.phaseChangesScreenLargeButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -2275,6 +2587,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.homeScreen.view.phaseChangesScreenLargeButton.text.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.homeScreen.view.phaseChangesScreenLargeButton.text.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -2393,6 +2718,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.homeScreen.view.phaseChangesScreenSmallButton.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.homeScreen.view.phaseChangesScreenSmallButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -2431,6 +2769,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.homeScreen.view.phaseChangesScreenSmallButton.text.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.homeScreen.view.phaseChangesScreenSmallButton.text.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -2562,6 +2913,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.homeScreen.view.statesScreenLargeButton.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.homeScreen.view.statesScreenLargeButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -2600,6 +2964,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.homeScreen.view.statesScreenLargeButton.text.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.homeScreen.view.statesScreenLargeButton.text.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -2718,6 +3095,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.homeScreen.view.statesScreenSmallButton.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.homeScreen.view.statesScreenSmallButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -2756,6 +3146,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.homeScreen.view.statesScreenSmallButton.text.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.homeScreen.view.statesScreenSmallButton.text.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -2835,6 +3238,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.homeScreen.view.title.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.homeScreen.view.title.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -2913,6 +3329,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.phaseChangesScreen.model.heatingCoolingAmountProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.phaseChangesScreen.model.interactionPotentialDiagramExpandedProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -2938,6 +3367,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.phaseChangesScreen.model.interactionStrengthProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.phaseChangesScreen.model.isExplodedProperty": {
       "phetioDocumentation": "",
@@ -2978,6 +3420,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.phaseChangesScreen.model.numberOfMoleculesProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.phaseChangesScreen.model.particleContainerHeightProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -2990,6 +3445,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.phaseChangesScreen.model.particleContainerHeightProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.phaseChangesScreen.model.phaseDiagramExpandedProperty": {
       "phetioDocumentation": "",
@@ -3017,6 +3485,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.phaseChangesScreen.model.pressureProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.phaseChangesScreen.model.substanceProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -3043,6 +3524,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.phaseChangesScreen.model.targetContainerHeightProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.phaseChangesScreen.model.temperatureSetPointProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -3055,6 +3549,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.phaseChangesScreen.model.temperatureSetPointProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.phaseChangesScreen.view.compositeThermometerNode": {
       "phetioDocumentation": "",
@@ -3081,6 +3588,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.phaseChangesScreen.view.compositeThermometerNode.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.phaseChangesScreen.view.compositeThermometerNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -3120,6 +3640,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.phaseChangesScreen.view.compositeThermometerNode.temperatureCelsiusText.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.phaseChangesScreen.view.compositeThermometerNode.temperatureCelsiusText.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -3224,6 +3757,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.phaseChangesScreen.view.compositeThermometerNode.temperatureComboBox.button.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.phaseChangesScreen.view.compositeThermometerNode.temperatureComboBox.button.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -3342,6 +3888,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.phaseChangesScreen.view.compositeThermometerNode.temperatureComboBox.listBox.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.phaseChangesScreen.view.compositeThermometerNode.temperatureComboBox.listBox.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -3380,6 +3939,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.phaseChangesScreen.view.compositeThermometerNode.temperatureComboBox.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.phaseChangesScreen.view.compositeThermometerNode.temperatureComboBox.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -3433,6 +4005,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.phaseChangesScreen.view.compositeThermometerNode.temperatureInKelvinProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.phaseChangesScreen.view.compositeThermometerNode.temperatureKelvinText": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -3458,6 +4043,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.phaseChangesScreen.view.compositeThermometerNode.temperatureKelvinText.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.phaseChangesScreen.view.compositeThermometerNode.temperatureKelvinText.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -3537,6 +4135,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.phaseChangesScreen.view.compositeThermometerNode.thermometerNode.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.phaseChangesScreen.view.compositeThermometerNode.thermometerNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -3601,6 +4212,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.phaseChangesScreen.view.heaterCoolerNode.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.phaseChangesScreen.view.heaterCoolerNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -3667,6 +4291,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.phaseChangesScreen.view.heaterCoolerNode.slider.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.phaseChangesScreen.view.heaterCoolerNode.slider.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -3705,6 +4342,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.phaseChangesScreen.view.heaterCoolerNode.slider.thumb.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.phaseChangesScreen.view.heaterCoolerNode.slider.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -3953,6 +4603,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.phaseChangesScreen.view.phaseChangesMoleculesControlPanel.interactionStrengthSlider.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.phaseChangesScreen.view.phaseChangesMoleculesControlPanel.interactionStrengthSlider.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -3991,6 +4654,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.phaseChangesScreen.view.phaseChangesMoleculesControlPanel.interactionStrengthSlider.thumb.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.phaseChangesScreen.view.phaseChangesMoleculesControlPanel.interactionStrengthSlider.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -4187,6 +4863,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.phaseChangesScreen.view.phaseChangesMoleculesControlPanel.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.phaseChangesScreen.view.phaseChangesMoleculesControlPanel.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -4264,6 +4953,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.phaseChangesScreen.view.phaseChangesMoleculesControlPanel.radioButtonGroup.argonSelector.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.phaseChangesScreen.view.phaseChangesMoleculesControlPanel.radioButtonGroup.argonSelector.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -4369,6 +5071,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.phaseChangesScreen.view.phaseChangesMoleculesControlPanel.radioButtonGroup.neonSelector.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.phaseChangesScreen.view.phaseChangesMoleculesControlPanel.radioButtonGroup.neonSelector.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -4434,6 +5149,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.phaseChangesScreen.view.phaseChangesMoleculesControlPanel.radioButtonGroup.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.phaseChangesScreen.view.phaseChangesMoleculesControlPanel.radioButtonGroup.oxygenSelector": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -4485,6 +5213,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.phaseChangesScreen.view.phaseChangesMoleculesControlPanel.radioButtonGroup.oxygenSelector.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.phaseChangesScreen.view.phaseChangesMoleculesControlPanel.radioButtonGroup.oxygenSelector.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -4629,6 +5370,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.phaseChangesScreen.view.phaseChangesMoleculesControlPanel.radioButtonGroup.waterSelector.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.phaseChangesScreen.view.phaseChangesMoleculesControlPanel.radioButtonGroup.waterSelector.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -4706,6 +5460,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.phaseChangesScreen.view.phaseChangesMoleculesControlPanel.title.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.phaseChangesScreen.view.phaseChangesMoleculesControlPanel.title.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -4824,6 +5591,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.phaseChangesScreen.view.phaseDiagram.accordionBox.expandCollapseButton.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.phaseChangesScreen.view.phaseDiagram.accordionBox.expandCollapseButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -4915,6 +5695,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.phaseChangesScreen.view.phaseDiagram.accordionBox.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.phaseChangesScreen.view.phaseDiagram.accordionBox.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -4953,6 +5746,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.phaseChangesScreen.view.phaseDiagram.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.phaseChangesScreen.view.phaseDiagram.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -5019,6 +5825,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.phaseChangesScreen.view.playPauseControl.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.phaseChangesScreen.view.playPauseControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -5070,6 +5889,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.phaseChangesScreen.view.playPauseControl.playPauseButton.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.phaseChangesScreen.view.playPauseControl.playPauseButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -5148,6 +5980,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.phaseChangesScreen.view.playPauseControl.playPauseButton.toggleNode.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.phaseChangesScreen.view.playPauseControl.playPauseButton.toggleNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -5252,6 +6097,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.phaseChangesScreen.view.playPauseControl.stepForwardButton.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.phaseChangesScreen.view.playPauseControl.stepForwardButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -5409,6 +6267,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.phaseChangesScreen.view.pointingHandNode.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.phaseChangesScreen.view.pointingHandNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -5487,6 +6358,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.phaseChangesScreen.view.pressureMeter.gaugeNode.foregroundNode.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.phaseChangesScreen.view.pressureMeter.gaugeNode.foregroundNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -5538,6 +6422,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.phaseChangesScreen.view.pressureMeter.gaugeNode.labelNode.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.phaseChangesScreen.view.pressureMeter.gaugeNode.labelNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -5591,6 +6488,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.phaseChangesScreen.view.pressureMeter.gaugeNode.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.phaseChangesScreen.view.pressureMeter.gaugeNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -5629,6 +6539,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.phaseChangesScreen.view.pressureMeter.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.phaseChangesScreen.view.pressureMeter.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -5721,6 +6644,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.phaseChangesScreen.view.pumpNode.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.phaseChangesScreen.view.pumpNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -5811,6 +6747,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.phaseChangesScreen.view.resetAllButton.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.phaseChangesScreen.view.resetAllButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -5916,6 +6865,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.phaseChangesScreen.view.returnLidButton.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.phaseChangesScreen.view.returnLidButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -5980,6 +6942,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.phaseChangesScreen.view.returnLidButton.textNode.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.phaseChangesScreen.view.returnLidButton.textNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -6059,6 +7034,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.statesScreen.model.heatingCoolingAmountProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.statesScreen.model.interactionPotentialDiagramExpandedProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -6084,6 +7072,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.statesScreen.model.interactionStrengthProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.statesScreen.model.isExplodedProperty": {
       "phetioDocumentation": "",
@@ -6124,6 +7125,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.statesScreen.model.numberOfMoleculesProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.statesScreen.model.particleContainerHeightProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -6136,6 +7150,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.statesScreen.model.particleContainerHeightProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.statesScreen.model.phaseDiagramExpandedProperty": {
       "phetioDocumentation": "",
@@ -6163,6 +7190,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.statesScreen.model.pressureProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.statesScreen.model.substanceProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -6189,6 +7229,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.statesScreen.model.targetContainerHeightProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.statesScreen.model.temperatureSetPointProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -6201,6 +7254,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.statesScreen.model.temperatureSetPointProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.statesScreen.view.atomsAndMoleculesSelectionPanel": {
       "phetioDocumentation": "",
@@ -6240,6 +7306,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.statesScreen.view.atomsAndMoleculesSelectionPanel.argonText.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.statesScreen.view.atomsAndMoleculesSelectionPanel.argonText.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -6306,6 +7385,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.statesScreen.view.atomsAndMoleculesSelectionPanel.neonText.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.statesScreen.view.atomsAndMoleculesSelectionPanel.neonText.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -6358,6 +7450,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.statesScreen.view.atomsAndMoleculesSelectionPanel.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.statesScreen.view.atomsAndMoleculesSelectionPanel.oxygenText": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -6383,6 +7488,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.statesScreen.view.atomsAndMoleculesSelectionPanel.oxygenText.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.statesScreen.view.atomsAndMoleculesSelectionPanel.oxygenText.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -6501,6 +7619,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.statesScreen.view.atomsAndMoleculesSelectionPanel.radioButtonGroup.argonSelector.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.statesScreen.view.atomsAndMoleculesSelectionPanel.radioButtonGroup.argonSelector.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -6605,6 +7736,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.statesScreen.view.atomsAndMoleculesSelectionPanel.radioButtonGroup.neonSelector.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.statesScreen.view.atomsAndMoleculesSelectionPanel.radioButtonGroup.neonSelector.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -6670,6 +7814,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.statesScreen.view.atomsAndMoleculesSelectionPanel.radioButtonGroup.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.statesScreen.view.atomsAndMoleculesSelectionPanel.radioButtonGroup.oxygenSelector": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -6721,6 +7878,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.statesScreen.view.atomsAndMoleculesSelectionPanel.radioButtonGroup.oxygenSelector.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.statesScreen.view.atomsAndMoleculesSelectionPanel.radioButtonGroup.oxygenSelector.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -6865,6 +8035,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.statesScreen.view.atomsAndMoleculesSelectionPanel.radioButtonGroup.waterSelector.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.statesScreen.view.atomsAndMoleculesSelectionPanel.radioButtonGroup.waterSelector.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -6942,6 +8125,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.statesScreen.view.atomsAndMoleculesSelectionPanel.title.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.statesScreen.view.atomsAndMoleculesSelectionPanel.title.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -7021,6 +8217,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.statesScreen.view.atomsAndMoleculesSelectionPanel.waterText.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.statesScreen.view.atomsAndMoleculesSelectionPanel.waterText.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -7086,6 +8295,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.statesScreen.view.compositeThermometerNode.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.statesScreen.view.compositeThermometerNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -7124,6 +8346,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.statesScreen.view.compositeThermometerNode.temperatureCelsiusText.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.statesScreen.view.compositeThermometerNode.temperatureCelsiusText.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -7228,6 +8463,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.statesScreen.view.compositeThermometerNode.temperatureComboBox.button.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.statesScreen.view.compositeThermometerNode.temperatureComboBox.button.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -7346,6 +8594,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.statesScreen.view.compositeThermometerNode.temperatureComboBox.listBox.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.statesScreen.view.compositeThermometerNode.temperatureComboBox.listBox.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -7384,6 +8645,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.statesScreen.view.compositeThermometerNode.temperatureComboBox.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.statesScreen.view.compositeThermometerNode.temperatureComboBox.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -7437,6 +8711,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.statesScreen.view.compositeThermometerNode.temperatureInKelvinProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.statesScreen.view.compositeThermometerNode.temperatureKelvinText": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -7462,6 +8749,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.statesScreen.view.compositeThermometerNode.temperatureKelvinText.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.statesScreen.view.compositeThermometerNode.temperatureKelvinText.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -7541,6 +8841,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.statesScreen.view.compositeThermometerNode.thermometerNode.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.statesScreen.view.compositeThermometerNode.thermometerNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -7605,6 +8918,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.statesScreen.view.heaterCoolerNode.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.statesScreen.view.heaterCoolerNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -7671,6 +8997,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.statesScreen.view.heaterCoolerNode.slider.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.statesScreen.view.heaterCoolerNode.slider.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -7709,6 +9048,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.statesScreen.view.heaterCoolerNode.slider.thumb.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.statesScreen.view.heaterCoolerNode.slider.thumb.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -7931,6 +9283,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.statesScreen.view.playPauseStepControl.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.statesScreen.view.playPauseStepControl.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -7982,6 +9347,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.statesScreen.view.playPauseStepControl.playPauseButton.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.statesScreen.view.playPauseStepControl.playPauseButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -8060,6 +9438,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.statesScreen.view.playPauseStepControl.playPauseButton.toggleNode.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.statesScreen.view.playPauseStepControl.playPauseButton.toggleNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -8164,6 +9555,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.statesScreen.view.playPauseStepControl.stepForwardButton.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.statesScreen.view.playPauseStepControl.stepForwardButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -8295,6 +9699,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.statesScreen.view.resetAllButton.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.statesScreen.view.resetAllButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -8411,6 +9828,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.statesScreen.view.solidLiquidGasPhaseControlNode.gasStateButton.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.statesScreen.view.solidLiquidGasPhaseControlNode.gasStateButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
@@ -8529,6 +9959,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.statesScreen.view.solidLiquidGasPhaseControlNode.liquidStateButton.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.statesScreen.view.solidLiquidGasPhaseControlNode.liquidStateButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -8607,6 +10050,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
+    "statesOfMatterBasics.statesScreen.view.solidLiquidGasPhaseControlNode.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
+    },
     "statesOfMatterBasics.statesScreen.view.solidLiquidGasPhaseControlNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
@@ -8671,6 +10127,19 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
+    },
+    "statesOfMatterBasics.statesScreen.view.solidLiquidGasPhaseControlNode.solidStateButton.opacityProperty.rangeProperty": {
+      "phetioDocumentation": "provides the range of possible values for the parent NumberProperty",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioIsArchetype": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": true,
+      "phetioState": true,
+      "phetioStudioControl": true,
+      "phetioTypeName": "PropertyIO<NullableIO<RangeIO>>"
     },
     "statesOfMatterBasics.statesScreen.view.solidLiquidGasPhaseControlNode.solidStateButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
