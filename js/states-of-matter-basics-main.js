@@ -20,6 +20,9 @@ define( require => {
   // strings
   const statesOfMatterBasicsTitleString = require( 'string!STATES_OF_MATTER_BASICS/states-of-matter-basics.title' );
 
+  // Eagerly create GlobalOptionsNode so it works smoothly with PhET-iO
+  const globalOptionsNode = new GlobalOptionsNode( Tandem.ROOT.createTandem( 'global' ).createTandem( 'view' ).createTandem( 'globalOptionsNode' ) );
+
   const simOptions = {
     credits: {
       leadDesign: 'Paul Beale, Yuen-ying Carpenter, Sarah McKagan, Emily B. Moore, Noah Podolefsky,<br>Amy Rouinfar',
@@ -31,7 +34,7 @@ define( require => {
     },
 
     // create content for the Options dialog
-    createOptionsDialogContent: () => new GlobalOptionsNode( Tandem.ROOT.createTandem( 'globalOptionsNode' ) )
+    createOptionsDialogContent: () => globalOptionsNode
   };
 
   SimLauncher.launch( function() {
