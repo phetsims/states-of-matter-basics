@@ -17,24 +17,25 @@ import statesOfMatterBasicsStrings from './states-of-matter-basics-strings.js';
 
 const statesOfMatterBasicsTitleString = statesOfMatterBasicsStrings[ 'states-of-matter-basics' ].title;
 
-// Eagerly create GlobalOptionsNode so it works smoothly with PhET-iO
-const globalOptionsNode = new GlobalOptionsNode( Tandem.ROOT.createTandem( 'global' ).createTandem( 'view' ).createTandem( 'globalOptionsNode' ) );
-
-const simOptions = {
-  credits: {
-    leadDesign: 'Paul Beale, Yuen-ying Carpenter, Sarah McKagan, Emily B. Moore, Noah Podolefsky,<br>Amy Rouinfar',
-    softwareDevelopment: 'John Blanco, Aaron Davis, Aadish Gupta',
-    team: 'Wendy Adams, Jack Barbera, Amy Hanson, Kelly Lancaster, Ariel Paul, Kathy Perkins,<br>Carl Wieman',
-    qualityAssurance: 'Steele Dalton, Amanda Davis, Bryce Griebenow, Ethan Johnson, Liam Mulhall,<br>' +
-                      'Oliver Orejola, Laura Rea, Benjamin Roberts, Jacob Romero, Kathryn Woessner, Bryan Yoelin',
-    thanks: 'Thanks to Actual Concepts for working with the PhET development team to convert this simulation to HTML5.'
-  },
-
-  // create content for the Options dialog
-  createOptionsDialogContent: () => globalOptionsNode
-};
-
 SimLauncher.launch( function() {
+
+  // Eagerly create GlobalOptionsNode so it works smoothly with PhET-iO
+  const globalOptionsNode = new GlobalOptionsNode( Tandem.ROOT.createTandem( 'global' ).createTandem( 'view' ).createTandem( 'globalOptionsNode' ) );
+
+  const simOptions = {
+    credits: {
+      leadDesign: 'Paul Beale, Yuen-ying Carpenter, Sarah McKagan, Emily B. Moore, Noah Podolefsky,<br>Amy Rouinfar',
+      softwareDevelopment: 'John Blanco, Aaron Davis, Aadish Gupta',
+      team: 'Wendy Adams, Jack Barbera, Amy Hanson, Kelly Lancaster, Ariel Paul, Kathy Perkins,<br>Carl Wieman',
+      qualityAssurance: 'Steele Dalton, Amanda Davis, Bryce Griebenow, Ethan Johnson, Liam Mulhall,<br>' +
+                        'Oliver Orejola, Laura Rea, Benjamin Roberts, Jacob Romero, Kathryn Woessner, Bryan Yoelin',
+      thanks: 'Thanks to Actual Concepts for working with the PhET development team to convert this simulation to HTML5.'
+    },
+
+    // create content for the Options dialog
+    createOptionsDialogContent: () => globalOptionsNode
+  };
+
   const sim = new Sim( statesOfMatterBasicsTitleString, [
     new StatesScreen( Tandem.ROOT.createTandem( 'statesScreen' ) ),
     new PhaseChangesScreen( false, Tandem.ROOT.createTandem( 'phaseChangesScreen' ) )
