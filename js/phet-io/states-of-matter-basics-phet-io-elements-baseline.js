@@ -5695,7 +5695,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseButton": {
+    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseStepButtons.playPauseButton": {
       "phetioDocumentation": "Button to control the animation in the simulation. This will also stop the model from stepping.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -5708,7 +5708,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ToggleButtonIO"
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseButton.enabledProperty": {
+    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseStepButtons.playPauseButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -5721,7 +5721,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseButton.opacityProperty": {
+    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseStepButtons.playPauseButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -5734,7 +5734,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseButton.pickableProperty": {
+    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseStepButtons.playPauseButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -5747,7 +5747,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseButton.pressListener.pressAction": {
+    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseStepButtons.playPauseButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -5760,7 +5760,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseButton.pressListener.releaseAction": {
+    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseStepButtons.playPauseButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -5773,7 +5773,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseButton.property": {
+    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseStepButtons.playPauseButton.property": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -5786,7 +5786,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseButton.toggleNode": {
+    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseStepButtons.playPauseButton.toggleNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -5799,7 +5799,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseButton.toggleNode.opacityProperty": {
+    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseStepButtons.playPauseButton.toggleNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -5812,7 +5812,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseButton.toggleNode.pickableProperty": {
+    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseStepButtons.playPauseButton.toggleNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -5825,7 +5825,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseButton.toggleNode.visibleProperty": {
+    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseStepButtons.playPauseButton.toggleNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -5838,7 +5838,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseButton.toggledEmitter": {
+    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseStepButtons.playPauseButton.toggledEmitter": {
       "phetioDocumentation": "Emits when the button is toggled No arguments.",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -5851,7 +5851,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseButton.visibleProperty": {
+    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseStepButtons.playPauseButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -5864,8 +5864,8 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.stepForwardButton": {
-      "phetioDocumentation": "Progress the simulation a single model step forwards.",
+    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseStepButtons.stepBackwardButton": {
+      "phetioDocumentation": "Progress the simulation a single model step backwards.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -5877,7 +5877,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.stepForwardButton.enabledProperty": {
+    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseStepButtons.stepBackwardButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -5890,7 +5890,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.stepForwardButton.firedEmitter": {
+    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseStepButtons.stepBackwardButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -5903,7 +5903,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.stepForwardButton.opacityProperty": {
+    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseStepButtons.stepBackwardButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -5916,7 +5916,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.stepForwardButton.pickableProperty": {
+    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseStepButtons.stepBackwardButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -5929,7 +5929,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.stepForwardButton.pressListener.pressAction": {
+    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseStepButtons.stepBackwardButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -5942,7 +5942,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.stepForwardButton.pressListener.releaseAction": {
+    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseStepButtons.stepBackwardButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -5955,7 +5955,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.stepForwardButton.visibleProperty": {
+    "statesOfMatterBasics.phaseChangesScreen.view.timeControlNode.playPauseStepButtons.stepBackwardButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8464,7 +8464,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseButton": {
+    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseStepButtons.playPauseButton": {
       "phetioDocumentation": "Button to control the animation in the simulation. This will also stop the model from stepping.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8477,7 +8477,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ToggleButtonIO"
     },
-    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseButton.enabledProperty": {
+    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseStepButtons.playPauseButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8490,7 +8490,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseButton.opacityProperty": {
+    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseStepButtons.playPauseButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8503,7 +8503,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseButton.pickableProperty": {
+    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseStepButtons.playPauseButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8516,7 +8516,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseButton.pressListener.pressAction": {
+    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseStepButtons.playPauseButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -8529,7 +8529,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
-    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseButton.pressListener.releaseAction": {
+    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseStepButtons.playPauseButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -8542,7 +8542,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
-    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseButton.property": {
+    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseStepButtons.playPauseButton.property": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8555,7 +8555,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseButton.toggleNode": {
+    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseStepButtons.playPauseButton.toggleNode": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8568,7 +8568,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseButton.toggleNode.opacityProperty": {
+    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseStepButtons.playPauseButton.toggleNode.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8581,7 +8581,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseButton.toggleNode.pickableProperty": {
+    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseStepButtons.playPauseButton.toggleNode.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8594,7 +8594,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseButton.toggleNode.visibleProperty": {
+    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseStepButtons.playPauseButton.toggleNode.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8607,7 +8607,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseButton.toggledEmitter": {
+    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseStepButtons.playPauseButton.toggledEmitter": {
       "phetioDocumentation": "Emits when the button is toggled No arguments.",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -8620,7 +8620,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseButton.visibleProperty": {
+    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseStepButtons.playPauseButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8633,8 +8633,8 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "statesOfMatterBasics.statesScreen.view.timeControlNode.stepForwardButton": {
-      "phetioDocumentation": "Progress the simulation a single model step forwards.",
+    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseStepButtons.stepBackwardButton": {
+      "phetioDocumentation": "Progress the simulation a single model step backwards.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -8646,7 +8646,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "statesOfMatterBasics.statesScreen.view.timeControlNode.stepForwardButton.enabledProperty": {
+    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseStepButtons.stepBackwardButton.enabledProperty": {
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8659,7 +8659,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "statesOfMatterBasics.statesScreen.view.timeControlNode.stepForwardButton.firedEmitter": {
+    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseStepButtons.stepBackwardButton.firedEmitter": {
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -8672,7 +8672,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO<>"
     },
-    "statesOfMatterBasics.statesScreen.view.timeControlNode.stepForwardButton.opacityProperty": {
+    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseStepButtons.stepBackwardButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8685,7 +8685,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "statesOfMatterBasics.statesScreen.view.timeControlNode.stepForwardButton.pickableProperty": {
+    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseStepButtons.stepBackwardButton.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -8698,7 +8698,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
-    "statesOfMatterBasics.statesScreen.view.timeControlNode.stepForwardButton.pressListener.pressAction": {
+    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseStepButtons.stepBackwardButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -8711,7 +8711,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
-    "statesOfMatterBasics.statesScreen.view.timeControlNode.stepForwardButton.pressListener.releaseAction": {
+    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseStepButtons.stepBackwardButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -8724,7 +8724,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
-    "statesOfMatterBasics.statesScreen.view.timeControlNode.stepForwardButton.visibleProperty": {
+    "statesOfMatterBasics.statesScreen.view.timeControlNode.playPauseStepButtons.stepBackwardButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
