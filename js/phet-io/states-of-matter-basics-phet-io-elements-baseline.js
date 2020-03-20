@@ -2836,7 +2836,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "MultipleParticleModelIO"
     },
     "statesOfMatterBasics.phaseChangesScreen.model.containerHeightProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The height of the particle container, in picometers.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -2979,7 +2979,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "statesOfMatterBasics.phaseChangesScreen.model.temperatureSetPointProperty": {
-      "phetioDocumentation": "in internal model units, solid = 0.15, liquid = 0.34, gas = 1",
+      "phetioDocumentation": "In internal model units, solid = 0.15, liquid = 0.34, gas = 1.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -6021,7 +6021,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "MultipleParticleModelIO"
     },
     "statesOfMatterBasics.statesScreen.model.containerHeightProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "The height of the particle container, in picometers.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -6112,7 +6112,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<EnumerationIO(NEON|ARGON|DIATOMIC_OXYGEN|WATER|ADJUSTABLE_ATOM)>"
     },
     "statesOfMatterBasics.statesScreen.model.temperatureSetPointProperty": {
-      "phetioDocumentation": "in internal model units, solid = 0.15, liquid = 0.34, gas = 1",
+      "phetioDocumentation": "In internal model units, solid = 0.15, liquid = 0.34, gas = 1.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
