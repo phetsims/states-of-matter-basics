@@ -13,7 +13,7 @@ import GlobalOptionsNode from '../../states-of-matter/js/common/view/GlobalOptio
 import PhaseChangesScreen from '../../states-of-matter/js/phase-changes/PhaseChangesScreen.js';
 import StatesScreen from '../../states-of-matter/js/states/StatesScreen.js';
 import Tandem from '../../tandem/js/Tandem.js';
-import statesOfMatterBasicsStrings from './states-of-matter-basics-strings.js';
+import statesOfMatterBasicsStrings from './statesOfMatterBasicsStrings.js';
 
 const statesOfMatterBasicsTitleString = statesOfMatterBasicsStrings[ 'states-of-matter-basics' ].title;
 
