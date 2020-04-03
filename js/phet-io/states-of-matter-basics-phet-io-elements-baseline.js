@@ -2888,7 +2888,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "statesOfMatterBasics.phaseChangesScreen.model.interactionStrengthProperty": {
-      "phetioDocumentation": "intermolecular potential for the \"Adjustable Attraction\" atoms",
+      "phetioDocumentation": "intermolecular potential for the \"Adjustable Attraction\" atoms - this is a parameter in the Lennard-Jones potential equation",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -2927,7 +2927,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "statesOfMatterBasics.phaseChangesScreen.model.numberOfMoleculesProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "This value represents the number of particles being simulated, not the number or particles in the container.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -6580,7 +6580,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "statesOfMatterBasics.statesScreen.model.numberOfMoleculesProperty": {
-      "phetioDocumentation": "",
+      "phetioDocumentation": "This value represents the number of particles being simulated, not the number or particles in the container.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
