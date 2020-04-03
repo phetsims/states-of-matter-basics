@@ -2874,7 +2874,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "statesOfMatterBasics.phaseChangesScreen.model.interactionPotentialDiagramExpandedProperty": {
+    "statesOfMatterBasics.phaseChangesScreen.model.interactionPotentialDiagramAccordionBoxExpandedProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -2939,7 +2939,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "statesOfMatterBasics.phaseChangesScreen.model.phaseDiagramExpandedProperty": {
+    "statesOfMatterBasics.phaseChangesScreen.model.phaseDiagramAccordionBoxExpandedProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
