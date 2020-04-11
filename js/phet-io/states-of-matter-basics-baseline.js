@@ -2874,7 +2874,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "statesOfMatterBasics.phaseChangesScreen.model.interactionPotentialDiagramAccordionBoxExpandedProperty": {
+    "statesOfMatterBasics.phaseChangesScreen.model.interactionPotentialAccordionBoxExpandedProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
