@@ -2873,7 +2873,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "statesOfMatterBasics.phaseChangesScreen.model.interactionPotentialAccordionBoxExpandedProperty": {
+    "statesOfMatterBasics.phaseChangesScreen.model.interactionPotentialExpandedProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -2925,7 +2925,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
-    "statesOfMatterBasics.phaseChangesScreen.model.phaseDiagramAccordionBoxExpandedProperty": {
+    "statesOfMatterBasics.phaseChangesScreen.model.phaseDiagramExpandedProperty": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
@@ -2978,7 +2978,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "statesOfMatterBasics.phaseChangesScreen.model.targetNumberOfMoleculesProperty": {
-      "phetioDocumentation": "This value represents the number of particles being simulated, not the number or particles in the container.",
+      "phetioDocumentation": "This value represents the number of particles being simulated, not the number of particles in the container.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
@@ -6545,7 +6545,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<EnumerationIO(NEON|ARGON|DIATOMIC_OXYGEN|WATER|ADJUSTABLE_ATOM)>"
     },
     "statesOfMatterBasics.statesScreen.model.targetNumberOfMoleculesProperty": {
-      "phetioDocumentation": "This value represents the number of particles being simulated, not the number or particles in the container.",
+      "phetioDocumentation": "This value represents the number of particles being simulated, not the number of particles in the container.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
