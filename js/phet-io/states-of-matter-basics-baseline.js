@@ -5377,7 +5377,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.particleContainerNode.lidNode.pointingHandNode.dragHandler.dragAction": {
+    "statesOfMatterBasics.phaseChangesScreen.view.particleContainerNode.lidNode.pointingHandNode.dragListener.dragAction": {
       "phetioDocumentation": "Emits whenever a drag occurs with an SceneryEventIO argument. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -5390,7 +5390,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.particleContainerNode.lidNode.pointingHandNode.dragHandler.pressAction": {
+    "statesOfMatterBasics.phaseChangesScreen.view.particleContainerNode.lidNode.pointingHandNode.dragListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
@@ -5403,7 +5403,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.particleContainerNode.lidNode.pointingHandNode.dragHandler.releaseAction": {
+    "statesOfMatterBasics.phaseChangesScreen.view.particleContainerNode.lidNode.pointingHandNode.dragListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioEventType": "USER",
