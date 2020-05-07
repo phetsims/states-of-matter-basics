@@ -8,7 +8,7 @@
  */
 
 import Sim from '../../joist/js/Sim.js';
-import SimLauncher from '../../joist/js/SimLauncher.js';
+import simLauncher from '../../joist/js/simLauncher.js';
 import GlobalOptionsNode from '../../states-of-matter/js/common/view/GlobalOptionsNode.js';
 import PhaseChangesScreen from '../../states-of-matter/js/phase-changes/PhaseChangesScreen.js';
 import StatesScreen from '../../states-of-matter/js/states/StatesScreen.js';
@@ -17,7 +17,7 @@ import statesOfMatterBasicsStrings from './statesOfMatterBasicsStrings.js';
 
 const statesOfMatterBasicsTitleString = statesOfMatterBasicsStrings[ 'states-of-matter-basics' ].title;
 
-SimLauncher.launch( function() {
+simLauncher.launch( function() {
 
   // Eagerly create GlobalOptionsNode so it works smoothly with PhET-iO
   const globalOptionsNode = new GlobalOptionsNode( Tandem.ROOT.createTandem( 'global' ).createTandem( 'view' ).createTandem( 'globalOptionsNode' ) );
