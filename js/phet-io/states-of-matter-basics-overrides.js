@@ -28,9 +28,6 @@ window.phet.preloads.phetio.phetioElementsOverrides =
   "statesOfMatterBasics.phaseChangesScreen.model.targetNumberOfMoleculesProperty": {
     "phetioFeatured": true
   },
-  "statesOfMatterBasics.phaseChangesScreen.model.temperatureInKelvinProperty": {
-    "phetioFeatured": true
-  },
   "statesOfMatterBasics.phaseChangesScreen.view.heaterCoolerNode.visibleProperty": {
     "phetioFeatured": true
   },
@@ -107,9 +104,6 @@ window.phet.preloads.phetio.phetioElementsOverrides =
     "phetioFeatured": true
   },
   "statesOfMatterBasics.statesScreen.model.targetNumberOfMoleculesProperty": {
-    "phetioFeatured": true
-  },
-  "statesOfMatterBasics.statesScreen.model.temperatureInKelvinProperty": {
     "phetioFeatured": true
   },
   "statesOfMatterBasics.statesScreen.view.heaterCoolerNode.visibleProperty": {
