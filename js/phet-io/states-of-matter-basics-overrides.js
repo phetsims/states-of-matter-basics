@@ -1,6 +1,9 @@
 /* eslint-disable */
 window.phet.preloads.phetio.phetioElementsOverrides =
 {
+  "statesOfMatterBasics.phaseChangesScreen.model.adjustableAtomInteractionStrengthProperty":{
+    "phetioFeatured":false
+  },
    "statesOfMatterBasics.phaseChangesScreen.model.containerHeightProperty": {
     "phetioFeatured": true
   },
