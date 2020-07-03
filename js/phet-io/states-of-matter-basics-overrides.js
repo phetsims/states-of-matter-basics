@@ -94,6 +94,9 @@ window.phet.preloads.phetio.phetioElementsOverrides =
   "statesOfMatterBasics.statesScreen.model.isExplodedProperty": {
     "phetioFeatured": true
   },
+  "statesOfMatterBasics.statesScreen.model.isPlayingProperty": {
+    "phetioFeatured": true
+  },
   "statesOfMatterBasics.statesScreen.model.pressureProperty": {
     "phetioFeatured": true
   },
