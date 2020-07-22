@@ -17,7 +17,7 @@ import statesOfMatterBasicsStrings from './statesOfMatterBasicsStrings.js';
 
 const statesOfMatterBasicsTitleString = statesOfMatterBasicsStrings[ 'states-of-matter-basics' ].title;
 
-simLauncher.launch( function() {
+simLauncher.launch( () => {
 
   const simOptions = {
     credits: {
