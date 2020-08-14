@@ -82,6 +82,12 @@ window.phet.preloads.phetio.phetioElementsOverrides =
   "statesOfMatterBasics.phaseChangesScreen.view.particleContainerNode.pressureGaugeNode.visibleProperty": {
     "phetioFeatured": true
   },
+  "statesOfMatterBasics.phaseChangesScreen.view.phaseDiagramContainer.phaseDiagramAccordionBox.visibleProperty": {
+    "phetioFeatured": false
+  },
+  "statesOfMatterBasics.phaseChangesScreen.view.phaseDiagramContainer.visibleProperty": {
+    "phetioFeatured": true
+  },
   "statesOfMatterBasics.phaseChangesScreen.view.pumpNode.visibleProperty": {
     "phetioFeatured": true
   },
