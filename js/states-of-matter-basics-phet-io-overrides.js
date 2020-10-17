@@ -64,9 +64,6 @@ window.phet.preloads.phetio.phetioElementsOverrides =
     "statesOfMatterBasics.phaseChangesScreen.view.particleContainerNode.lidNode.handleNode.visibleProperty": {
       "phetioFeatured": true
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.particleContainerNode.lidNode.pickableProperty": {
-      "phetioFeatured": true
-    },
     "statesOfMatterBasics.phaseChangesScreen.view.particleContainerNode.lidNode.pointingHandNode.visibleProperty": {
       "phetioFeatured": true
     },
