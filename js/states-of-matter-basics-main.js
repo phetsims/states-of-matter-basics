@@ -24,8 +24,9 @@ simLauncher.launch( () => {
       leadDesign: 'Paul Beale, Yuen-ying Carpenter, Sarah McKagan, Emily B. Moore, Noah Podolefsky,<br>Amy Rouinfar',
       softwareDevelopment: 'John Blanco, Aaron Davis, Aadish Gupta',
       team: 'Wendy Adams, Jack Barbera, Amy Hanson, Kelly Lancaster, Ariel Paul, Kathy Perkins,<br>Carl Wieman',
-      qualityAssurance: 'Steele Dalton, Amanda Davis, Bryce Griebenow, Ethan Johnson, Liam Mulhall,<br>' +
-                        'Oliver Orejola, Laura Rea, Benjamin Roberts, Jacob Romero, Kathryn Woessner, Bryan Yoelin',
+      qualityAssurance: 'Steele Dalton, Amanda Davis, Bryce Griebenow, Ethan Johnson, Megan Lai,<br>' +
+                        'Brooklyn Lash, Liam Mulhall, Oliver Orejola, Devon Quispe, Laura Rea, Benjamin Roberts,<br>' +
+                        'Jacob Romero, Kathryn Woessner, Bryan Yoelin',
       thanks: 'Thanks to Actual Concepts for working with the PhET development team to convert this simulation to HTML5.'
     },
 
