@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "joist": {
-    "sha": "7ea8fb32ce82a7d2543bd09a906c358bd6675ebb",
+    "sha": "55215add9ec42ec9f8c4e238d92bc9f87ce2d47f",
     "branch": "HEAD"
   },
   "kite": {
@@ -77,7 +77,7 @@
     "branch": "HEAD"
   },
   "states-of-matter-basics": {
-    "sha": "a0d65941d62b9e3961e723d08507c89fd1ceb042",
+    "sha": "82eb47d158be9292c73a99651bdf6441c3b59ae4",
     "branch": "1.2"
   },
   "studio": {
