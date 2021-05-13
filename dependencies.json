@@ -61,7 +61,7 @@
     "branch": "HEAD"
   },
   "scenery": {
-    "sha": "382723785eec6c6f8b96975343fd94080bb90c9d",
+    "sha": "5d44177d69f760ecd3dad33f98a7b47fc19d9077",
     "branch": "HEAD"
   },
   "scenery-phet": {
@@ -77,7 +77,7 @@
     "branch": "HEAD"
   },
   "states-of-matter-basics": {
-    "sha": "82eb47d158be9292c73a99651bdf6441c3b59ae4",
+    "sha": "3b9583b29a4776ecd8916f5513157c2b43c751c7",
     "branch": "1.2"
   },
   "studio": {
