@@ -3,11 +3,17 @@
 /**
  * Auto-generated from modulify, DO NOT manually modify.
  */
-
+/* eslint-disable */
 import getStringModule from '../../chipper/js/getStringModule.js';
 import statesOfMatterBasics from './statesOfMatterBasics.js';
 
-const statesOfMatterBasicsStrings = getStringModule( 'STATES_OF_MATTER_BASICS' );
+type StringsType = {
+  'states-of-matter-basics': {
+    'title': string
+  }
+};
+
+const statesOfMatterBasicsStrings = getStringModule( 'STATES_OF_MATTER_BASICS' ) as StringsType;
 
 statesOfMatterBasics.register( 'statesOfMatterBasicsStrings', statesOfMatterBasicsStrings );
 
