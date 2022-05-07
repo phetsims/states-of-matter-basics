@@ -9,7 +9,7 @@ import statesOfMatterBasics from './statesOfMatterBasics.js';
 
 type StringsType = {
   'states-of-matter-basics': {
-    'title': string
+    'title': string;
   }
 };
 
