@@ -5,11 +5,13 @@
  */
 /* eslint-disable */
 import getStringModule from '../../chipper/js/getStringModule.js';
+import TReadOnlyProperty from '../../axon/js/TReadOnlyProperty.js';
 import statesOfMatterBasics from './statesOfMatterBasics.js';
 
 type StringsType = {
   'states-of-matter-basics': {
     'title': string;
+    'titleProperty': TReadOnlyProperty<string>;
   }
 };
 
