@@ -7,9 +7,9 @@
  * @author Sam Reid (PhET Interactive Simulations)
  */
 
+import PreferencesModel from '../../joist/js/preferences/PreferencesModel.js';
 import Sim from '../../joist/js/Sim.js';
 import simLauncher from '../../joist/js/simLauncher.js';
-import GlobalOptionsNode from '../../states-of-matter/js/common/view/GlobalOptionsNode.js';
 import PhaseChangesScreen from '../../states-of-matter/js/phase-changes/PhaseChangesScreen.js';
 import StatesScreen from '../../states-of-matter/js/states/StatesScreen.js';
 import Tandem from '../../tandem/js/Tandem.js';
@@ -30,8 +30,11 @@ simLauncher.launch( () => {
       thanks: 'Thanks to Actual Concepts for working with the PhET development team to convert this simulation to HTML5.'
     },
 
-    // create content for the Options dialog
-    createOptionsDialogContent: tandem => new GlobalOptionsNode( tandem ),
+    preferencesModel: new PreferencesModel( {
+      visualOptions: {
+        supportsProjectorMode: true
+      }
+    } ),
 
     // phet-io options
     phetioDesigned: true
