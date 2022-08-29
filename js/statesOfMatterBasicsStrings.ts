@@ -11,7 +11,7 @@ import statesOfMatterBasics from './statesOfMatterBasics.js';
 type StringsType = {
   'states-of-matter-basics': {
     'title': string;
-    'titleProperty': TReadOnlyProperty<string>;
+    'titleStringProperty': TReadOnlyProperty<string>;
   }
 };
 
