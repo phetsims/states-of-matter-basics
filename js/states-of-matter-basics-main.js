@@ -15,7 +15,7 @@ import StatesScreen from '../../states-of-matter/js/states/StatesScreen.js';
 import Tandem from '../../tandem/js/Tandem.js';
 import statesOfMatterBasicsStrings from './statesOfMatterBasicsStrings.js';
 
-const statesOfMatterBasicsTitleString = statesOfMatterBasicsStrings[ 'states-of-matter-basics' ].title;
+const statesOfMatterBasicsTitleStringProperty = statesOfMatterBasicsStrings[ 'states-of-matter-basics' ].titleStringProperty;
 
 simLauncher.launch( () => {
 
@@ -40,7 +40,7 @@ simLauncher.launch( () => {
     phetioDesigned: true
   };
 
-  const sim = new Sim( statesOfMatterBasicsTitleString, [
+  const sim = new Sim( statesOfMatterBasicsTitleStringProperty, [
     new StatesScreen( Tandem.ROOT.createTandem( 'statesScreen' ) ),
     new PhaseChangesScreen( false, Tandem.ROOT.createTandem( 'phaseChangesScreen' ) )
   ], simOptions );
