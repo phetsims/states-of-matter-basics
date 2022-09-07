@@ -13,9 +13,9 @@ import simLauncher from '../../joist/js/simLauncher.js';
 import PhaseChangesScreen from '../../states-of-matter/js/phase-changes/PhaseChangesScreen.js';
 import StatesScreen from '../../states-of-matter/js/states/StatesScreen.js';
 import Tandem from '../../tandem/js/Tandem.js';
-import statesOfMatterBasicsStrings from './statesOfMatterBasicsStrings.js';
+import StatesOfMatterBasicsStrings from './StatesOfMatterBasicsStrings.js';
 
-const statesOfMatterBasicsTitleStringProperty = statesOfMatterBasicsStrings[ 'states-of-matter-basics' ].titleStringProperty;
+const statesOfMatterBasicsTitleStringProperty = StatesOfMatterBasicsStrings[ 'states-of-matter-basics' ].titleStringProperty;
 
 simLauncher.launch( () => {
 
