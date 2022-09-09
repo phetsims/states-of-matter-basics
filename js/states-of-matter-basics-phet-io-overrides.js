@@ -70,9 +70,6 @@ window.phet.preloads.phetio.phetioElementsOverrides =
     "statesOfMatterBasics.phaseChangesScreen.view.particleContainerNode.pressureGaugeNode.gaugeNode.labelNode.textProperty": {
       "phetioFeatured": true
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.particleContainerNode.pressureGaugeNode.gaugeNode.labelNode.visibleProperty": {
-      "phetioFeatured": true
-    },
     "statesOfMatterBasics.phaseChangesScreen.view.particleContainerNode.pressureGaugeNode.readoutNode.visibleProperty": {
       "phetioFeatured": true
     },
