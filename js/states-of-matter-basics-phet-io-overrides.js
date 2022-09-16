@@ -34,22 +34,22 @@ window.phet.preloads.phetio.phetioElementsOverrides =
     "statesOfMatterBasics.phaseChangesScreen.view.heaterCoolerNode.visibleProperty": {
       "phetioFeatured": true
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.moleculesControlPanel.radioButtonGroup.adjustableAttractionText.textProperty": {
+    "statesOfMatterBasics.phaseChangesScreen.view.moleculesControlPanel.radioButtonGroup.adjustableAttractionText.stringProperty": {
       "phetioFeatured": true
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.moleculesControlPanel.radioButtonGroup.argonText.textProperty": {
+    "statesOfMatterBasics.phaseChangesScreen.view.moleculesControlPanel.radioButtonGroup.argonText.stringProperty": {
       "phetioFeatured": true
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.moleculesControlPanel.radioButtonGroup.neonText.textProperty": {
+    "statesOfMatterBasics.phaseChangesScreen.view.moleculesControlPanel.radioButtonGroup.neonText.stringProperty": {
       "phetioFeatured": true
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.moleculesControlPanel.radioButtonGroup.oxygenText.textProperty": {
+    "statesOfMatterBasics.phaseChangesScreen.view.moleculesControlPanel.radioButtonGroup.oxygenText.stringProperty": {
       "phetioFeatured": true
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.moleculesControlPanel.radioButtonGroup.waterText.textProperty": {
+    "statesOfMatterBasics.phaseChangesScreen.view.moleculesControlPanel.radioButtonGroup.waterText.stringProperty": {
       "phetioFeatured": true
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.moleculesControlPanel.titleText.textProperty": {
+    "statesOfMatterBasics.phaseChangesScreen.view.moleculesControlPanel.titleText.stringProperty": {
       "phetioFeatured": true
     },
     "statesOfMatterBasics.phaseChangesScreen.view.moleculesControlPanel.visibleProperty": {
@@ -67,7 +67,7 @@ window.phet.preloads.phetio.phetioElementsOverrides =
     "statesOfMatterBasics.phaseChangesScreen.view.particleContainerNode.lidNode.pointingHandNode.visibleProperty": {
       "phetioFeatured": true
     },
-    "statesOfMatterBasics.phaseChangesScreen.view.particleContainerNode.pressureGaugeNode.gaugeNode.labelText.textProperty": {
+    "statesOfMatterBasics.phaseChangesScreen.view.particleContainerNode.pressureGaugeNode.gaugeNode.labelText.stringProperty": {
       "phetioFeatured": true
     },
     "statesOfMatterBasics.phaseChangesScreen.view.particleContainerNode.pressureGaugeNode.readoutNode.visibleProperty": {
@@ -115,19 +115,19 @@ window.phet.preloads.phetio.phetioElementsOverrides =
     "statesOfMatterBasics.statesScreen.view.heaterCoolerNode.visibleProperty": {
       "phetioFeatured": true
     },
-    "statesOfMatterBasics.statesScreen.view.moleculesControlPanel.radioButtonGroup.argonText.textProperty": {
+    "statesOfMatterBasics.statesScreen.view.moleculesControlPanel.radioButtonGroup.argonText.stringProperty": {
       "phetioFeatured": true
     },
-    "statesOfMatterBasics.statesScreen.view.moleculesControlPanel.radioButtonGroup.neonText.textProperty": {
+    "statesOfMatterBasics.statesScreen.view.moleculesControlPanel.radioButtonGroup.neonText.stringProperty": {
       "phetioFeatured": true
     },
-    "statesOfMatterBasics.statesScreen.view.moleculesControlPanel.radioButtonGroup.oxygenText.textProperty": {
+    "statesOfMatterBasics.statesScreen.view.moleculesControlPanel.radioButtonGroup.oxygenText.stringProperty": {
       "phetioFeatured": true
     },
-    "statesOfMatterBasics.statesScreen.view.moleculesControlPanel.radioButtonGroup.waterText.textProperty": {
+    "statesOfMatterBasics.statesScreen.view.moleculesControlPanel.radioButtonGroup.waterText.stringProperty": {
       "phetioFeatured": true
     },
-    "statesOfMatterBasics.statesScreen.view.moleculesControlPanel.titleText.textProperty": {
+    "statesOfMatterBasics.statesScreen.view.moleculesControlPanel.titleText.stringProperty": {
       "phetioFeatured": true
     },
     "statesOfMatterBasics.statesScreen.view.moleculesControlPanel.visibleProperty": {
