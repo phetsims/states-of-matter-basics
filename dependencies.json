@@ -13,7 +13,7 @@
     "branch": "HEAD"
   },
   "chipper": {
-    "sha": "a088a69f7c559a4113e34762f0dca8d06852dfe8",
+    "sha": "acf61d8cb885546f36ec4e1c7fcd831037f5036d",
     "branch": "HEAD"
   },
   "dot": {
@@ -77,7 +77,7 @@
     "branch": "HEAD"
   },
   "states-of-matter-basics": {
-    "sha": "070435373e08cb9f09dd1b8a77677593d22e26bf",
+    "sha": "8350e40573caf01b13f69b64d81e0ca230467374",
     "branch": "1.2"
   },
   "studio": {
