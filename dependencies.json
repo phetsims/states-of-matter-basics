@@ -49,7 +49,7 @@
     "branch": "HEAD"
   },
   "phetcommon": {
-    "sha": "7efe73b2044421640a7a2c71a9a41d3e37ecd0bb",
+    "sha": "be372378803dbcfa97ed077ccbf6ee332758a8d9",
     "branch": "HEAD"
   },
   "phetmarks": {
@@ -77,7 +77,7 @@
     "branch": "HEAD"
   },
   "states-of-matter-basics": {
-    "sha": "0df5652da200da8a658791b205a1041549d807cf",
+    "sha": "772fc2cc9cdbe6e302eba8ccfa08aef58c1bb80e",
     "branch": "1.2"
   },
   "studio": {
