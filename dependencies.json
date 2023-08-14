@@ -2,102 +2,102 @@
   "comment": "# states-of-matter-basics 1.2.0-dev.1 Thu Jun 25 2020 16:23:37 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "73ed687cbea36db888079159cf9b43d41b8b8854",
-    "branch": "master"
+    "branch": "main"
   },
   "axon": {
     "sha": "9b918a1225cf817d2c43e2140f5906729486edbc",
-    "branch": "master"
+    "branch": "main"
   },
   "brand": {
     "sha": "3e27b3a82461eefd98f46879170c4bafdc300af1",
-    "branch": "master"
+    "branch": "main"
   },
   "chipper": {
     "sha": "2b386e07b163e9df396be437fe6b8a683e058900",
-    "branch": "master"
+    "branch": "main"
   },
   "dot": {
     "sha": "867eb6d7f10bb6ddb19eea2082525e290ce5a575",
-    "branch": "master"
+    "branch": "main"
   },
   "joist": {
     "sha": "b18a7a4235ad860311aefa3d95637910684a4686",
-    "branch": "master"
+    "branch": "main"
   },
   "kite": {
     "sha": "063dc24e418e5392aa0584b4021d25607d9fd38b",
-    "branch": "master"
+    "branch": "main"
   },
   "nitroglycerin": {
     "sha": "7bf64a49d2e365ada27461081ca899c62d165e93",
-    "branch": "master"
+    "branch": "main"
   },
   "phet-core": {
     "sha": "24eac19a9b1d0729f893f8aeae1c86f26e87b748",
-    "branch": "master"
+    "branch": "main"
   },
   "phet-io": {
     "sha": "ee7ffcefc4ec88451cedaa0d49500dbc949853ed",
-    "branch": "master"
+    "branch": "main"
   },
   "phet-io-client-guides": {
     "sha": "ce019bc395d33032dd417072ccaec6d4cdc4d2d8",
-    "branch": "master"
+    "branch": "main"
   },
   "phet-io-wrappers": {
     "sha": "4f000d86e022e58aee1da637eaed266bedfa056e",
-    "branch": "master"
+    "branch": "main"
   },
   "phetcommon": {
     "sha": "1c61d0cc25bea645fa2ce2dfa6ad4473a3027452",
-    "branch": "master"
+    "branch": "main"
   },
   "phetmarks": {
     "sha": "501cd0dc06d86347306bb9fbe5bd809f1431245a",
-    "branch": "master"
+    "branch": "main"
   },
   "query-string-machine": {
     "sha": "2d76627dbcc2b1831a3715b68bac03b281d4c5c5",
-    "branch": "master"
+    "branch": "main"
   },
   "scenery": {
     "sha": "9cb5d1c7e1f5a787ddf0a74c740b4a46e1674cda",
-    "branch": "master"
+    "branch": "main"
   },
   "scenery-phet": {
     "sha": "e0ef768b2afd673f990be4ea829266405224d4a3",
-    "branch": "master"
+    "branch": "main"
   },
   "sherpa": {
     "sha": "f2d6e320646c6e0b63d5c8c30cc34953629b25a8",
-    "branch": "master"
+    "branch": "main"
   },
   "states-of-matter": {
     "sha": "25bd4f90ab5d30ace3a1db68cad8d1fd84c998cc",
-    "branch": "master"
+    "branch": "main"
   },
   "states-of-matter-basics": {
     "sha": "f83a0174a73ff5b6c080fc5ce376340225af6396",
-    "branch": "master"
+    "branch": "main"
   },
   "studio": {
     "sha": "943fe3813e1df06a8e87f002fdd262460efe8711",
-    "branch": "master"
+    "branch": "main"
   },
   "sun": {
     "sha": "6f5cab57e8f897575e48e4c255a7e19d7b6bdd79",
-    "branch": "master"
+    "branch": "main"
   },
   "tambo": {
     "sha": "dba93ba415b9e5e5dc739ac059a0124db756ef5f",
-    "branch": "master"
+    "branch": "main"
   },
   "tandem": {
     "sha": "d499d75df0b1e7014fc7c038118043e163c8f41e",
-    "branch": "master"
+    "branch": "main"
   },
   "utterance-queue": {
     "sha": "03e02b7290d549558a20aa62511b3260070b6294",
-    "branch": "master"
+    "branch": "main"
   }
 }
