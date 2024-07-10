@@ -1,5 +1,5 @@
 {
-  "comment": "# states-of-matter-basics 1.2.19-rc.1 Wed Jul 10 2024 01:03:49 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# states-of-matter-basics 1.2.19-rc.2 Wed Jul 10 2024 16:29:44 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "1a41cef653bbed1025af5768bea958d7e3e0f8ae",
     "branch": "HEAD"
@@ -77,7 +77,7 @@
     "branch": "HEAD"
   },
   "states-of-matter-basics": {
-    "sha": "7de0cd84395ddc77e9d39b4d2211ff30fbb81d69",
+    "sha": "af37f79e401abcd292fb00cf9aaececed9675533",
     "branch": "1.2"
   },
   "studio": {
