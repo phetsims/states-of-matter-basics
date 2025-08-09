@@ -19,7 +19,10 @@ const statesOfMatterBasicsTitleStringProperty = StatesOfMatterBasicsStrings[ 'st
 
 simLauncher.launch( () => {
 
-  const simOptions = {
+  const sim = new Sim( statesOfMatterBasicsTitleStringProperty, [
+    new StatesScreen( Tandem.ROOT.createTandem( 'statesScreen' ) ),
+    new PhaseChangesScreen( false, Tandem.ROOT.createTandem( 'phaseChangesScreen' ) )
+  ], {
     credits: {
       leadDesign: 'Paul Beale, Yuen-ying Carpenter, Sarah McKagan, Emily B. Moore, Noah Podolefsky,<br>Amy Rouinfar',
       softwareDevelopment: 'John Blanco, Aaron Davis, Aadish Gupta',
@@ -35,11 +38,6 @@ simLauncher.launch( () => {
         supportsProjectorMode: true
       }
     } )
-  };
-
-  const sim = new Sim( statesOfMatterBasicsTitleStringProperty, [
-    new StatesScreen( Tandem.ROOT.createTandem( 'statesScreen' ) ),
-    new PhaseChangesScreen( false, Tandem.ROOT.createTandem( 'phaseChangesScreen' ) )
-  ], simOptions );
+  } );
   sim.start();
 } );
