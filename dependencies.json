@@ -9,7 +9,7 @@
     "branch": "HEAD"
   },
   "brand": {
-    "sha": "bab3eafbb924c5b7adbc804674749f0df883f674",
+    "sha": "a1098eb1156f8065d263720e022ae3b3d73eee1e",
     "branch": "HEAD"
   },
   "chipper": {
@@ -77,7 +77,7 @@
     "branch": "HEAD"
   },
   "states-of-matter-basics": {
-    "sha": "0872c28ea71f67ad0d2c45a5ee8a7221b33ca77a",
+    "sha": "1d24bd60e2cb49d073b15f2ce15b0de6024b74b6",
     "branch": "1.2"
   },
   "studio": {
