@@ -20,4 +20,6 @@ type StringsType = {
 
 const StatesOfMatterBasicsStrings = getStringModule( 'STATES_OF_MATTER_BASICS' ) as StringsType;
 
+statesOfMatterBasics.register( 'StatesOfMatterBasicsStrings', StatesOfMatterBasicsStrings );
+
 export default StatesOfMatterBasicsStrings;
